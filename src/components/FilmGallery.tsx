@@ -32,12 +32,12 @@ export default function FilmGallery({
           onClose={() => setLightboxSrc(null)}
         />
       )}
-      <div className="flex flex-wrap gap-3">
+      <div className="grid grid-cols-2 gap-3" style={{ maxWidth: "612px" }}>
         {preopImages.map((img, i) => (
           <button
             key={`pre-${i}`}
             onClick={() => openLightbox(img, `${title} pre-op ${i + 1}`)}
-            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in w-72"
+            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in"
           >
             <div className="absolute top-2 left-2 z-10 px-1.5 py-0.5 bg-black/60 text-[10px] font-medium text-white/80 rounded">
               Pre-op
@@ -55,7 +55,7 @@ export default function FilmGallery({
           <button
             key={`post-${i}`}
             onClick={() => openLightbox(img, `${title} post-op ${i + 1}`)}
-            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in w-72"
+            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in"
           >
             <div className="absolute top-2 left-2 z-10 px-1.5 py-0.5 bg-black/60 text-[10px] font-medium text-white/80 rounded">
               Post-op

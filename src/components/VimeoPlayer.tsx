@@ -153,7 +153,7 @@ export default function VimeoPlayer({ vimeoId }: { vimeoId: string }) {
 
   // Loading skeleton for chapters
   const chapterSkeleton = (
-    <div className="lg:w-72 shrink-0">
+    <div className="max-lg:hidden lg:w-72 shrink-0">
       <div className="skeleton h-4 w-20 rounded mb-3" />
       <div className="flex flex-row lg:flex-col gap-1.5">
         {Array.from({ length: 6 }).map((_, i) => (
@@ -206,7 +206,7 @@ export default function VimeoPlayer({ vimeoId }: { vimeoId: string }) {
       {/* Chapter markers sidebar */}
       {!isReady && chapterSkeleton}
       {isReady && chapters.length > 0 && (
-        <div className="lg:w-72 shrink-0">
+        <div className="max-lg:hidden lg:w-72 shrink-0">
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted mb-2 px-1">
             Chapters
           </h3>

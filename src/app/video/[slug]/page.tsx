@@ -90,7 +90,7 @@ export default async function VideoPage({
       {/* Below video — same flex layout as VimeoPlayer */}
       <div className="mt-4 flex flex-col lg:flex-row lg:items-stretch gap-4">
         {/* Left column — matches video width */}
-        <div className="flex-1 min-w-0 bg-card-bg border border-card-border rounded-xl p-5">
+        <div className="flex-1 min-w-0">
           {/* Title + like */}
           <div className="flex items-center gap-3">
             <h1 className="text-xl sm:text-2xl font-bold leading-tight">
