@@ -9,7 +9,7 @@ import {
 } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Fuse from "fuse.js";
+import MiniSearch from "minisearch";
 import {
   videos,
   authors,
@@ -37,16 +37,16 @@ const searchableVideos = videos.map((video) => {
   };
 });
 
-const fuse = new Fuse(searchableVideos, {
-  keys: [
-    { name: "title", weight: 2 },
-    { name: "authorName", weight: 1 },
-    { name: "specialtyNames", weight: 0.8 },
-    { name: "institutionName", weight: 0.5 },
-  ],
-  threshold: 0.35,
-  ignoreLocation: true,
+const miniSearch = new MiniSearch({
+  fields: ["title", "authorName", "specialtyNames", "institutionName"],
+  storeFields: ["id"],
+  searchOptions: {
+    boost: { title: 2, authorName: 1, specialtyNames: 0.8, institutionName: 0.5 },
+    prefix: true,
+    fuzzy: 0.2,
+  },
 });
+miniSearch.addAll(searchableVideos);
 
 
 function HeartIcon({
@@ -382,7 +382,9 @@ export default function VideoGrid({
   const filteredVideos = useMemo(() => {
     let pool: Video[];
     if (searchQuery.trim()) {
-      pool = fuse.search(searchQuery).map((r) => r.item);
+      const results = miniSearch.search(searchQuery);
+      const videoMap = new Map(videos.map((v) => [v.id, v]));
+      pool = results.map((r) => videoMap.get(r.id)).filter(Boolean) as Video[];
     } else {
       pool = videos;
     }
