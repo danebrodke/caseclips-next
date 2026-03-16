@@ -313,6 +313,18 @@ export default function VideoGrid({
     new Set()
   );
 
+  // Listen for logo-click reset
+  useEffect(() => {
+    function handleReset() {
+      setSearchQuery("");
+      setSelectedSpecialties(new Set());
+      setSelectedAuthors(new Set());
+      setSelectedInstitutions(new Set());
+    }
+    window.addEventListener("caseclips:reset-filters", handleReset);
+    return () => window.removeEventListener("caseclips:reset-filters", handleReset);
+  }, []);
+
   // Likes state
   const [likeCounts, setLikeCounts] = useState<Record<string, number>>({});
   const [likedIds, setLikedIds] = useState<Set<string>>(new Set());
@@ -476,7 +488,7 @@ export default function VideoGrid({
             placeholder="Search videos, authors, specialties..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-10 py-2.5 text-sm border border-card-border rounded-lg bg-card-bg text-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 transition-colors placeholder:text-muted"
+            className="w-full pl-10 pr-10 py-2.5 text-base sm:text-sm border border-card-border rounded-lg bg-card-bg text-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 transition-colors placeholder:text-muted"
           />
           {searchQuery && (
             <button
