@@ -170,7 +170,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/scaphoid-postop.jpg"],
     authorIds: ["auth-15", "auth-16", "auth-17"],
     specialtyIds: ["spec-7", "spec-1"],
-    likesCount: 26,
     publishedAt: "2025-12-14",
   },
   {
@@ -183,7 +182,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Postop-AP.jpeg"],
     authorIds: ["auth-13", "auth-11"],
     specialtyIds: ["spec-4"],
-    likesCount: 15,
     publishedAt: "2023-04-17",
   },
   {
@@ -196,7 +194,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/intra-art-humerus-postop.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 47,
     publishedAt: "2023-04-04",
   },
   {
@@ -209,7 +206,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/postop-2.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 43,
     publishedAt: "2023-03-23",
   },
   {
@@ -222,7 +218,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/VDRO-postop.jpg"],
     authorIds: ["auth-12"],
     specialtyIds: ["spec-6"],
-    likesCount: 40,
     publishedAt: "2023-02-18",
   },
   {
@@ -235,7 +230,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/ACL-postop.jpg"],
     authorIds: ["auth-7"],
     specialtyIds: ["spec-5"],
-    likesCount: 29,
     publishedAt: "2023-02-11",
   },
   {
@@ -248,7 +242,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Cheung-RSA--2--postop.jpg"],
     authorIds: ["auth-7"],
     specialtyIds: ["spec-5"],
-    likesCount: 25,
     publishedAt: "2022-12-28",
   },
   {
@@ -261,7 +254,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/aTSA-postop.jpg"],
     authorIds: ["auth-7"],
     specialtyIds: ["spec-5"],
-    likesCount: 81,
     publishedAt: "2022-12-13",
   },
   {
@@ -274,7 +266,6 @@ export const videos: Video[] = [
     postopImages: [],
     authorIds: ["auth-9"],
     specialtyIds: ["spec-2", "spec-8"],
-    likesCount: 23,
     publishedAt: "2022-11-15",
   },
   {
@@ -287,7 +278,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/2022-09-postop.jpg"],
     authorIds: ["auth-7"],
     specialtyIds: ["spec-5", "spec-1"],
-    likesCount: 87,
     publishedAt: "2022-09-08",
   },
   {
@@ -300,7 +290,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/anterior-THA-postop.jpg"],
     authorIds: ["auth-10", "auth-11"],
     specialtyIds: ["spec-4"],
-    likesCount: 66,
     publishedAt: "2022-08-31",
   },
   {
@@ -313,7 +302,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/postop.jpg"],
     authorIds: ["auth-5"],
     specialtyIds: ["spec-4", "spec-2"],
-    likesCount: 16,
     publishedAt: "2022-05-08",
   },
   {
@@ -326,7 +314,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/anterior-column-postop.jpg"],
     authorIds: ["auth-6"],
     specialtyIds: ["spec-2"],
-    likesCount: 15,
     publishedAt: "2022-04-17",
   },
   {
@@ -339,7 +326,6 @@ export const videos: Video[] = [
     postopImages: [],
     authorIds: ["auth-9"],
     specialtyIds: ["spec-2", "spec-8"],
-    likesCount: 23,
     publishedAt: "2022-03-14",
   },
   {
@@ -352,7 +338,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Segmental-humerus-postop-1.jpeg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 39,
     publishedAt: "2022-02-10",
   },
   {
@@ -365,7 +350,6 @@ export const videos: Video[] = [
     postopImages: [],
     authorIds: ["auth-7"],
     specialtyIds: ["spec-5"],
-    likesCount: 41,
     publishedAt: "2022-01-06",
   },
   {
@@ -378,7 +362,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/THA-postop.jpg"],
     authorIds: ["auth-5"],
     specialtyIds: ["spec-4"],
-    likesCount: 76,
     publishedAt: "2021-12-14",
   },
   {
@@ -391,7 +374,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/olecranon-radial-postop.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 89,
     publishedAt: "2021-12-13",
   },
   {
@@ -404,7 +386,6 @@ export const videos: Video[] = [
     postopImages: [],
     authorIds: ["auth-7"],
     specialtyIds: ["spec-5"],
-    likesCount: 15,
     publishedAt: "2021-11-25",
   },
   {
@@ -417,7 +398,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/postop-3.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 83,
     publishedAt: "2021-10-14",
   },
   {
@@ -430,7 +410,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/postop.jpeg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 37,
     publishedAt: "2021-09-06",
   },
   {
@@ -443,7 +422,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/latarjet-postop.jpg"],
     authorIds: ["auth-7"],
     specialtyIds: ["spec-5"],
-    likesCount: 81,
     publishedAt: "2021-08-04",
   },
   {
@@ -456,7 +434,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/patella-postop.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 65,
     publishedAt: "2021-07-30",
   },
   {
@@ -469,7 +446,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/fem-neck-postop.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 40,
     publishedAt: "2021-07-07",
   },
   {
@@ -482,7 +458,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/posterior-cervical-prep.jpg", "/images/cases/posterior-cervical-postop.jpg"],
     authorIds: ["auth-4"],
     specialtyIds: ["spec-3"],
-    likesCount: 69,
     publishedAt: "2021-06-01",
   },
   {
@@ -495,7 +470,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/post-op--4-.jpg"],
     authorIds: ["auth-5"],
     specialtyIds: ["spec-4"],
-    likesCount: 87,
     publishedAt: "2021-05-17",
   },
   {
@@ -508,7 +482,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/RSA-postop.jpg"],
     authorIds: ["auth-7"],
     specialtyIds: ["spec-5"],
-    likesCount: 47,
     publishedAt: "2021-04-15",
   },
   {
@@ -521,7 +494,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/cerv-disc-replacement-postop.jpg"],
     authorIds: ["auth-4"],
     specialtyIds: ["spec-3"],
-    likesCount: 12,
     publishedAt: "2021-04-15",
   },
   {
@@ -534,7 +506,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/prox-humerus---postop.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 32,
     publishedAt: "2021-03-23",
   },
   {
@@ -547,7 +518,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/UKA---postop.jpg"],
     authorIds: ["auth-5"],
     specialtyIds: ["spec-4"],
-    likesCount: 66,
     publishedAt: "2021-03-14",
   },
   {
@@ -560,7 +530,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/clavicle-postop.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 55,
     publishedAt: "2021-02-27",
   },
   {
@@ -573,7 +542,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/plateau-postop-1.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 47,
     publishedAt: "2021-02-16",
   },
   {
@@ -586,7 +554,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/SHD-post-op--1-.jpg"],
     authorIds: ["auth-5"],
     specialtyIds: ["spec-4", "spec-8", "spec-5"],
-    likesCount: 31,
     publishedAt: "2021-02-02",
   },
   {
@@ -599,7 +566,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Rothberg-SI-post-op.jpg"],
     authorIds: ["auth-6"],
     specialtyIds: ["spec-2"],
-    likesCount: 39,
     publishedAt: "2021-01-28",
   },
   {
@@ -612,7 +578,6 @@ export const videos: Video[] = [
     postopImages: [],
     authorIds: ["auth-4"],
     specialtyIds: ["spec-3"],
-    likesCount: 55,
     publishedAt: "2021-01-19",
   },
   {
@@ -625,7 +590,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/post-op--2--1.jpg"],
     authorIds: ["auth-5"],
     specialtyIds: ["spec-4"],
-    likesCount: 25,
     publishedAt: "2020-12-21",
   },
   {
@@ -638,7 +602,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/post-op--2-.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 23,
     publishedAt: "2020-12-18",
   },
   {
@@ -651,7 +614,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Post-op-1.jpg"],
     authorIds: ["auth-4"],
     specialtyIds: ["spec-3"],
-    likesCount: 60,
     publishedAt: "2020-10-23",
   },
   {
@@ -664,7 +626,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Post-op.jpg"],
     authorIds: ["auth-4"],
     specialtyIds: ["spec-3"],
-    likesCount: 24,
     publishedAt: "2020-10-16",
   },
   {
@@ -677,7 +638,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Both-bone-post.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 57,
     publishedAt: "2020-09-24",
   },
   {
@@ -690,7 +650,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Slide1.jpeg"],
     authorIds: ["auth-8"],
     specialtyIds: ["spec-6"],
-    likesCount: 56,
     publishedAt: "2020-09-05",
   },
   {
@@ -703,7 +662,6 @@ export const videos: Video[] = [
     postopImages: [],
     authorIds: ["auth-2"],
     specialtyIds: ["spec-7"],
-    likesCount: 89,
     publishedAt: "2020-09-01",
   },
   {
@@ -716,7 +674,6 @@ export const videos: Video[] = [
     postopImages: [],
     authorIds: ["auth-2"],
     specialtyIds: ["spec-7"],
-    likesCount: 45,
     publishedAt: "2020-09-01",
   },
   {
@@ -729,7 +686,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/BeFunky-collage--7-.jpg"],
     authorIds: ["auth-6"],
     specialtyIds: ["spec-2"],
-    likesCount: 17,
     publishedAt: "2020-07-24",
   },
   {
@@ -742,7 +698,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/scoli-postop.jpg"],
     authorIds: ["auth-3"],
     specialtyIds: ["spec-6", "spec-3"],
-    likesCount: 70,
     publishedAt: "2020-07-15",
   },
   {
@@ -755,7 +710,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/BeFunky-collage--3-.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 80,
     publishedAt: "2020-07-03",
   },
   {
@@ -768,7 +722,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Slide8--1-.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 27,
     publishedAt: "2020-06-23",
   },
   {
@@ -781,7 +734,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Slide12-1.jpg"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 60,
     publishedAt: "2020-06-10",
   },
   {
@@ -794,7 +746,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/Screen-Shot-2020-07-11-at-5.05.57-PM.png"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 22,
     publishedAt: "2020-05-26",
   },
   {
@@ -807,7 +758,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/image--2-.png"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-1"],
-    likesCount: 82,
     publishedAt: "2020-05-21",
   },
   {
@@ -820,7 +770,6 @@ export const videos: Video[] = [
     postopImages: ["/images/cases/image--1---1-.png"],
     authorIds: ["auth-1"],
     specialtyIds: ["spec-2"],
-    likesCount: 49,
     publishedAt: "2020-05-14",
   },
 ];

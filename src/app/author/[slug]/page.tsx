@@ -12,23 +12,6 @@ export function generateStaticParams() {
   return authors.map((a) => ({ slug: a.slug }));
 }
 
-function HeartIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
 export default async function AuthorPage({
   params,
 }: {
@@ -107,10 +90,6 @@ export default async function AuthorPage({
                     </svg>
                   </div>
                 )}
-                <div className="absolute bottom-2 right-2 flex items-center gap-1 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
-                  <HeartIcon className="w-3 h-3" />
-                  {video.likesCount}
-                </div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>
               <h3 className="font-semibold text-sm leading-snug group-hover:text-accent transition-colors line-clamp-2">

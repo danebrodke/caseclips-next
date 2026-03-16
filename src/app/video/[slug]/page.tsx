@@ -96,7 +96,7 @@ export default async function VideoPage({
             <h1 className="text-xl sm:text-2xl font-bold leading-tight">
               {video.title}
             </h1>
-            <LikeButton videoId={video.id} initialCount={video.likesCount} />
+            <LikeButton videoId={video.id} />
           </div>
 
           {/* Author byline: photos + names + institution */}

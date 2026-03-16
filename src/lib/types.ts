@@ -29,6 +29,5 @@ export interface Video {
   postopImages: string[];
   authorIds: string[];
   specialtyIds: string[];
-  likesCount: number;
   publishedAt: string;
 }

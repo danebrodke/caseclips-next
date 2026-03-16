@@ -48,26 +48,6 @@ const fuse = new Fuse(searchableVideos, {
   ignoreLocation: true,
 });
 
-// Likes helpers
-function getLikes(): Record<string, number> {
-  if (typeof window === "undefined") return {};
-  try {
-    return JSON.parse(localStorage.getItem("caseclips-likes") || "{}");
-  } catch {
-    return {};
-  }
-}
-
-function getLikedSet(): Set<string> {
-  if (typeof window === "undefined") return new Set();
-  try {
-    return new Set(
-      JSON.parse(localStorage.getItem("caseclips-liked-ids") || "[]")
-    );
-  } catch {
-    return new Set();
-  }
-}
 
 function HeartIcon({
   className,
@@ -338,33 +318,56 @@ export default function VideoGrid({
   const [likedIds, setLikedIds] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    setLikeCounts(getLikes());
-    setLikedIds(getLikedSet());
+    fetch("/api/likes")
+      .then((res) => res.json())
+      .then((data: { counts: Record<string, number>; liked: string[] }) => {
+        setLikeCounts(data.counts);
+        setLikedIds(new Set(data.liked));
+      })
+      .catch(() => {});
   }, []);
 
   const handleLike = useCallback(
-    (videoId: string) => {
-      const video = videos.find((v) => v.id === videoId);
-      if (!video) return;
-
+    async (videoId: string) => {
+      // Optimistic update
       const wasLiked = likedIds.has(videoId);
-      const currentCount = likeCounts[videoId] ?? video.likesCount;
+      const currentCount = likeCounts[videoId] ?? 0;
       const newCount = wasLiked ? currentCount - 1 : currentCount + 1;
 
-      // Update counts
-      const newCounts = { ...likeCounts, [videoId]: newCount };
-      setLikeCounts(newCounts);
-      localStorage.setItem("caseclips-likes", JSON.stringify(newCounts));
+      setLikeCounts((prev) => ({ ...prev, [videoId]: newCount }));
+      setLikedIds((prev) => {
+        const next = new Set(prev);
+        if (wasLiked) next.delete(videoId);
+        else next.add(videoId);
+        return next;
+      });
 
-      // Update liked set
-      const newLiked = new Set(likedIds);
-      if (wasLiked) newLiked.delete(videoId);
-      else newLiked.add(videoId);
-      setLikedIds(newLiked);
-      localStorage.setItem(
-        "caseclips-liked-ids",
-        JSON.stringify([...newLiked])
-      );
+      try {
+        const res = await fetch("/api/likes", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ videoId }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setLikeCounts((prev) => ({ ...prev, [videoId]: data.count }));
+          setLikedIds((prev) => {
+            const next = new Set(prev);
+            if (data.liked) next.add(videoId);
+            else next.delete(videoId);
+            return next;
+          });
+        }
+      } catch {
+        // Revert on failure
+        setLikeCounts((prev) => ({ ...prev, [videoId]: currentCount }));
+        setLikedIds((prev) => {
+          const next = new Set(prev);
+          if (wasLiked) next.add(videoId);
+          else next.delete(videoId);
+          return next;
+        });
+      }
     },
     [likeCounts, likedIds]
   );
@@ -574,7 +577,7 @@ export default function VideoGrid({
           <VideoCard
             key={video.id}
             video={video}
-            likeCount={likeCounts[video.id] ?? video.likesCount}
+            likeCount={likeCounts[video.id] ?? 0}
             isLiked={likedIds.has(video.id)}
             onLike={handleLike}
           />
