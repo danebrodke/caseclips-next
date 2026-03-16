@@ -6,10 +6,10 @@ Surgical case video platform for orthopaedic surgery. Migrated from Ghost CMS to
 
 - **Framework**: Next.js 16 (App Router) with TypeScript
 - **Styling**: Tailwind CSS v4, dark mode
-- **Search**: Fuse.js for client-side fuzzy search
+- **Search**: MiniSearch for client-side BM25-ranked search with prefix and fuzzy matching
 - **Video**: Vimeo embeds via @vimeo/player SDK (with chapter markers)
-- **Likes**: localStorage-based (will move to Supabase)
-- **Deployment target**: Vercel (frontend), Supabase (backend - not yet integrated)
+- **Likes**: Upstash Redis backend with anonymous cookie-based user tracking
+- **Deployment**: Vercel (hosting + serverless API routes), Upstash Redis (likes storage)
 - **Package manager**: npm
 
 ## Project Structure
@@ -26,7 +26,7 @@ src/
 ├── components/
 │   ├── VideoGrid.tsx           # Search, specialty pills, author/institution typeahead, grid
 │   ├── VimeoPlayer.tsx         # Vimeo SDK player with chapter sidebar, loading skeleton, auto-scroll
-│   ├── LikeButton.tsx          # Like toggle with localStorage persistence
+│   ├── LikeButton.tsx          # Like toggle with Redis-backed persistence
 │   ├── Lightbox.tsx            # Fullscreen image lightbox overlay (Escape to close)
 │   └── FilmGallery.tsx         # Pre/post-op film grid with lightbox integration
 └── lib/
@@ -54,7 +54,7 @@ The Ghost export is at repo root: `caseclips.ghost.2026-03-16-02-49-07.json` (ha
 - Logo SVG in header with tagline
 - Specialty filters: clickable pills. Author/Institution: typeahead dropdowns
 - Video grid: 4 cols desktop, 2 cols mobile
-- Likes: localStorage with seeded random initial counts (12-89), like button inline with video title
+- Likes: Upstash Redis with anonymous cookie-based tracking, like button inline with video title
 - Chapters: sidebar on desktop (height matched to video via ResizeObserver), horizontal scroll on mobile, auto-scrolls to active chapter
 - Loading: shimmer skeleton for video and chapters while Vimeo loads
 - Lightbox: pre/post-op films open in fullscreen overlay on click
@@ -64,6 +64,6 @@ The Ghost export is at repo root: `caseclips.ghost.2026-03-16-02-49-07.json` (ha
 
 ## Future (Not Yet Built)
 
-- Supabase backend (auth, likes persistence, admin panel)
+- User authentication
 - Admin dashboard for content management
 - Custom domain on Vercel
