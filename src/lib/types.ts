@@ -27,7 +27,7 @@ export interface Video {
   thumbnailUrl: string;
   preopImages: string[];
   postopImages: string[];
-  authorId: string;
+  authorIds: string[];
   specialtyIds: string[];
   likesCount: number;
   publishedAt: string;

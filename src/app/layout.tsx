@@ -24,7 +24,7 @@ export default function RootLayout({
         <header className="border-b border-card-border bg-surface/80 backdrop-blur-md sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-14">
-              <Link href="/" className="flex items-center gap-3">
+              <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
                 <img
                   src="/images/logo.svg"
                   alt="Caseclips"
@@ -40,6 +40,12 @@ export default function RootLayout({
                   className="hover:text-foreground transition-colors"
                 >
                   Videos
+                </Link>
+                <Link
+                  href="/authors"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Authors
                 </Link>
                 <Link
                   href="/about"

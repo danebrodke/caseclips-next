@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect, useCallback } from "react";
+import {
+  useState,
+  useMemo,
+  useRef,
+  useEffect,
+  useCallback,
+} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Fuse from "fuse.js";
@@ -9,7 +15,7 @@ import {
   authors,
   institutions,
   specialties,
-  getAuthor,
+  getAuthors,
   getSpecialties,
   getAuthorInstitution,
 } from "@/lib/data";
@@ -17,14 +23,17 @@ import type { Video } from "@/lib/types";
 
 // Build searchable index
 const searchableVideos = videos.map((video) => {
-  const author = getAuthor(video.authorId);
+  const videoAuthors = getAuthors(video.authorIds);
   const specs = getSpecialties(video.specialtyIds);
-  const inst = author ? getAuthorInstitution(author) : undefined;
+  const instNames = videoAuthors
+    .map((a) => getAuthorInstitution(a)?.name)
+    .filter(Boolean)
+    .join(" ");
   return {
     ...video,
-    authorName: author?.name ?? "",
+    authorName: videoAuthors.map((a) => a.name).join(" "),
     specialtyNames: specs.map((s) => s.name).join(" "),
-    institutionName: inst?.name ?? "",
+    institutionName: instNames,
   };
 });
 
@@ -224,7 +233,7 @@ function VideoCard({
   isLiked: boolean;
   onLike: (id: string) => void;
 }) {
-  const author = getAuthor(video.authorId);
+  const videoAuthors = getAuthors(video.authorIds);
   const videoSpecialties = getSpecialties(video.specialtyIds);
 
   return (
@@ -261,14 +270,19 @@ function VideoCard({
               {video.title}
             </h3>
           </Link>
-          {author && (
-            <Link
-              href={`/author/${author.slug}`}
-              className="text-xs text-muted hover:text-accent transition-colors"
-            >
-              {author.name}
-            </Link>
-          )}
+          <div className="text-xs text-muted">
+            {videoAuthors.map((author, i) => (
+              <span key={author.id}>
+                {i > 0 && ", "}
+                <Link
+                  href={`/author/${author.slug}`}
+                  className="hover:text-accent transition-colors"
+                >
+                  {author.name}
+                </Link>
+              </span>
+            ))}
+          </div>
           <div className="flex flex-wrap gap-1 mt-1">
             {videoSpecialties.map((spec) => (
               <span
@@ -299,10 +313,18 @@ function VideoCard({
   );
 }
 
-export default function VideoGrid() {
+export default function VideoGrid({
+  initialSpecialty,
+}: {
+  initialSpecialty?: string;
+}) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialties, setSelectedSpecialties] = useState<Set<string>>(
-    new Set()
+    () => {
+      if (!initialSpecialty) return new Set();
+      const spec = specialties.find((s) => s.slug === initialSpecialty);
+      return spec ? new Set([spec.id]) : new Set();
+    }
   );
   const [selectedAuthors, setSelectedAuthors] = useState<Set<string>>(
     new Set()
@@ -369,18 +391,55 @@ export default function VideoGrid() {
       )
         return false;
 
-      if (selectedAuthors.size > 0 && !selectedAuthors.has(video.authorId))
+      if (
+        selectedAuthors.size > 0 &&
+        !video.authorIds.some((aid) => selectedAuthors.has(aid))
+      )
         return false;
 
       if (selectedInstitutions.size > 0) {
-        const author = getAuthor(video.authorId);
-        if (!author || !selectedInstitutions.has(author.institutionId))
+        const videoAuthors = getAuthors(video.authorIds);
+        if (
+          !videoAuthors.some((a) =>
+            selectedInstitutions.has(a.institutionId)
+          )
+        )
           return false;
       }
 
       return true;
     });
   }, [searchQuery, selectedSpecialties, selectedAuthors, selectedInstitutions]);
+
+  // Lazy loading: show 16 initially, load 16 more each time sentinel is visible
+  const PAGE_SIZE = 16;
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  // Reset visible count when filters change
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [searchQuery, selectedSpecialties, selectedAuthors, selectedInstitutions]);
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => prev + PAGE_SIZE);
+        }
+      },
+      { rootMargin: "400px" }
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [filteredVideos]);
+
+  const visibleVideos = filteredVideos.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredVideos.length;
 
   const hasFilters =
     searchQuery.trim().length > 0 ||
@@ -511,7 +570,7 @@ export default function VideoGrid() {
 
       {/* Video grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 sm:gap-x-5 sm:gap-y-7">
-        {filteredVideos.map((video) => (
+        {visibleVideos.map((video) => (
           <VideoCard
             key={video.id}
             video={video}
@@ -521,6 +580,9 @@ export default function VideoGrid() {
           />
         ))}
       </div>
+
+      {/* Lazy load sentinel */}
+      {hasMore && <div ref={sentinelRef} className="h-px" />}
 
       {filteredVideos.length === 0 && (
         <div className="text-center py-20 text-muted">
