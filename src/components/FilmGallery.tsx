@@ -32,12 +32,12 @@ export default function FilmGallery({
           onClose={() => setLightboxSrc(null)}
         />
       )}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="flex flex-wrap gap-3">
         {preopImages.map((img, i) => (
           <button
             key={`pre-${i}`}
             onClick={() => openLightbox(img, `${title} pre-op ${i + 1}`)}
-            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in"
+            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in w-72"
           >
             <div className="absolute top-2 left-2 z-10 px-1.5 py-0.5 bg-black/60 text-[10px] font-medium text-white/80 rounded">
               Pre-op
@@ -45,8 +45,8 @@ export default function FilmGallery({
             <Image
               src={img}
               alt={`${title} pre-op ${i + 1}`}
-              width={400}
-              height={300}
+              width={224}
+              height={168}
               className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
             />
           </button>
@@ -55,7 +55,7 @@ export default function FilmGallery({
           <button
             key={`post-${i}`}
             onClick={() => openLightbox(img, `${title} post-op ${i + 1}`)}
-            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in"
+            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in w-72"
           >
             <div className="absolute top-2 left-2 z-10 px-1.5 py-0.5 bg-black/60 text-[10px] font-medium text-white/80 rounded">
               Post-op
@@ -63,8 +63,8 @@ export default function FilmGallery({
             <Image
               src={img}
               alt={`${title} post-op ${i + 1}`}
-              width={400}
-              height={300}
+              width={224}
+              height={168}
               className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
             />
           </button>

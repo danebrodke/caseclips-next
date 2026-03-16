@@ -72,11 +72,14 @@ export default async function VideoPage({
   const hasFilms =
     video.preopImages.length > 0 || video.postopImages.length > 0;
 
-  // Estimate how many related videos to fill the right column.
-  // Rough: title block ~80px, imaging ~300-500px depending on image count.
-  // Each related card is ~70px. Aim for enough to fill.
+  // Scale related count to roughly match left column height.
+  // Left col: ~100px title/meta + ~30px imaging header + image rows.
+  // w-72 tiles (288px) fit 2 per row in ~750px left col. Each row ~220px.
+  // Each related card ~70px tall + 12px gap ≈ 82px.
   const imageCount = video.preopImages.length + video.postopImages.length;
-  const relatedCount = Math.max(4, 2 + imageCount * 2);
+  const imageRows = Math.ceil(imageCount / 2);
+  const leftHeightEstimate = 130 + imageRows * 230;
+  const relatedCount = Math.max(3, Math.min(8, Math.round(leftHeightEstimate / 82)));
   const related = getRelatedVideos(video, relatedCount);
 
   return (
@@ -85,9 +88,9 @@ export default async function VideoPage({
       {video.vimeoId && <VimeoPlayer vimeoId={video.vimeoId} />}
 
       {/* Below video — same flex layout as VimeoPlayer */}
-      <div className="mt-4 flex flex-col lg:flex-row gap-4">
+      <div className="mt-4 flex flex-col lg:flex-row lg:items-stretch gap-4">
         {/* Left column — matches video width */}
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 bg-card-bg border border-card-border rounded-xl p-5">
           {/* Title + like */}
           <div className="flex items-center gap-3">
             <h1 className="text-xl sm:text-2xl font-bold leading-tight">
@@ -102,7 +105,7 @@ export default async function VideoPage({
               {videoAuthors.map((author) => (
                 <div
                   key={author.id}
-                  className="w-6 h-6 rounded-full bg-surface border-2 border-background overflow-hidden"
+                  className="w-6 h-6 rounded-full bg-surface border-2 border-card-bg overflow-hidden"
                 >
                   {author.photoUrl ? (
                     <Image
@@ -177,7 +180,7 @@ export default async function VideoPage({
         {/* Right column — matches chapter column width */}
         <div className="lg:w-72 shrink-0">
           {related.length > 0 && (
-            <div>
+            <div className="bg-[#181818] rounded-xl p-4 h-full">
               <h2 className="text-xs font-semibold uppercase tracking-wider text-muted mb-3">
                 Related
               </h2>
