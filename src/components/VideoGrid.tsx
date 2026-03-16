@@ -153,7 +153,7 @@ function TypeaheadFilter({
               placeholder={`Search ${label.toLowerCase()}...`}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full px-3 py-1.5 text-sm border border-card-border rounded-md bg-surface text-foreground focus:outline-none focus:border-accent placeholder:text-muted"
+              className="w-full px-3 py-1.5 text-base sm:text-sm border border-card-border rounded-md bg-surface text-foreground focus:outline-none focus:border-accent placeholder:text-muted"
               autoFocus
             />
           </div>
