@@ -37,9 +37,9 @@ export default function FilmGallery({
           <button
             key={`pre-${i}`}
             onClick={() => openLightbox(img, `${title} pre-op ${i + 1}`)}
-            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in"
+            className="group relative rounded-xl overflow-hidden bg-card-bg ring-1 ring-white/[0.06] cursor-zoom-in"
           >
-            <div className="absolute top-2 left-2 z-10 px-1.5 py-0.5 bg-black/60 text-[10px] font-medium text-white/80 rounded">
+            <div className="absolute top-2.5 left-2.5 z-10 px-2 py-0.5 bg-black/70 backdrop-blur-sm text-[10px] font-semibold uppercase tracking-wider text-white/60 rounded-md">
               Pre-op
             </div>
             <Image
@@ -47,7 +47,7 @@ export default function FilmGallery({
               alt={`${title} pre-op ${i + 1}`}
               width={224}
               height={168}
-              className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-auto group-hover:scale-[1.03] transition-transform duration-500 ease-out"
             />
           </button>
         ))}
@@ -55,9 +55,9 @@ export default function FilmGallery({
           <button
             key={`post-${i}`}
             onClick={() => openLightbox(img, `${title} post-op ${i + 1}`)}
-            className="group relative rounded-lg overflow-hidden bg-card-bg border border-card-border cursor-zoom-in"
+            className="group relative rounded-xl overflow-hidden bg-card-bg ring-1 ring-white/[0.06] cursor-zoom-in"
           >
-            <div className="absolute top-2 left-2 z-10 px-1.5 py-0.5 bg-black/60 text-[10px] font-medium text-white/80 rounded">
+            <div className="absolute top-2.5 left-2.5 z-10 px-2 py-0.5 bg-black/70 backdrop-blur-sm text-[10px] font-semibold uppercase tracking-wider text-white/60 rounded-md">
               Post-op
             </div>
             <Image
@@ -65,7 +65,7 @@ export default function FilmGallery({
               alt={`${title} post-op ${i + 1}`}
               width={224}
               height={168}
-              className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-auto group-hover:scale-[1.03] transition-transform duration-500 ease-out"
             />
           </button>
         ))}

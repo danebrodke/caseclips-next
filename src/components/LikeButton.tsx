@@ -77,14 +77,17 @@ export default function LikeButton({ videoId }: { videoId: string }) {
     <button
       onClick={handleLike}
       disabled={pending}
-      className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-all ${
+      className={`group flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-all duration-200 ${
         liked
-          ? "border-rose-500/30 bg-rose-500/10 text-rose-400"
-          : "border-card-border bg-card-bg text-muted hover:border-rose-500/30 hover:text-rose-400"
+          ? "bg-rose-500/10 text-rose-400"
+          : "text-muted/60 hover:text-rose-400 hover:bg-rose-500/5"
       }`}
     >
-      <HeartIcon className="w-5 h-5" filled={liked} />
-      <span className="text-sm font-medium">{count}</span>
+      <HeartIcon
+        className="w-[18px] h-[18px] transition-transform duration-200 group-active:scale-90"
+        filled={liked}
+      />
+      <span className="text-sm tabular-nums">{count}</span>
     </button>
   );
 }

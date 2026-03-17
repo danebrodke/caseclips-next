@@ -155,7 +155,7 @@ export default function VimeoPlayer({ vimeoId }: { vimeoId: string }) {
   const chapterSkeleton = (
     <div className="max-lg:hidden lg:w-72 shrink-0">
       <div className="skeleton h-4 w-20 rounded mb-3" />
-      <div className="flex flex-row lg:flex-col gap-1.5">
+      <div className="flex flex-row lg:flex-col gap-0.5">
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
@@ -182,7 +182,7 @@ export default function VimeoPlayer({ vimeoId }: { vimeoId: string }) {
       >
         {/* Loading skeleton behind the player */}
         {!isReady && (
-          <div className="skeleton aspect-video rounded-lg flex items-center justify-center">
+          <div className="skeleton aspect-video rounded-xl flex items-center justify-center">
             <div className="flex flex-col items-center gap-2">
               <svg
                 className="w-12 h-12 text-muted/30 animate-pulse"
@@ -197,7 +197,7 @@ export default function VimeoPlayer({ vimeoId }: { vimeoId: string }) {
         )}
         <div
           ref={containerRef}
-          className={`rounded-lg overflow-hidden bg-black ${
+          className={`video-frame rounded-xl overflow-hidden bg-black ${
             !isReady ? "hidden" : ""
           }`}
         />
@@ -207,15 +207,15 @@ export default function VimeoPlayer({ vimeoId }: { vimeoId: string }) {
       {!isReady && chapterSkeleton}
       {isReady && chapters.length > 0 && (
         <div className="max-lg:hidden lg:w-72 shrink-0">
-          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted mb-2 px-1">
+          <h3 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted/50 mb-3 px-3">
             Chapters
           </h3>
           <div
             ref={chapterListRef}
-            className="flex flex-row lg:flex-col gap-1.5 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto pb-2 lg:pb-0"
+            className="flex flex-row lg:flex-col gap-0.5 overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto pb-2 lg:pb-0"
             style={
               videoHeight
-                ? { maxHeight: `${videoHeight - 24}px` }
+                ? { maxHeight: `${videoHeight - 32}px` }
                 : { maxHeight: "60vh" }
             }
           >
@@ -223,20 +223,23 @@ export default function VimeoPlayer({ vimeoId }: { vimeoId: string }) {
               <button
                 key={i}
                 onClick={() => seekToChapter(chapter.startTime)}
-                className={`flex items-start gap-2.5 px-3 py-2 rounded-lg text-left transition-all shrink-0 lg:shrink lg:w-full ${
+                className={`relative flex items-start gap-3 pl-4 pr-3 py-2.5 rounded-lg text-left transition-all duration-200 shrink-0 lg:shrink lg:w-full ${
                   activeChapter === i
-                    ? "bg-accent/15 border border-accent/30 text-accent"
-                    : "bg-card-bg border border-card-border hover:border-accent/30 text-foreground"
+                    ? "bg-accent/8 text-foreground"
+                    : "text-foreground/70 hover:text-foreground hover:bg-white/[0.03]"
                 }`}
               >
+                {activeChapter === i && (
+                  <span className="absolute left-0 top-2 bottom-2 w-[2px] rounded-full bg-accent" />
+                )}
                 <span
-                  className={`text-[10px] font-mono mt-0.5 shrink-0 ${
-                    activeChapter === i ? "text-accent" : "text-muted"
+                  className={`text-[10px] font-mono mt-[3px] shrink-0 tabular-nums ${
+                    activeChapter === i ? "text-accent" : "text-muted/50"
                   }`}
                 >
                   {formatTime(chapter.startTime)}
                 </span>
-                <span className="text-sm leading-snug line-clamp-2">
+                <span className="text-[13px] leading-snug line-clamp-2">
                   {chapter.title}
                 </span>
               </button>
