@@ -25,16 +25,16 @@ export default async function AuthorPage({
   const authorVideos = getVideosByAuthor(author.id);
 
   return (
-    <div className="max-w-4xl mx-auto">
-      {/* Author header */}
-      <div className="flex items-start gap-5 mb-8">
-        <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-card-bg border border-card-border shrink-0 overflow-hidden">
+    <div className="max-w-4xl mx-auto animate-fade-in-up">
+      {/* Author header — compact, horizontal */}
+      <div className="flex items-center gap-5 mb-6">
+        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-card-bg border border-card-border shrink-0 overflow-hidden ring-1 ring-accent/15 ring-offset-2 ring-offset-background">
           {author.photoUrl ? (
             <Image
               src={author.photoUrl}
               alt={author.name}
-              width={112}
-              height={112}
+              width={96}
+              height={96}
               className="w-full h-full object-cover"
             />
           ) : (
@@ -46,16 +46,25 @@ export default async function AuthorPage({
             </div>
           )}
         </div>
-        <div>
-          <h1 className="text-xl sm:text-2xl font-bold">{author.name}</h1>
+        <div className="min-w-0">
+          <h1 className="text-xl sm:text-2xl font-semibold font-serif tracking-tight">
+            {author.name}
+          </h1>
           {institution && (
-            <p className="text-muted text-sm mt-0.5">{institution.name}</p>
+            <p className="text-[11px] tracking-wide uppercase text-muted font-medium mt-0.5">
+              {institution.name}
+            </p>
           )}
-          <p className="mt-2 text-sm leading-relaxed text-foreground/80 max-w-xl">
-            {author.bio}
-          </p>
+          {author.bio && (
+            <p className="mt-2 text-sm leading-relaxed text-foreground/70 max-w-xl">
+              {author.bio}
+            </p>
+          )}
         </div>
       </div>
+
+      {/* Separator */}
+      <div className="border-t border-card-border my-6" />
 
       {/* Videos */}
       <h2 className="text-sm font-semibold uppercase tracking-wider text-muted mb-4">
@@ -111,9 +120,22 @@ export default async function AuthorPage({
       </div>
 
       {authorVideos.length === 0 && (
-        <p className="text-muted text-center py-12">
-          No videos yet from this author.
-        </p>
+        <div className="text-center py-16">
+          <svg
+            className="w-12 h-12 text-muted/30 mx-auto mb-3"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+            />
+          </svg>
+          <p className="text-muted text-sm">No videos yet from this author.</p>
+        </div>
       )}
     </div>
   );
