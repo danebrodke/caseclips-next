@@ -32,7 +32,7 @@ export default function FilmGallery({
           onClose={() => setLightboxSrc(null)}
         />
       )}
-      <div className="grid grid-cols-2 gap-3" style={{ maxWidth: "612px" }}>
+      <div className="grid grid-cols-2 gap-3 max-w-2xl">
         {preopImages.map((img, i) => (
           <button
             key={`pre-${i}`}

@@ -72,12 +72,7 @@ export default async function VideoPage({
     video.preopImages.length > 0 || video.postopImages.length > 0;
 
   const imageCount = video.preopImages.length + video.postopImages.length;
-  const imageRows = Math.ceil(imageCount / 2);
-  const leftHeightEstimate = 130 + imageRows * 230;
-  const relatedCount = Math.max(
-    3,
-    Math.min(8, Math.round(leftHeightEstimate / 82))
-  );
+  const relatedCount = imageCount <= 2 ? 3 : Math.min(5, imageCount + 1);
   const related = getRelatedVideos(video, relatedCount);
 
   return (
@@ -87,14 +82,9 @@ export default async function VideoPage({
 
       {/* Title */}
       <div className="mt-8 animate-fade-in-up">
-        <div className="flex items-start justify-between gap-6">
-          <h1 className="font-serif text-[1.7rem] sm:text-[2.25rem] font-normal tracking-[-0.015em] leading-[1.2] text-white">
-            {video.title}
-          </h1>
-          <div className="shrink-0 pt-1.5">
-            <LikeButton videoId={video.id} />
-          </div>
-        </div>
+        <h1 className="font-serif text-[1.7rem] sm:text-[2.25rem] font-normal tracking-[-0.015em] leading-[1.2] text-white">
+          {video.title}
+        </h1>
 
         {/* Metadata */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-4">
@@ -150,19 +140,17 @@ export default async function VideoPage({
           <span className="text-sm text-muted">
             {formatDate(video.publishedAt)}
           </span>
-          {videoSpecialties.length > 0 && (
-            <div className="flex items-center gap-1.5 sm:ml-auto">
-              {videoSpecialties.map((spec) => (
-                <Link
-                  key={spec.id}
-                  href={`/?specialty=${spec.slug}`}
-                  className="text-[11px] px-2.5 py-[3px] bg-accent/8 text-accent/80 rounded-full font-medium border border-accent/10 hover:bg-accent/15 hover:text-accent transition-all duration-200"
-                >
-                  {spec.name}
-                </Link>
-              ))}
-            </div>
-          )}
+          <span className="text-muted/30 select-none">&middot;</span>
+          <LikeButton videoId={video.id} />
+          {videoSpecialties.map((spec) => (
+            <Link
+              key={spec.id}
+              href={`/?specialty=${spec.slug}`}
+              className="text-[11px] px-2.5 py-[3px] bg-accent/8 text-accent/80 rounded-full font-medium border border-accent/10 hover:bg-accent/15 hover:text-accent transition-all duration-200"
+            >
+              {spec.name}
+            </Link>
+          ))}
         </div>
       </div>
 
@@ -171,7 +159,7 @@ export default async function VideoPage({
 
       {/* Imaging + Related */}
       <div
-        className="flex flex-col lg:flex-row gap-8 animate-fade-in-up"
+        className="flex flex-col lg:flex-row lg:items-start gap-8 animate-fade-in-up"
         style={{ animationDelay: "0.12s" }}
       >
         {/* Imaging */}

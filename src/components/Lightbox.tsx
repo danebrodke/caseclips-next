@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 
 export default function Lightbox({
   src,
@@ -27,7 +28,7 @@ export default function Lightbox({
     };
   }, [handleKeyDown]);
 
-  return (
+  return createPortal(
     <div className="lightbox-overlay" onClick={onClose}>
       <button
         onClick={onClose}
@@ -54,6 +55,7 @@ export default function Lightbox({
         onClick={(e) => e.stopPropagation()}
         style={{ cursor: "default" }}
       />
-    </div>
+    </div>,
+    document.body
   );
 }
