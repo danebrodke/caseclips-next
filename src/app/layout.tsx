@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import Link from "next/link";
 import LogoLink from "@/components/LogoLink";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -58,6 +60,8 @@ export default function RootLayout({
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           {children}
         </main>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
