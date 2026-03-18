@@ -42,7 +42,7 @@ export default function AboutPage() {
           University of Utah, Kaiser Permanente, Southern Illinois University,
           and Oregon Health &amp; Science University. For feedback, questions, or
           if you would like to contribute, please contact us at{" "}
-          <span className="text-accent">editor@caseclips.com</span>.
+          <a href="mailto:editor@caseclips.com" className="text-accent hover:text-accent-hover">editor@caseclips.com</a>.
         </p>
       </div>
 
