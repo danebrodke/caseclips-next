@@ -151,17 +151,30 @@ export default function VimeoPlayer({ vimeoId }: { vimeoId: string }) {
     }
   }, []);
 
-  // Loading skeleton for chapters
+  // Loading skeleton for chapters (mirrors real chapter item layout)
   const chapterSkeleton = (
     <div className="max-lg:hidden lg:w-72 shrink-0">
-      <div className="skeleton h-4 w-20 rounded mb-3" />
-      <div className="flex flex-row lg:flex-col gap-0.5">
+      <div className="skeleton h-3 w-16 rounded mb-3 ml-3" />
+      <div className="flex flex-col gap-0.5">
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
-            className="skeleton h-10 rounded-lg shrink-0 lg:w-full"
-            style={{ width: "160px" }}
-          />
+            className="flex items-start gap-3 pl-4 pr-3 py-2.5 rounded-lg"
+          >
+            <div className="skeleton h-3.5 w-8 rounded mt-[3px] shrink-0" />
+            <div className="flex-1 flex flex-col gap-1.5">
+              <div
+                className="skeleton h-3.5 rounded"
+                style={{ width: `${65 + ((i * 17) % 30)}%` }}
+              />
+              {i % 3 !== 2 && (
+                <div
+                  className="skeleton h-3.5 rounded"
+                  style={{ width: `${40 + ((i * 13) % 25)}%` }}
+                />
+              )}
+            </div>
+          </div>
         ))}
       </div>
     </div>

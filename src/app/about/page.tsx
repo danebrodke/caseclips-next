@@ -10,9 +10,9 @@ export default function AboutPage() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">About Caseclips</h1>
+      <h1 className="text-3xl font-serif mb-6">About</h1>
 
-      <div className="prose prose-sm prose-invert max-w-none text-foreground/85 leading-relaxed space-y-4 mb-10">
+      <div className="max-w-none text-foreground/85 space-y-5 mb-10 font-serif text-[1.15rem] leading-[1.75]">
         <p>
           Caseclips is a surgical education project started by{" "}
           <Link href="/author/dane" className="text-accent hover:text-accent-hover">
@@ -95,7 +95,7 @@ export default function AboutPage() {
       </div>
 
       <div className="border-t border-card-border mt-8 pt-6">
-        <p className="text-xs text-muted leading-relaxed italic">
+        <p className="text-xs text-muted leading-relaxed italic font-serif text-sm">
           Disclaimer: This website is for medical professionals for educational
           purposes. It is not intended to present the only, or necessarily best,
           methods for the medical situations discussed.
