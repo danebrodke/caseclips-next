@@ -12,7 +12,7 @@ export default function AboutPage() {
     <div className="max-w-3xl mx-auto">
       <h1 className="text-3xl font-serif mb-6">About</h1>
 
-      <div className="max-w-none text-foreground/85 space-y-5 mb-10 font-serif text-[1.15rem] leading-[1.75]">
+      <div className="max-w-none text-foreground/85 space-y-5 mb-10 font-sans text-[1.05rem] leading-[1.8] tracking-[-0.01em] font-[350]">
         <p>
           Caseclips is a surgical education project started by{" "}
           <Link href="/author/dane" className="text-accent hover:text-accent-hover">
