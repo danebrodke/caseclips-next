@@ -7,6 +7,7 @@ import {
   useEffect,
   useCallback,
 } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import MiniSearch from "minisearch";
@@ -293,14 +294,12 @@ function VideoCard({
   );
 }
 
-export default function VideoGrid({
-  initialSpecialty,
-}: {
-  initialSpecialty?: string;
-}) {
+export default function VideoGrid() {
+  const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialties, setSelectedSpecialties] = useState<Set<string>>(
     () => {
+      const initialSpecialty = searchParams.get("specialty");
       if (!initialSpecialty) return new Set();
       const spec = specialties.find((s) => s.slug === initialSpecialty);
       return spec ? new Set([spec.id]) : new Set();
