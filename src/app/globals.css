@@ -101,6 +101,9 @@ html {
 
 /* Video cinema frame */
 .video-frame {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  line-height: 0;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.03),
     0 20px 50px -20px rgba(0, 0, 0, 0.6),

@@ -152,11 +152,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
             </div>
           </div>
         )}
-        <div
-          className={`video-frame rounded-xl overflow-hidden bg-black ${
-            !isReady ? "hidden" : ""
-          }`}
-        >
+        <div className={`video-frame ${!isReady ? "hidden" : ""}`}>
           <MuxPlayerReact
             ref={playerRef}
             playbackId={playbackId}
@@ -166,7 +162,14 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
             poster={`/posters/${slug}.jpg`}
             onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
-            style={{ aspectRatio: "16 / 9", width: "100%" }}
+            style={
+              {
+                display: "block",
+                width: "100%",
+                aspectRatio: "16 / 9",
+                backgroundColor: "#000",
+              } as React.CSSProperties
+            }
           />
         </div>
       </div>
