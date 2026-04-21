@@ -162,14 +162,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
             poster={`/posters/${slug}.jpg`}
             onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
-            style={
-              {
-                display: "block",
-                width: "100%",
-                aspectRatio: "16 / 9",
-                backgroundColor: "#000",
-              } as React.CSSProperties
-            }
+            style={{ backgroundColor: "#000" }}
           />
         </div>
       </div>
