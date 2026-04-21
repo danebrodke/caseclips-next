@@ -158,7 +158,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
             playbackId={playbackId}
             metadataVideoTitle={title}
             streamType="on-demand"
-            accentColor="#4A90B9"
+            accentColor="#6366f1"
             poster={`/posters/${slug}.jpg`}
             onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
