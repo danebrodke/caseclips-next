@@ -3,9 +3,9 @@
 :root {
   --background: #0f0f0f;
   --foreground: #e5e5e5;
-  --accent: #e11d48;
-  --accent-hover: #f43f5e;
-  --accent-light: rgba(225, 29, 72, 0.15);
+  --accent: #be123c;
+  --accent-hover: #e11d48;
+  --accent-light: rgba(190, 18, 60, 0.15);
   --card-bg: #1a1a1a;
   --card-border: #2a2a2a;
   --muted: #9ca3af;
@@ -109,7 +109,7 @@ html {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.03),
     0 20px 50px -20px rgba(0, 0, 0, 0.6),
-    0 0 80px -30px rgba(225, 29, 72, 0.04);
+    0 0 80px -30px rgba(190, 18, 60, 0.04);
 }
 
 .video-frame > mux-player {
