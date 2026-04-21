@@ -2,7 +2,10 @@
 
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
 import MuxPlayerReact from "@mux/mux-player-react";
-import type { MuxPlayerRefAttributes } from "@mux/mux-player-react";
+import type {
+  MuxPlayerRefAttributes,
+  MuxCSSProperties,
+} from "@mux/mux-player-react";
 import { getChapters } from "@/lib/chapters";
 
 function formatTime(seconds: number): string {
@@ -169,7 +172,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
                 "--pip-button": "none",
                 "--playback-rate-button": "inline-flex",
                 "--bottom-playback-rate-button": "inline-flex",
-              } as React.CSSProperties
+              } as MuxCSSProperties
             }
           />
         </div>
