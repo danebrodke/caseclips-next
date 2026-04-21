@@ -162,7 +162,15 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
             poster={`/posters/${slug}.jpg`}
             onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
-            style={{ backgroundColor: "#000" }}
+            style={
+              {
+                backgroundColor: "#000",
+                "--airplay-button": "none",
+                "--pip-button": "none",
+                "--playback-rate-button": "inline-flex",
+                "--bottom-playback-rate-button": "inline-flex",
+              } as React.CSSProperties
+            }
           />
         </div>
       </div>
