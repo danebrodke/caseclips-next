@@ -1,0 +1,4040 @@
+{
+  "scaphoid-fracture-fixation": [
+    {
+      "title": "Intro",
+      "startTime": 0
+    },
+    {
+      "title": "Initial imaging",
+      "startTime": 27
+    },
+    {
+      "title": "K-wire insertion",
+      "startTime": 40
+    },
+    {
+      "title": "Drill",
+      "startTime": 180
+    },
+    {
+      "title": "Insert screw",
+      "startTime": 255
+    },
+    {
+      "title": "Remove K-wire and final images",
+      "startTime": 343
+    },
+    {
+      "title": "Post-op",
+      "startTime": 385
+    }
+  ],
+  "total-knee-arthroplasty-rosa": [
+    {
+      "title": "Incision",
+      "startTime": 1
+    },
+    {
+      "title": "Arthrotomy",
+      "startTime": 18
+    },
+    {
+      "title": "Medial release",
+      "startTime": 32
+    },
+    {
+      "title": "Undermine fat pad",
+      "startTime": 38
+    },
+    {
+      "title": "Remove patellar osteophytes",
+      "startTime": 50
+    },
+    {
+      "title": "Place femoral reference",
+      "startTime": 56
+    },
+    {
+      "title": "Place tibial reference",
+      "startTime": 71
+    },
+    {
+      "title": "Perform registration steps",
+      "startTime": 85
+    },
+    {
+      "title": "Assess ligament balance and plan cuts",
+      "startTime": 123
+    },
+    {
+      "title": "Position distal femur block and make cut",
+      "startTime": 143
+    },
+    {
+      "title": "Drill holes for 4-in-1 block",
+      "startTime": 172
+    },
+    {
+      "title": "Place 4-in-1 block and make cuts",
+      "startTime": 188
+    },
+    {
+      "title": "Remove bone pieces and osteophytes",
+      "startTime": 229
+    },
+    {
+      "title": "Subluxate and expose tibia",
+      "startTime": 237
+    },
+    {
+      "title": "Position tibial block and make cut",
+      "startTime": 245
+    },
+    {
+      "title": "Resect menisci",
+      "startTime": 281
+    },
+    {
+      "title": "Place trials and assess",
+      "startTime": 299
+    },
+    {
+      "title": "Drill femoral lug holes",
+      "startTime": 337
+    },
+    {
+      "title": "Drill tibia lug holes, place tibial component",
+      "startTime": 363
+    },
+    {
+      "title": "Betadine wash",
+      "startTime": 418
+    },
+    {
+      "title": "Remove arrays",
+      "startTime": 422
+    },
+    {
+      "title": "Closure",
+      "startTime": 436
+    }
+  ],
+  "intra-articular-distal-humerus-orif": [
+    {
+      "title": "Midline incision posteriorly",
+      "startTime": 1
+    },
+    {
+      "title": "Incise fascia over triceps",
+      "startTime": 8
+    },
+    {
+      "title": "Dissect along fascial planes medially",
+      "startTime": 23
+    },
+    {
+      "title": "Dissect bare area of posterolateral humerus",
+      "startTime": 49
+    },
+    {
+      "title": "Expose radius radial to middle collateral a.",
+      "startTime": 53
+    },
+    {
+      "title": "Dissect along fascial plane medially",
+      "startTime": 76
+    },
+    {
+      "title": "Identify ulnar n. and mobilize it ulnarly",
+      "startTime": 86
+    },
+    {
+      "title": "Release nerve off epicondyle in subperiost. sleeve",
+      "startTime": 122
+    },
+    {
+      "title": "Plan osteotomy, predrill IM screw",
+      "startTime": 136
+    },
+    {
+      "title": "Make olecranon osteotomy",
+      "startTime": 181
+    },
+    {
+      "title": "Debride fracture site",
+      "startTime": 208
+    },
+    {
+      "title": "Reduce joint",
+      "startTime": 215
+    },
+    {
+      "title": "Stabilize joint with transverse screw",
+      "startTime": 243
+    },
+    {
+      "title": "Reduce and stabilize metaphysis",
+      "startTime": 267
+    },
+    {
+      "title": "Place definitive lateral plate",
+      "startTime": 337
+    },
+    {
+      "title": "Place definitive medial plate",
+      "startTime": 361
+    },
+    {
+      "title": "Reduce olecranon and place IM screw",
+      "startTime": 404
+    },
+    {
+      "title": "Check range of motion",
+      "startTime": 430
+    },
+    {
+      "title": "Irrigate and close",
+      "startTime": 439
+    }
+  ],
+  "intertrochanteric-fracture-short-nail": [
+    {
+      "title": "Positioning and closed reduction",
+      "startTime": 1
+    },
+    {
+      "title": "Skin marking",
+      "startTime": 29
+    },
+    {
+      "title": "Percutaneous reduction",
+      "startTime": 71
+    },
+    {
+      "title": "Incision and dissection",
+      "startTime": 84
+    },
+    {
+      "title": "Starting wire placement",
+      "startTime": 93
+    },
+    {
+      "title": "Pass opening reamer",
+      "startTime": 138
+    },
+    {
+      "title": "Assemble jig and place nail",
+      "startTime": 142
+    },
+    {
+      "title": "Place lag screw through trocar",
+      "startTime": 171
+    },
+    {
+      "title": "Anti-rotational wire",
+      "startTime": 214
+    },
+    {
+      "title": "Tighten set screw",
+      "startTime": 237
+    },
+    {
+      "title": "Place distal interlock",
+      "startTime": 249
+    },
+    {
+      "title": "Remove jig and obtain final fluoro",
+      "startTime": 276
+    },
+    {
+      "title": "Irrigation and closure",
+      "startTime": 295
+    }
+  ],
+  "varus-derotational-osteotomy-of-proximal-femur": [
+    {
+      "title": "Positioning",
+      "startTime": 0
+    },
+    {
+      "title": "Skin marking and incision",
+      "startTime": 70
+    },
+    {
+      "title": "Expose and split IT band",
+      "startTime": 82
+    },
+    {
+      "title": "Excise bursa",
+      "startTime": 112
+    },
+    {
+      "title": "Divide vastus lateralis",
+      "startTime": 120
+    },
+    {
+      "title": "Expose lateral femur",
+      "startTime": 185
+    },
+    {
+      "title": "Place guidewire up femoral neck",
+      "startTime": 204
+    },
+    {
+      "title": "Place 2nd wire 30º varus from wire up neck",
+      "startTime": 217
+    },
+    {
+      "title": "Measure wire",
+      "startTime": 254
+    },
+    {
+      "title": "Place guide for chisel and pass chisel",
+      "startTime": 261
+    },
+    {
+      "title": "Place reference wires for rotation",
+      "startTime": 287
+    },
+    {
+      "title": "Make bone cuts",
+      "startTime": 314
+    },
+    {
+      "title": "Place blade plate",
+      "startTime": 368
+    },
+    {
+      "title": "Clamp side plate and place screws",
+      "startTime": 402
+    },
+    {
+      "title": "Check fluoro images",
+      "startTime": 456
+    },
+    {
+      "title": "Irrigate and close",
+      "startTime": 488
+    }
+  ],
+  "acl-reconstruction-btb": [
+    {
+      "title": "Positioning",
+      "startTime": 2
+    },
+    {
+      "title": "EUA",
+      "startTime": 11
+    },
+    {
+      "title": "Skin marking",
+      "startTime": 17
+    },
+    {
+      "title": "Inject local and incise skin",
+      "startTime": 41
+    },
+    {
+      "title": "Expose and split paratenon",
+      "startTime": 49
+    },
+    {
+      "title": "Mark and cut central patellar tendon",
+      "startTime": 77
+    },
+    {
+      "title": "Cut and remove bone blocks with saw/osteotome",
+      "startTime": 102
+    },
+    {
+      "title": "Expose footprint for tibial tunnel",
+      "startTime": 176
+    },
+    {
+      "title": "Diagnostic arthroscopy",
+      "startTime": 182
+    },
+    {
+      "title": "Create medial portal",
+      "startTime": 260
+    },
+    {
+      "title": "Debride meniscus tear",
+      "startTime": 270
+    },
+    {
+      "title": "Debride ACL remnant",
+      "startTime": 287
+    },
+    {
+      "title": "Prepare BTB graft",
+      "startTime": 302
+    },
+    {
+      "title": "Make femoral tunnel",
+      "startTime": 364
+    },
+    {
+      "title": "Pass passing stitch through femoral tunnel",
+      "startTime": 407
+    },
+    {
+      "title": "Make tibial tunnel",
+      "startTime": 418
+    },
+    {
+      "title": "Notch femoral tunnel for screw",
+      "startTime": 501
+    },
+    {
+      "title": "Pass graft",
+      "startTime": 534
+    },
+    {
+      "title": "Place femoral screw",
+      "startTime": 551
+    },
+    {
+      "title": "Place tibial screw",
+      "startTime": 559
+    },
+    {
+      "title": "Post-reconstruction EUA",
+      "startTime": 572
+    },
+    {
+      "title": "Irrigation and closure",
+      "startTime": 576
+    },
+    {
+      "title": "Aftercare",
+      "startTime": 628
+    }
+  ],
+  "reverse-shoulder-arth": [
+    {
+      "title": "Incision and subcutaneous dissection",
+      "startTime": 16
+    },
+    {
+      "title": "Find deltopectoral interval",
+      "startTime": 23
+    },
+    {
+      "title": "Place Darrach retractor in interval around humerus",
+      "startTime": 31
+    },
+    {
+      "title": "Place Kolbel and deltoid brown retractors",
+      "startTime": 38
+    },
+    {
+      "title": "Remove clavipectoral fascia and tendese biceps",
+      "startTime": 44
+    },
+    {
+      "title": "Tenotomize biceps",
+      "startTime": 67
+    },
+    {
+      "title": "Subscap tenotomy",
+      "startTime": 72
+    },
+    {
+      "title": "Expose and resect inferior osteophyte",
+      "startTime": 103
+    },
+    {
+      "title": "Place intramedullary cut guide",
+      "startTime": 134
+    },
+    {
+      "title": "Make humeral head cut",
+      "startTime": 156
+    },
+    {
+      "title": "Broach proximal humerus",
+      "startTime": 171
+    },
+    {
+      "title": "Expose glenoid",
+      "startTime": 186
+    },
+    {
+      "title": "Excise labrum",
+      "startTime": 216
+    },
+    {
+      "title": "Place guidepin for glenoid reaming",
+      "startTime": 244
+    },
+    {
+      "title": "Ream for glenoid component",
+      "startTime": 255
+    },
+    {
+      "title": "Check glenoid trial",
+      "startTime": 263
+    },
+    {
+      "title": "Drill central screw",
+      "startTime": 306
+    },
+    {
+      "title": "Implant glenoid baseplate and place screws",
+      "startTime": 320
+    },
+    {
+      "title": "Impact glenosphere",
+      "startTime": 363
+    },
+    {
+      "title": "Place humeral trial component",
+      "startTime": 385
+    },
+    {
+      "title": "Place sutures for subscap repair",
+      "startTime": 407
+    },
+    {
+      "title": "Place final humeral component",
+      "startTime": 424
+    },
+    {
+      "title": "Repair subscapularis",
+      "startTime": 436
+    },
+    {
+      "title": "Closure and aftercare",
+      "startTime": 475
+    }
+  ],
+  "anatomic-total-shoulder-arthroplasty": [
+    {
+      "title": "Skin marking",
+      "startTime": 1
+    },
+    {
+      "title": "Incision",
+      "startTime": 7
+    },
+    {
+      "title": "Find deltopectoral interval",
+      "startTime": 22
+    },
+    {
+      "title": "Incise interval and place darrach retractor",
+      "startTime": 34
+    },
+    {
+      "title": "Place second darrach and kolbel",
+      "startTime": 40
+    },
+    {
+      "title": "Incise remaining deltopec interval",
+      "startTime": 47
+    },
+    {
+      "title": "Excise clavipectoral fascia",
+      "startTime": 57
+    },
+    {
+      "title": "Tenodese biceps to pec major",
+      "startTime": 60
+    },
+    {
+      "title": "Incise rotator interval",
+      "startTime": 76
+    },
+    {
+      "title": "Expose, tag, and tenotomize subscap",
+      "startTime": 81
+    },
+    {
+      "title": "Expose GH joint and debride osteophytes",
+      "startTime": 104
+    },
+    {
+      "title": "Make freehand neck cut",
+      "startTime": 123
+    },
+    {
+      "title": "Prep proximal humerus for stemless component",
+      "startTime": 135
+    },
+    {
+      "title": "Expose glenoid with retractors",
+      "startTime": 173
+    },
+    {
+      "title": "Excise labrum",
+      "startTime": 198
+    },
+    {
+      "title": "Place guide pin and ream",
+      "startTime": 212
+    },
+    {
+      "title": "Prep glenoid for component",
+      "startTime": 234
+    },
+    {
+      "title": "Irrigate, dry and cement gelnoid component",
+      "startTime": 255
+    },
+    {
+      "title": "Trial humeral component",
+      "startTime": 292
+    },
+    {
+      "title": "Make drill holes for subscap repair sutures",
+      "startTime": 307
+    },
+    {
+      "title": "Place final humeral component",
+      "startTime": 323
+    },
+    {
+      "title": "Reduce joint and repair subscap",
+      "startTime": 331
+    },
+    {
+      "title": "Irrigate and close",
+      "startTime": 357
+    }
+  ],
+  "below-knee-amputation": [
+    {
+      "title": "Introduction",
+      "startTime": 2
+    },
+    {
+      "title": "Positioning",
+      "startTime": 33
+    },
+    {
+      "title": "Prep and raise tourniquet",
+      "startTime": 38
+    },
+    {
+      "title": "Mark anterior and posterior flaps",
+      "startTime": 50
+    },
+    {
+      "title": "Incise to fascia",
+      "startTime": 78
+    },
+    {
+      "title": "Clamp saphenous nerve and vein",
+      "startTime": 85
+    },
+    {
+      "title": "Dissect full thickness anterior flap",
+      "startTime": 101
+    },
+    {
+      "title": "Elevate anterior flap to tibial cut level",
+      "startTime": 109
+    },
+    {
+      "title": "Subperiosteally dissect tibia circumferentially",
+      "startTime": 128
+    },
+    {
+      "title": "Expose and cut fibula 1.5cm proximally",
+      "startTime": 145
+    },
+    {
+      "title": "Flex knee and dissect posterior flap free",
+      "startTime": 154
+    },
+    {
+      "title": "Find NV bundles, cut nerves, ligate vessels",
+      "startTime": 195
+    },
+    {
+      "title": "Bevel anterior tibia",
+      "startTime": 280
+    },
+    {
+      "title": "Irrigate, obtain hemostasis, close",
+      "startTime": 286
+    }
+  ],
+  "distal-tibia-allograft-glenoid-reconstruction": [
+    {
+      "title": "Skin marking",
+      "startTime": 1
+    },
+    {
+      "title": "Incision",
+      "startTime": 17
+    },
+    {
+      "title": "Identify cephalic v. and develop deltopec interval",
+      "startTime": 34
+    },
+    {
+      "title": "Place retractors",
+      "startTime": 42
+    },
+    {
+      "title": "Chapter Title",
+      "startTime": 56
+    },
+    {
+      "title": "Excise part of clavipectoral fascia",
+      "startTime": 66
+    },
+    {
+      "title": "Horizontal split of subscapularis",
+      "startTime": 72
+    },
+    {
+      "title": "Expose anterior capsule and make capsulotomy",
+      "startTime": 108
+    },
+    {
+      "title": "Remove comminuted glenoid fragments",
+      "startTime": 136
+    },
+    {
+      "title": "Clean anterior glenoid fracture bed",
+      "startTime": 158
+    },
+    {
+      "title": "Size the bone block",
+      "startTime": 171
+    },
+    {
+      "title": "Prepare allograft bone block",
+      "startTime": 183
+    },
+    {
+      "title": "Predrill cannulated screws",
+      "startTime": 213
+    },
+    {
+      "title": "Cut, remove, and irrigate bone block",
+      "startTime": 230
+    },
+    {
+      "title": "Debride anterior glenoid to receive bone block",
+      "startTime": 252
+    },
+    {
+      "title": "Place allograft",
+      "startTime": 281
+    },
+    {
+      "title": "Pin allograft in place, drill and place screws",
+      "startTime": 293
+    },
+    {
+      "title": "Close capsule to sutures tied to screws",
+      "startTime": 350
+    },
+    {
+      "title": "Check stability",
+      "startTime": 381
+    },
+    {
+      "title": "Close subscapularis",
+      "startTime": 390
+    },
+    {
+      "title": "Irrigate and close",
+      "startTime": 409
+    }
+  ],
+  "total-hip-replacement-anterior": [
+    {
+      "title": "Skin marking",
+      "startTime": 1
+    },
+    {
+      "title": "Incision and subcutaneous dissection",
+      "startTime": 27
+    },
+    {
+      "title": "Expose and incise TFL fascia",
+      "startTime": 36
+    },
+    {
+      "title": "Develop TFL/sartorius interval",
+      "startTime": 52
+    },
+    {
+      "title": "Retractor on superior neck",
+      "startTime": 65
+    },
+    {
+      "title": "Find/cauterize ascending br. lateral circumflex a.",
+      "startTime": 73
+    },
+    {
+      "title": "Retractor on inferior neck",
+      "startTime": 97
+    },
+    {
+      "title": "Develop interval under direct head of rectus m.",
+      "startTime": 102
+    },
+    {
+      "title": "Retractor over anterior wall of acetabulum",
+      "startTime": 108
+    },
+    {
+      "title": "Capsulotomy",
+      "startTime": 120
+    },
+    {
+      "title": "Cut femoral neck and remove head",
+      "startTime": 169
+    },
+    {
+      "title": "Place retractors around acetabulum",
+      "startTime": 195
+    },
+    {
+      "title": "Excise pulvinar/labrum",
+      "startTime": 211
+    },
+    {
+      "title": "Ream medially, then superomedially",
+      "startTime": 222
+    },
+    {
+      "title": "Place acetabular cup and check flouro",
+      "startTime": 266
+    },
+    {
+      "title": "Place acetabular liner",
+      "startTime": 281
+    },
+    {
+      "title": "Place hook for fracture table",
+      "startTime": 290
+    },
+    {
+      "title": "Femoral releases",
+      "startTime": 295
+    },
+    {
+      "title": "Externally rotate, extend, and adduct leg",
+      "startTime": 315
+    },
+    {
+      "title": "Retractors around femur",
+      "startTime": 343
+    },
+    {
+      "title": "Broach femur",
+      "startTime": 356
+    },
+    {
+      "title": "Plane neck cut",
+      "startTime": 385
+    },
+    {
+      "title": "Place trial components",
+      "startTime": 407
+    },
+    {
+      "title": "Reduce trials and assess length/offset on fluoro",
+      "startTime": 412
+    },
+    {
+      "title": "Dislocate trials",
+      "startTime": 427
+    }
+  ],
+  "periprosthetic-femur-fracture-orif": [
+    {
+      "title": "Case introduction",
+      "startTime": 1
+    },
+    {
+      "title": "Skin marking and incision",
+      "startTime": 30
+    },
+    {
+      "title": "Expose lateral fascia",
+      "startTime": 46
+    },
+    {
+      "title": "Divide lateral fascia",
+      "startTime": 62
+    },
+    {
+      "title": "Dissect vastus lateralis off intramuscular septum",
+      "startTime": 81
+    },
+    {
+      "title": "Ligate perforators",
+      "startTime": 94
+    },
+    {
+      "title": "Expose and clean fracture",
+      "startTime": 106
+    },
+    {
+      "title": "Remove femoral component",
+      "startTime": 129
+    },
+    {
+      "title": "Reduce fracture",
+      "startTime": 138
+    },
+    {
+      "title": "Place cerclage cables",
+      "startTime": 155
+    },
+    {
+      "title": "Expose proximal canal and begin reaming",
+      "startTime": 228
+    },
+    {
+      "title": "Place modular trial",
+      "startTime": 278
+    },
+    {
+      "title": "Place trial head, reduce, check stability",
+      "startTime": 321
+    },
+    {
+      "title": "Place final implant",
+      "startTime": 351
+    },
+    {
+      "title": "Assess for periprosthetic lateral plate",
+      "startTime": 382
+    },
+    {
+      "title": "Remove some provisional cables",
+      "startTime": 399
+    },
+    {
+      "title": "Make slit in vastus lateralis, place plate",
+      "startTime": 418
+    },
+    {
+      "title": "Fix plate with screws and cables through islets",
+      "startTime": 426
+    },
+    {
+      "title": "Fix additional fragment with suture",
+      "startTime": 478
+    },
+    {
+      "title": "Final tighten and clip cables",
+      "startTime": 488
+    },
+    {
+      "title": "Irrigation, antibiotic bead, closure",
+      "startTime": 506
+    }
+  ],
+  "anterior-column-acetabular-orif": [
+    {
+      "title": "Skin marking",
+      "startTime": 1
+    },
+    {
+      "title": "Incision and dissection to external oblique fascia",
+      "startTime": 13
+    },
+    {
+      "title": "Lateral window: expose ileum and pack",
+      "startTime": 23
+    },
+    {
+      "title": "Middle window: divide external oblique fascia",
+      "startTime": 39
+    },
+    {
+      "title": "Middle window: divide inguinal ligament",
+      "startTime": 49
+    },
+    {
+      "title": "Middle window: expose IP muscle and femoral nerve",
+      "startTime": 62
+    },
+    {
+      "title": "Middle window: expose/divide liopectineal fascia",
+      "startTime": 72
+    },
+    {
+      "title": "Middle window: penrose around IP muscle",
+      "startTime": 110
+    },
+    {
+      "title": "Connect lateral and middle windows under IP muscle",
+      "startTime": 122
+    },
+    {
+      "title": "Medial window: expose and incise linea alba",
+      "startTime": 151
+    },
+    {
+      "title": "Medial window: split rectus, enter retropubic spac",
+      "startTime": 161
+    },
+    {
+      "title": "Expose pubic symphysis",
+      "startTime": 168
+    },
+    {
+      "title": "Ligate corona mortis if present",
+      "startTime": 176
+    },
+    {
+      "title": "Expose pelvic brim",
+      "startTime": 188
+    },
+    {
+      "title": "Schanz pin into femoral neck for lateral traction",
+      "startTime": 205
+    },
+    {
+      "title": "Reduce anterior column through lateral window",
+      "startTime": 220
+    },
+    {
+      "title": "Clean and reduce superior ramus fracture",
+      "startTime": 240
+    },
+    {
+      "title": "Clean and re-reduce anterior column",
+      "startTime": 266
+    },
+    {
+      "title": "Buttress anterior column with short recon plate",
+      "startTime": 295
+    },
+    {
+      "title": "Place independent anterior-to-posterior lag screw",
+      "startTime": 348
+    },
+    {
+      "title": "Expose contralateral superior ramus",
+      "startTime": 385
+    },
+    {
+      "title": "Contour pelvic brim plate",
+      "startTime": 394
+    },
+    {
+      "title": "Anchor plate with 2 screws on contralateral ramus",
+      "startTime": 403
+    },
+    {
+      "title": "Undercontoured lateral plate buttresses fracture",
+      "startTime": 438
+    },
+    {
+      "title": "Irrigate and remove Schanz pin",
+      "startTime": 459
+    }
+  ],
+  "above-knee-amputation": [
+    {
+      "title": "Indications",
+      "startTime": 0
+    },
+    {
+      "title": "Positioning",
+      "startTime": 36
+    },
+    {
+      "title": "Measure flaps and mark incision",
+      "startTime": 61
+    },
+    {
+      "title": "Incision",
+      "startTime": 77
+    },
+    {
+      "title": "Dissect anterior flap down to femur",
+      "startTime": 86
+    },
+    {
+      "title": "Cut femur",
+      "startTime": 112
+    },
+    {
+      "title": "Complete posterior flap",
+      "startTime": 137
+    },
+    {
+      "title": "Identify, clamp, ligate deep femoral vessels",
+      "startTime": 162
+    },
+    {
+      "title": "Expose sciatic n.",
+      "startTime": 208
+    },
+    {
+      "title": "Incise and inject sciatic sheath with lidocaine",
+      "startTime": 215
+    },
+    {
+      "title": "Retract, ligate, and cut sciatic n.",
+      "startTime": 222
+    },
+    {
+      "title": "Retract, ligate, cut saphenous n.",
+      "startTime": 233
+    },
+    {
+      "title": "Irrigate and check hemostasis",
+      "startTime": 240
+    },
+    {
+      "title": "Check flap tension, resect more bone if needed",
+      "startTime": 251
+    },
+    {
+      "title": "Smooth bone edges",
+      "startTime": 260
+    },
+    {
+      "title": "Closure",
+      "startTime": 266
+    }
+  ],
+  "segmental-humerus-orif": [
+    {
+      "title": "Skin marking",
+      "startTime": 0
+    },
+    {
+      "title": "Incision and subcutaneous dissection",
+      "startTime": 12
+    },
+    {
+      "title": "Mobilize cephalic vein",
+      "startTime": 35
+    },
+    {
+      "title": "Find deltopectoral interval proximally",
+      "startTime": 57
+    },
+    {
+      "title": "Partially release deltoid insertion",
+      "startTime": 78
+    },
+    {
+      "title": "Complete subperiosteal exposure",
+      "startTime": 87
+    },
+    {
+      "title": "Clamp humeral shaft fracture",
+      "startTime": 90
+    },
+    {
+      "title": "Provisional stabilization with unicortical plate",
+      "startTime": 99
+    },
+    {
+      "title": "Incise and partially resect bursa proximally",
+      "startTime": 139
+    },
+    {
+      "title": "Tag rotator cuff",
+      "startTime": 151
+    },
+    {
+      "title": "Disimpact surgical neck fracture",
+      "startTime": 164
+    },
+    {
+      "title": "Contour and place plate lateral to biceps tendon",
+      "startTime": 180
+    },
+    {
+      "title": "Place screw in oblong plate hole",
+      "startTime": 197
+    },
+    {
+      "title": "Place calcar screws",
+      "startTime": 217
+    },
+    {
+      "title": "Clamp plate to shaft and place distal screws",
+      "startTime": 232
+    },
+    {
+      "title": "Place remaining proximal locking screws",
+      "startTime": 278
+    },
+    {
+      "title": "Tie cuff sutures to plate",
+      "startTime": 321
+    },
+    {
+      "title": "Irrigate and place antibiotic powder",
+      "startTime": 340
+    },
+    {
+      "title": "Closure",
+      "startTime": 347
+    }
+  ],
+  "distal-biceps-repair": [
+    {
+      "title": "Skin marking",
+      "startTime": 59
+    },
+    {
+      "title": "Incision and subcutaneous dissection",
+      "startTime": 69
+    },
+    {
+      "title": "Identify and avoid lat. antebrachial cutaneous n.",
+      "startTime": 113
+    },
+    {
+      "title": "Expose and grasp biceps stump",
+      "startTime": 122
+    },
+    {
+      "title": "Place traction stitch and debride tendon",
+      "startTime": 152
+    },
+    {
+      "title": "Size tendon",
+      "startTime": 174
+    },
+    {
+      "title": "Krakow suture tendon stump",
+      "startTime": 180
+    },
+    {
+      "title": "Pass suture through button",
+      "startTime": 218
+    },
+    {
+      "title": "Expose radial tuberosity",
+      "startTime": 234
+    },
+    {
+      "title": "Place guidewire and ream unicortical hole",
+      "startTime": 253
+    },
+    {
+      "title": "Pass button and reduce tendon stump",
+      "startTime": 282
+    },
+    {
+      "title": "Pass suture through and tie over top of tendon",
+      "startTime": 329
+    },
+    {
+      "title": "Closure and splint",
+      "startTime": 358
+    }
+  ],
+  "total-hip-arthroplasty": [
+    {
+      "title": "Skin marking",
+      "startTime": 4
+    },
+    {
+      "title": "Incision and subcutaneous dissection",
+      "startTime": 35
+    },
+    {
+      "title": "Expose fascia",
+      "startTime": 48
+    },
+    {
+      "title": "Split IT band and gluteus maximus",
+      "startTime": 53
+    },
+    {
+      "title": "Place Charnley retractor",
+      "startTime": 76
+    },
+    {
+      "title": "Retract gluteus medius anteriorly",
+      "startTime": 83
+    },
+    {
+      "title": "Release and tag piriformis and conjoint",
+      "startTime": 93
+    },
+    {
+      "title": "Mobilize external rotators and make capsulotomy",
+      "startTime": 110
+    },
+    {
+      "title": "Elevate and tag capsule",
+      "startTime": 131
+    },
+    {
+      "title": "Dislocate hip",
+      "startTime": 149
+    },
+    {
+      "title": "Place retractors around proximal femur",
+      "startTime": 163
+    },
+    {
+      "title": "Measure and mark neck cut",
+      "startTime": 174
+    },
+    {
+      "title": "Cut femoral neck and remove head",
+      "startTime": 177
+    },
+    {
+      "title": "Place retractors around acetabulum",
+      "startTime": 195
+    },
+    {
+      "title": "Remove soft tissue and ream acetabulum",
+      "startTime": 209
+    },
+    {
+      "title": "Final cup impaction",
+      "startTime": 231
+    },
+    {
+      "title": "Place two screws in acetabulum",
+      "startTime": 240
+    },
+    {
+      "title": "Place trial liner",
+      "startTime": 258
+    },
+    {
+      "title": "Remove rim osteophytes",
+      "startTime": 264
+    },
+    {
+      "title": "Elevate proximal femur",
+      "startTime": 294
+    },
+    {
+      "title": "Expose femoral shoulder and mark version",
+      "startTime": 306
+    },
+    {
+      "title": "Impact starting broach",
+      "startTime": 326
+    },
+    {
+      "title": "Place canal finder and lateralizing reamer",
+      "startTime": 332
+    },
+    {
+      "title": "Broach femur",
+      "startTime": 338
+    },
+    {
+      "title": "Plane calcar and attach trials",
+      "startTime": 357
+    }
+  ],
+  "olecranon-radial-head-orif": [
+    {
+      "title": "Supine positioning",
+      "startTime": 1
+    },
+    {
+      "title": "Skin marking",
+      "startTime": 9
+    },
+    {
+      "title": "Incision and subcutaneous dissection",
+      "startTime": 19
+    },
+    {
+      "title": "Elevate radial flap",
+      "startTime": 37
+    },
+    {
+      "title": "Mark and incise kaplan interval (ECRB/EDC)",
+      "startTime": 43
+    },
+    {
+      "title": "Carefully dissect supinator",
+      "startTime": 64
+    },
+    {
+      "title": "Sublux radial head",
+      "startTime": 69
+    },
+    {
+      "title": "Reduce radial head with clamp",
+      "startTime": 72
+    },
+    {
+      "title": "Headless compression screws in \"Christmas tree\"",
+      "startTime": 84
+    },
+    {
+      "title": "Expose posterior fascia for olecranon fixation",
+      "startTime": 135
+    },
+    {
+      "title": "Incise fascia over ulna",
+      "startTime": 142
+    },
+    {
+      "title": "Debride olecranon fracture",
+      "startTime": 153
+    },
+    {
+      "title": "Reduce olecranon with clamp",
+      "startTime": 158
+    },
+    {
+      "title": "Provisional fixation w/ k-wires, mini-frag plate",
+      "startTime": 164
+    },
+    {
+      "title": "Drill for olecranon screw",
+      "startTime": 207
+    },
+    {
+      "title": "Tap for olecranon sscrew",
+      "startTime": 220
+    },
+    {
+      "title": "Place 6.5 solid partially threaded screw",
+      "startTime": 231
+    }
+  ],
+  "pectoralis-major-repair": [
+    {
+      "title": "Skin marking",
+      "startTime": 17
+    },
+    {
+      "title": "Incision and subcutaneous dissection",
+      "startTime": 26
+    },
+    {
+      "title": "Expose and excise clavipectoral fascia",
+      "startTime": 41
+    },
+    {
+      "title": "Dissect under clavicular head of pec major",
+      "startTime": 51
+    },
+    {
+      "title": "Identify and grasp torn sternal head",
+      "startTime": 78
+    },
+    {
+      "title": "Mobilize torn sternal head",
+      "startTime": 103
+    },
+    {
+      "title": "Place traction suture to help mobilize",
+      "startTime": 114
+    },
+    {
+      "title": "Expose and debride pec major insertion site",
+      "startTime": 148
+    },
+    {
+      "title": "Place definitive repair sutures",
+      "startTime": 168
+    },
+    {
+      "title": "Drill holes for suture buttons",
+      "startTime": 200
+    },
+    {
+      "title": "Load and insert suture buttons",
+      "startTime": 213
+    },
+    {
+      "title": "Reduce pec tendon to insertion",
+      "startTime": 245
+    },
+    {
+      "title": "Tie suture tape at insertion site",
+      "startTime": 284
+    },
+    {
+      "title": "Inspect repair, irrigate, and close",
+      "startTime": 301
+    },
+    {
+      "title": "Post-op care",
+      "startTime": 318
+    }
+  ],
+  "pelvic-ring-fixation": [
+    {
+      "title": "Skin marking (Pfannenstiel, ramus screw)",
+      "startTime": 4
+    },
+    {
+      "title": "Incise for pig sticker (cannulated drill guide)",
+      "startTime": 20
+    },
+    {
+      "title": "Mallet pig sticker into place",
+      "startTime": 30
+    },
+    {
+      "title": "Place guidewire for ramus screw",
+      "startTime": 37
+    },
+    {
+      "title": "Drill and place screw",
+      "startTime": 48
+    },
+    {
+      "title": "Incise for approach to symphysis",
+      "startTime": 69
+    },
+    {
+      "title": "Expose rectus abdominis",
+      "startTime": 75
+    },
+    {
+      "title": "Divide rectus fascia at midline",
+      "startTime": 83
+    },
+    {
+      "title": "Enter retropubic space",
+      "startTime": 93
+    },
+    {
+      "title": "Release rectus fascia off symphysis",
+      "startTime": 108
+    },
+    {
+      "title": "Expose and clean sympysis",
+      "startTime": 124
+    },
+    {
+      "title": "Place screws for Jungbluth clamp",
+      "startTime": 150
+    },
+    {
+      "title": "Place Jungbluth clamp",
+      "startTime": 160
+    },
+    {
+      "title": "Reduce symphysis with Jungbluth clamp",
+      "startTime": 174
+    },
+    {
+      "title": "Contour and place symphysis plate",
+      "startTime": 182
+    },
+    {
+      "title": "Remove Jungbluth clamp",
+      "startTime": 244
+    },
+    {
+      "title": "Incise and obtain start point for S1 screw",
+      "startTime": 262
+    },
+    {
+      "title": "Place guidewire, drill, and place S1 screw",
+      "startTime": 295
+    },
+    {
+      "title": "Place S2 Transiliac-transsacral screw",
+      "startTime": 311
+    },
+    {
+      "title": "Irrigate, antibiotic powder, place drain, close",
+      "startTime": 330
+    }
+  ],
+  "subtrochanteric-femur-orif": [
+    {
+      "title": "Positioning",
+      "startTime": 0
+    },
+    {
+      "title": "Skin marking",
+      "startTime": 6
+    },
+    {
+      "title": "Incision",
+      "startTime": 13
+    },
+    {
+      "title": "Dissect to IT band",
+      "startTime": 17
+    },
+    {
+      "title": "Incise IT band and expose vastus lateralis",
+      "startTime": 27
+    },
+    {
+      "title": "Dissect vastus off posterolateral femur",
+      "startTime": 35
+    },
+    {
+      "title": "Reduce first split and place minifrag plate",
+      "startTime": 70
+    },
+    {
+      "title": "Reduction of main split",
+      "startTime": 96
+    },
+    {
+      "title": "Place cerclage wires for provisional fixation",
+      "startTime": 111
+    },
+    {
+      "title": "Pass and twist wire",
+      "startTime": 118
+    },
+    {
+      "title": "Use wiredriver to cinch wires",
+      "startTime": 132
+    },
+    {
+      "title": "Place second cerclage wire",
+      "startTime": 140
+    },
+    {
+      "title": "Use collinear to reduce proximal fragment to shaft",
+      "startTime": 163
+    },
+    {
+      "title": "Incise and dissect for nail",
+      "startTime": 171
+    },
+    {
+      "title": "Place starting guidewire",
+      "startTime": 180
+    },
+    {
+      "title": "Entry reamer",
+      "startTime": 188
+    },
+    {
+      "title": "Long guidewire",
+      "startTime": 190
+    },
+    {
+      "title": "Sequential reaming to chatter",
+      "startTime": 192
+    },
+    {
+      "title": "Place nail",
+      "startTime": 197
+    },
+    {
+      "title": "Place lag screw",
+      "startTime": 206
+    },
+    {
+      "title": "Lock set screw",
+      "startTime": 223
+    },
+    {
+      "title": "Place distal interlocks",
+      "startTime": 233
+    },
+    {
+      "title": "Remove jig, clamps, and plate",
+      "startTime": 252
+    },
+    {
+      "title": "Irrigate and place antibiotic powder",
+      "startTime": 264
+    },
+    {
+      "title": "Closure",
+      "startTime": 276
+    }
+  ],
+  "latarjet-procedure": [
+    {
+      "title": "Positioning",
+      "startTime": 0
+    },
+    {
+      "title": "Skin marking",
+      "startTime": 35
+    },
+    {
+      "title": "Incision in line with deltopectoral interval",
+      "startTime": 52
+    },
+    {
+      "title": "Develop deltopectoral interval",
+      "startTime": 62
+    },
+    {
+      "title": "Place retractors",
+      "startTime": 73
+    },
+    {
+      "title": "Release clavipectoral fascia",
+      "startTime": 88
+    },
+    {
+      "title": "Release coracohumeral ligament",
+      "startTime": 93
+    },
+    {
+      "title": "Release medial part of  pectoralis minor",
+      "startTime": 120
+    },
+    {
+      "title": "Make bone cut on coracoid",
+      "startTime": 138
+    },
+    {
+      "title": "Debride and decorticate undersurface of coracoid",
+      "startTime": 172
+    },
+    {
+      "title": "Pre-drill coracoid for 4.5 screws",
+      "startTime": 189
+    },
+    {
+      "title": "Split subscapularis",
+      "startTime": 222
+    },
+    {
+      "title": "Incise joint capsule",
+      "startTime": 259
+    },
+    {
+      "title": "Place Fukuda retractor",
+      "startTime": 265
+    },
+    {
+      "title": "Remove anterior labrum",
+      "startTime": 279
+    },
+    {
+      "title": "Decorticate anterior glenoid",
+      "startTime": 299
+    },
+    {
+      "title": "Predrill first glenoid screw hole",
+      "startTime": 317
+    },
+    {
+      "title": "Place first glenoid screw",
+      "startTime": 346
+    },
+    {
+      "title": "Drill and place second 4.5 screw",
+      "startTime": 359
+    },
+    {
+      "title": "Repair capsule",
+      "startTime": 376
+    },
+    {
+      "title": "Irrigation, antibiotic powder, closure",
+      "startTime": 426
+    },
+    {
+      "title": "Post-op care",
+      "startTime": 479
+    }
+  ],
+  "patella-orif": [
+    {
+      "title": "Skin marking",
+      "startTime": 1
+    },
+    {
+      "title": "Incision",
+      "startTime": 9
+    },
+    {
+      "title": "Subcutaneous dissection",
+      "startTime": 14
+    },
+    {
+      "title": "Elevate periosteum",
+      "startTime": 19
+    },
+    {
+      "title": "Clean fracture site",
+      "startTime": 30
+    },
+    {
+      "title": "Place threaded k-wires as joysticks",
+      "startTime": 38
+    },
+    {
+      "title": "Reduction",
+      "startTime": 50
+    },
+    {
+      "title": "Contour and place 2.0 LCP plate",
+      "startTime": 69
+    },
+    {
+      "title": "Place unicortical screws in compression mode",
+      "startTime": 80
+    },
+    {
+      "title": "Place long screw across fracture site",
+      "startTime": 102
+    },
+    {
+      "title": "Remove k-wires and place 2.4 plate",
+      "startTime": 119
+    },
+    {
+      "title": "Short unicortical followed by long screws",
+      "startTime": 129
+    },
+    {
+      "title": "Check range of motion",
+      "startTime": 160
+    },
+    {
+      "title": "Reinforce with Krakow through quad/patella tendon",
+      "startTime": 166
+    },
+    {
+      "title": "Tie sutures with knee in extension",
+      "startTime": 220
+    },
+    {
+      "title": "Antibiotic powder and closure",
+      "startTime": 253
+    }
+  ],
+  "femoral-neck-orif": [
+    {
+      "title": "Skin marking",
+      "startTime": 1
+    },
+    {
+      "title": "Incision",
+      "startTime": 11
+    },
+    {
+      "title": "Dissect to IT band",
+      "startTime": 18
+    },
+    {
+      "title": "Incise IT band",
+      "startTime": 33
+    },
+    {
+      "title": "Expose edge of gluteus medius",
+      "startTime": 49
+    },
+    {
+      "title": "Lift gluteus medius & Isolate capsule",
+      "startTime": 55
+    },
+    {
+      "title": "Perform L-shaped capsulotomy",
+      "startTime": 62
+    },
+    {
+      "title": "Elevate vastus lateralis",
+      "startTime": 95
+    },
+    {
+      "title": "Place Schanz pin as joystick",
+      "startTime": 122
+    },
+    {
+      "title": "Place K-wires just proximal to fracture site",
+      "startTime": 129
+    },
+    {
+      "title": "Obtain reduction",
+      "startTime": 144
+    },
+    {
+      "title": "Place K-wires across fracture",
+      "startTime": 158
+    },
+    {
+      "title": "Place DHHS guidewire",
+      "startTime": 177
+    },
+    {
+      "title": "Drill for DHHS barrel and screw",
+      "startTime": 188
+    },
+    {
+      "title": "Impact helical blade",
+      "startTime": 211
+    },
+    {
+      "title": "Place side plate",
+      "startTime": 218
+    },
+    {
+      "title": "Place two cortical screws through plate",
+      "startTime": 234
+    },
+    {
+      "title": "Remove K wires",
+      "startTime": 263
+    },
+    {
+      "title": "Place compression screw",
+      "startTime": 271
+    },
+    {
+      "title": "Place de-rotational screw",
+      "startTime": 279
+    },
+    {
+      "title": "Remove compression screw",
+      "startTime": 295
+    },
+    {
+      "title": "Irrigation and antibiotic powder",
+      "startTime": 308
+    },
+    {
+      "title": "Repair capsule and vastus lateralis",
+      "startTime": 319
+    },
+    {
+      "title": "Remainder of closure",
+      "startTime": 332
+    }
+  ],
+  "c1-2-fusion": [
+    {
+      "title": "Review imaging",
+      "startTime": 1
+    },
+    {
+      "title": "Incision",
+      "startTime": 47
+    },
+    {
+      "title": "Midline dissection",
+      "startTime": 57
+    },
+    {
+      "title": "Expose C2",
+      "startTime": 73
+    },
+    {
+      "title": "Expose C1",
+      "startTime": 98
+    },
+    {
+      "title": "Shuttle cables under C1",
+      "startTime": 125
+    },
+    {
+      "title": "Place C1 lateral mass screws",
+      "startTime": 158
+    },
+    {
+      "title": "Place C2 lateral mass screws",
+      "startTime": 225
+    },
+    {
+      "title": "Prepare allograft",
+      "startTime": 245
+    },
+    {
+      "title": "Place demineralized bone matrix",
+      "startTime": 291
+    },
+    {
+      "title": "Pass cables around C2 spinous process",
+      "startTime": 300
+    },
+    {
+      "title": "Place rods on lateral mass screws",
+      "startTime": 333
+    },
+    {
+      "title": "Place allograft and fix with cables",
+      "startTime": 362
+    },
+    {
+      "title": "Closure",
+      "startTime": 430
+    }
+  ],
+  "patellofemoral-arthroplasty": [
+    {
+      "title": "Skin marking",
+      "startTime": 8
+    },
+    {
+      "title": "Incision",
+      "startTime": 28
+    },
+    {
+      "title": "Elevate subcutaneous flaps",
+      "startTime": 39
+    },
+    {
+      "title": "Medial parapatellar arthrotomy",
+      "startTime": 46
+    },
+    {
+      "title": "Release anterior synovium from femoral cortex",
+      "startTime": 88
+    },
+    {
+      "title": "Place intramedullary guide for anterior femur cut",
+      "startTime": 98
+    },
+    {
+      "title": "Size component to prevent femoral notching",
+      "startTime": 121
+    },
+    {
+      "title": "Make anterior femur cut",
+      "startTime": 141
+    },
+    {
+      "title": "Place milling guide",
+      "startTime": 162
+    },
+    {
+      "title": "Prepare trochlea using handheld router in milling",
+      "startTime": 176
+    },
+    {
+      "title": "Irrigate prepared trochlea",
+      "startTime": 211
+    },
+    {
+      "title": "Place lug hole guide and drill lug holes",
+      "startTime": 217
+    },
+    {
+      "title": "Place trial trochlear component",
+      "startTime": 251
+    },
+    {
+      "title": "Expose patella",
+      "startTime": 268
+    },
+    {
+      "title": "Excise synovium from patellar rim",
+      "startTime": 274
+    },
+    {
+      "title": "Perform measured resection from patella",
+      "startTime": 291
+    },
+    {
+      "title": "Size patellar component and drill lug holes",
+      "startTime": 320
+    },
+    {
+      "title": "Remove guide and place patellar trial",
+      "startTime": 333
+    },
+    {
+      "title": "Trialing to assess patellar tracking",
+      "startTime": 341
+    },
+    {
+      "title": "Remove trial components and make accessory cement",
+      "startTime": 363
+    },
+    {
+      "title": "Irrigate prepared surfaces",
+      "startTime": 383
+    },
+    {
+      "title": "Cement final components",
+      "startTime": 390
+    },
+    {
+      "title": "Local anesthetic injection",
+      "startTime": 443
+    },
+    {
+      "title": "Chapter Title",
+      "startTime": 449
+    },
+    {
+      "title": "Close anterior synovium",
+      "startTime": 457
+    }
+  ],
+  "reverse-shoulder-arthroplasty": [
+    {
+      "title": "Landmarks",
+      "startTime": 1
+    },
+    {
+      "title": "Incision",
+      "startTime": 18
+    },
+    {
+      "title": "Make medial skin flap",
+      "startTime": 24
+    },
+    {
+      "title": "Bluntly develop deltopectoral interval",
+      "startTime": 32
+    },
+    {
+      "title": "Place darrach retractor over humerus",
+      "startTime": 36
+    },
+    {
+      "title": "Excise clavipectoral fascia",
+      "startTime": 45
+    },
+    {
+      "title": "Identify and tenodese biceps",
+      "startTime": 52
+    },
+    {
+      "title": "Tag and tenotomize biceps",
+      "startTime": 59
+    },
+    {
+      "title": "Split rotator interval",
+      "startTime": 68
+    },
+    {
+      "title": "Tag and tenotomize subscapularis",
+      "startTime": 84
+    },
+    {
+      "title": "Expose humerus",
+      "startTime": 116
+    },
+    {
+      "title": "Identify start site for awl on humerus",
+      "startTime": 122
+    },
+    {
+      "title": "Place humeral cutting guide",
+      "startTime": 131
+    },
+    {
+      "title": "Make humeral head cut",
+      "startTime": 148
+    },
+    {
+      "title": "Ream humerus",
+      "startTime": 172
+    },
+    {
+      "title": "Broach humerus",
+      "startTime": 193
+    },
+    {
+      "title": "Plane humeral head",
+      "startTime": 204
+    },
+    {
+      "title": "Place head protector",
+      "startTime": 213
+    },
+    {
+      "title": "Expose glenoid",
+      "startTime": 244
+    },
+    {
+      "title": "Place glenoid guide pin",
+      "startTime": 270
+    },
+    {
+      "title": "Ream glenoid",
+      "startTime": 277
+    },
+    {
+      "title": "Measure central screw",
+      "startTime": 291
+    },
+    {
+      "title": "Place baseplate",
+      "startTime": 296
+    },
+    {
+      "title": "Place baseplate screws",
+      "startTime": 328
+    },
+    {
+      "title": "Place glenosphere",
+      "startTime": 353
+    }
+  ],
+  "cervical-disc-replacement": [
+    {
+      "title": "Incision",
+      "startTime": 11
+    },
+    {
+      "title": "Divide platysma",
+      "startTime": 21
+    },
+    {
+      "title": "Blunt dissection to vertebral body",
+      "startTime": 29
+    },
+    {
+      "title": "Localize with forceps",
+      "startTime": 50
+    },
+    {
+      "title": "Elevate longus colli muscles laterally",
+      "startTime": 58
+    },
+    {
+      "title": "Place caspar pins",
+      "startTime": 76
+    },
+    {
+      "title": "Perform discectomy",
+      "startTime": 104
+    },
+    {
+      "title": "Distract disc space",
+      "startTime": 133
+    },
+    {
+      "title": "Remove posterior annulus and PLL",
+      "startTime": 146
+    },
+    {
+      "title": "Place trial spacer and confirm on fluoro",
+      "startTime": 180
+    },
+    {
+      "title": "Cut channels for implant teeth",
+      "startTime": 214
+    },
+    {
+      "title": "Place implant",
+      "startTime": 233
+    },
+    {
+      "title": "Remove caspar pins",
+      "startTime": 249
+    },
+    {
+      "title": "Final fluoro shots",
+      "startTime": 252
+    },
+    {
+      "title": "Irrigate and close",
+      "startTime": 258
+    }
+  ],
+  "proximal-humerus-orif": [
+    {
+      "title": "Landmarks",
+      "startTime": 1
+    },
+    {
+      "title": "Incision and subcutaneous dissection",
+      "startTime": 16
+    },
+    {
+      "title": "Incise fascia",
+      "startTime": 30
+    },
+    {
+      "title": "Develop deltopectoral interval",
+      "startTime": 34
+    },
+    {
+      "title": "Place Kolbel retractor",
+      "startTime": 74
+    },
+    {
+      "title": "Expose fracture",
+      "startTime": 80
+    },
+    {
+      "title": "Tag rotator cuff",
+      "startTime": 86
+    },
+    {
+      "title": "Apply traction with clamp",
+      "startTime": 105
+    },
+    {
+      "title": "Place fibula allograft",
+      "startTime": 117
+    },
+    {
+      "title": "Reduce greater tuberosity to shaft",
+      "startTime": 136
+    },
+    {
+      "title": "Provisional minifrag plate",
+      "startTime": 162
+    },
+    {
+      "title": "Place precontoured plate",
+      "startTime": 205
+    },
+    {
+      "title": "Confirm plate position on fluoro",
+      "startTime": 226
+    },
+    {
+      "title": "Cortical screw in oblong hole",
+      "startTime": 236
+    },
+    {
+      "title": "Place distal cortical screws",
+      "startTime": 253
+    },
+    {
+      "title": "Place proximal locking screws",
+      "startTime": 267
+    },
+    {
+      "title": "Place calcar screws",
+      "startTime": 351
+    },
+    {
+      "title": "Check screws on fluoro",
+      "startTime": 383
+    },
+    {
+      "title": "Tag subscapularis",
+      "startTime": 391
+    },
+    {
+      "title": "Tie cuff sutures to plate",
+      "startTime": 407
+    },
+    {
+      "title": "Antibiotic powder",
+      "startTime": 423
+    },
+    {
+      "title": "Irrigate and close",
+      "startTime": 427
+    }
+  ],
+  "unicompartmental-knee-arthroplasty": [
+    {
+      "title": "Skin marking",
+      "startTime": 31
+    },
+    {
+      "title": "Incision",
+      "startTime": 40
+    },
+    {
+      "title": "Elevate flaps",
+      "startTime": 48
+    },
+    {
+      "title": "Midvastus arthrotomy",
+      "startTime": 58
+    },
+    {
+      "title": "Medial release",
+      "startTime": 96
+    },
+    {
+      "title": "Place Z retractors",
+      "startTime": 104
+    },
+    {
+      "title": "Mark sagittal contact axis",
+      "startTime": 119
+    },
+    {
+      "title": "Apply UniAlign Jig",
+      "startTime": 148
+    },
+    {
+      "title": "Register offset and malleoli",
+      "startTime": 168
+    },
+    {
+      "title": "Navigate cut at 6º slope, 0º varus/valgus",
+      "startTime": 176
+    },
+    {
+      "title": "Set 4mm resection depth & pin guide",
+      "startTime": 186
+    },
+    {
+      "title": "Make tibial cut",
+      "startTime": 213
+    },
+    {
+      "title": "Gap balancing (add 2mm in extension)",
+      "startTime": 235
+    },
+    {
+      "title": "Place distal cutting guide (with 2mm shim)",
+      "startTime": 260
+    },
+    {
+      "title": "Make distal femur cut",
+      "startTime": 277
+    },
+    {
+      "title": "Size and place femoral block",
+      "startTime": 287
+    },
+    {
+      "title": "Make posterior and chamfer cuts",
+      "startTime": 308
+    },
+    {
+      "title": "Remove meniscal remnant & posterior osteophytes",
+      "startTime": 325
+    },
+    {
+      "title": "Size and pin tibial baseplate trial",
+      "startTime": 346
+    },
+    {
+      "title": "Trial with femoral component and 8mm insert",
+      "startTime": 355
+    },
+    {
+      "title": "Exsanguinate & remove trials",
+      "startTime": 370
+    },
+    {
+      "title": "Irrigate & dry",
+      "startTime": 394
+    },
+    {
+      "title": "Cement final components",
+      "startTime": 399
+    },
+    {
+      "title": "Irrigate & inject local anesthetic",
+      "startTime": 443
+    },
+    {
+      "title": "Confirm range of motion",
+      "startTime": 456
+    }
+  ],
+  "clavicle-orif": [
+    {
+      "title": "Skin marking",
+      "startTime": 3
+    },
+    {
+      "title": "Incision and superficial dissection",
+      "startTime": 21
+    },
+    {
+      "title": "Expose clavicle",
+      "startTime": 41
+    },
+    {
+      "title": "Debride fracture",
+      "startTime": 102
+    },
+    {
+      "title": "Reduce fracture",
+      "startTime": 118
+    },
+    {
+      "title": "Place lag screws",
+      "startTime": 153
+    },
+    {
+      "title": "Contour anterior plate",
+      "startTime": 210
+    },
+    {
+      "title": "Fix anterior plate",
+      "startTime": 243
+    },
+    {
+      "title": "Contour and fix superior plate",
+      "startTime": 324
+    },
+    {
+      "title": "Irrigate and place antibiotic powder",
+      "startTime": 435
+    },
+    {
+      "title": "Closure",
+      "startTime": 446
+    },
+    {
+      "title": "Dressings and aftercare",
+      "startTime": 515
+    }
+  ],
+  "tibial-plateau-orif": [
+    {
+      "title": "Positioning",
+      "startTime": 0
+    },
+    {
+      "title": "Landmarks",
+      "startTime": 5
+    },
+    {
+      "title": "Incision",
+      "startTime": 14
+    },
+    {
+      "title": "Subcutaneous dissection",
+      "startTime": 25
+    },
+    {
+      "title": "Split IT band",
+      "startTime": 42
+    },
+    {
+      "title": "Dissect IT band off Gerdy's tubercle",
+      "startTime": 55
+    },
+    {
+      "title": "Dissect muscle off proximal tibia",
+      "startTime": 62
+    },
+    {
+      "title": "Make arthrotomy",
+      "startTime": 72
+    },
+    {
+      "title": "Open lateral split",
+      "startTime": 85
+    },
+    {
+      "title": "Repair meniscal tear",
+      "startTime": 88
+    },
+    {
+      "title": "Elevate depressed fragment",
+      "startTime": 106
+    },
+    {
+      "title": "Provisionally fix with K-wires",
+      "startTime": 116
+    },
+    {
+      "title": "Reduce lateral split",
+      "startTime": 148
+    },
+    {
+      "title": "Fill void with bone graft",
+      "startTime": 160
+    },
+    {
+      "title": "Reduce remaining lateral fragment",
+      "startTime": 174
+    },
+    {
+      "title": "Reduce condylar width with periarticular clamp",
+      "startTime": 198
+    },
+    {
+      "title": "Place precontoured plate",
+      "startTime": 230
+    },
+    {
+      "title": "Place buttress screw",
+      "startTime": 234
+    },
+    {
+      "title": "Place distal screws percutaneously",
+      "startTime": 248
+    },
+    {
+      "title": "Place periarticular clamp over plate",
+      "startTime": 304
+    },
+    {
+      "title": "Place proximal rafting screws",
+      "startTime": 310
+    },
+    {
+      "title": "Place independent rafting screws",
+      "startTime": 341
+    },
+    {
+      "title": "Tie capsular sutures to plate",
+      "startTime": 354
+    },
+    {
+      "title": "Irrigation, antibiotic powder, and closure",
+      "startTime": 372
+    },
+    {
+      "title": "Post-op protocol",
+      "startTime": 391
+    }
+  ],
+  "surgical-hip-dislocation": [
+    {
+      "title": "Positioning",
+      "startTime": 15
+    },
+    {
+      "title": "Incision",
+      "startTime": 18
+    },
+    {
+      "title": "Subcutaneous dissection",
+      "startTime": 25
+    },
+    {
+      "title": "Split IT band",
+      "startTime": 42
+    },
+    {
+      "title": "Divide gluteus maximus",
+      "startTime": 59
+    },
+    {
+      "title": "Place Charnley",
+      "startTime": 68
+    },
+    {
+      "title": "Remove bursal tissue",
+      "startTime": 73
+    },
+    {
+      "title": "Retract gluteus medius",
+      "startTime": 82
+    },
+    {
+      "title": "Mark trochanteric osteotomy",
+      "startTime": 89
+    },
+    {
+      "title": "Retract vastus lateralis",
+      "startTime": 96
+    },
+    {
+      "title": "Make osteotomy cut",
+      "startTime": 106
+    },
+    {
+      "title": "Retract osteotomy",
+      "startTime": 126
+    },
+    {
+      "title": "Doppler femoral head blood supply",
+      "startTime": 130
+    },
+    {
+      "title": "Elevate gluteus minimus off anterior capsule",
+      "startTime": 146
+    },
+    {
+      "title": "Z-shaped capsulotomy",
+      "startTime": 162
+    },
+    {
+      "title": "Dislocate hip and release adhesions",
+      "startTime": 220
+    },
+    {
+      "title": "Re-check blood supply",
+      "startTime": 229
+    },
+    {
+      "title": "Currette lesion (chondroblastoma)",
+      "startTime": 253
+    },
+    {
+      "title": "Pathologic section",
+      "startTime": 281
+    },
+    {
+      "title": "Size and ream for allograft",
+      "startTime": 297
+    },
+    {
+      "title": "Measure depth of graft recipient site",
+      "startTime": 328
+    },
+    {
+      "title": "Cut and trim allograft",
+      "startTime": 344
+    },
+    {
+      "title": "Place allograft",
+      "startTime": 370
+    },
+    {
+      "title": "Reduce hip",
+      "startTime": 392
+    },
+    {
+      "title": "Close capsulotomy",
+      "startTime": 400
+    }
+  ],
+  "posterior-si-fixation": [
+    {
+      "title": "Landmarks",
+      "startTime": 1
+    },
+    {
+      "title": "Incision",
+      "startTime": 10
+    },
+    {
+      "title": "Subcutaneous dissection",
+      "startTime": 34
+    },
+    {
+      "title": "Divide fascia",
+      "startTime": 52
+    },
+    {
+      "title": "Reflect fascia over glut max",
+      "startTime": 74
+    },
+    {
+      "title": "Reflect glut max off bony insertion",
+      "startTime": 96
+    },
+    {
+      "title": "Anatomy around sciatic notch",
+      "startTime": 132
+    },
+    {
+      "title": "Expose SI joint",
+      "startTime": 157
+    },
+    {
+      "title": "Clean SI joint",
+      "startTime": 180
+    },
+    {
+      "title": "Place reduction clamp",
+      "startTime": 212
+    },
+    {
+      "title": "Reduce SI joint",
+      "startTime": 258
+    },
+    {
+      "title": "Assess reduction on fluoro",
+      "startTime": 283
+    },
+    {
+      "title": "Obtain lateral image for SI screws",
+      "startTime": 305
+    },
+    {
+      "title": "Place S1 SI screw",
+      "startTime": 329
+    },
+    {
+      "title": "Place S2 transiliac transsacral screw",
+      "startTime": 374
+    },
+    {
+      "title": "Confirm screws on fluoro",
+      "startTime": 400
+    },
+    {
+      "title": "Antibiotic powder",
+      "startTime": 421
+    },
+    {
+      "title": "Re-approximate glut max",
+      "startTime": 422
+    },
+    {
+      "title": "Close fascia and skin",
+      "startTime": 453
+    }
+  ],
+  "l5-s1-microdiscectomy": [
+    {
+      "title": "Superficial dissection",
+      "startTime": 1
+    },
+    {
+      "title": "Palpate spinous processes",
+      "startTime": 15
+    },
+    {
+      "title": "Incise fascia",
+      "startTime": 19
+    },
+    {
+      "title": "Dissect paraspinal muscles off spinous process",
+      "startTime": 23
+    },
+    {
+      "title": "Expose lamina",
+      "startTime": 34
+    },
+    {
+      "title": "Place Taylor retractor",
+      "startTime": 45
+    },
+    {
+      "title": "Expose ligamentum flavum",
+      "startTime": 60
+    },
+    {
+      "title": "Make laminotomy with burr",
+      "startTime": 68
+    },
+    {
+      "title": "Complete laminotomy with Kerrison",
+      "startTime": 108
+    },
+    {
+      "title": "Free ligamentum laterally",
+      "startTime": 122
+    },
+    {
+      "title": "Retract thecal sac & obtain hemostasis",
+      "startTime": 156
+    },
+    {
+      "title": "Remove extruded disc",
+      "startTime": 180
+    },
+    {
+      "title": "Remove free fragments in disc space",
+      "startTime": 212
+    },
+    {
+      "title": "Irrigate disc space & remove fragments",
+      "startTime": 232
+    },
+    {
+      "title": "Gel foam for hemostasis",
+      "startTime": 263
+    },
+    {
+      "title": "Palpate to ensure no fragments remain",
+      "startTime": 269
+    },
+    {
+      "title": "Place absorbable hemostat",
+      "startTime": 279
+    },
+    {
+      "title": "Closure",
+      "startTime": 289
+    }
+  ],
+  "total-knee-arthroplasty": [
+    {
+      "title": "Case introduction",
+      "startTime": 0
+    },
+    {
+      "title": "Mark landmarks",
+      "startTime": 22
+    },
+    {
+      "title": "Incision",
+      "startTime": 34
+    },
+    {
+      "title": "Elevate flaps",
+      "startTime": 39
+    },
+    {
+      "title": "Arthrotomy",
+      "startTime": 49
+    },
+    {
+      "title": "Medial release",
+      "startTime": 85
+    },
+    {
+      "title": "Resect anterior fat pad",
+      "startTime": 97
+    },
+    {
+      "title": "Synovial flaps",
+      "startTime": 106
+    },
+    {
+      "title": "Remove osteophytes",
+      "startTime": 132
+    },
+    {
+      "title": "Attach OrthAlign femoral block",
+      "startTime": 140
+    },
+    {
+      "title": "Register hip rotation",
+      "startTime": 161
+    },
+    {
+      "title": "Navigate distal cut (3º flexion, 2º varus)",
+      "startTime": 174
+    },
+    {
+      "title": "Set cut depth (9mm)",
+      "startTime": 185
+    },
+    {
+      "title": "Make distal femur cut",
+      "startTime": 201
+    },
+    {
+      "title": "Set femoral component size and rotation",
+      "startTime": 219
+    },
+    {
+      "title": "Impact cutting block",
+      "startTime": 248
+    },
+    {
+      "title": "Make anterior, posterior, chamfer cuts",
+      "startTime": 266
+    },
+    {
+      "title": "Attach OrthAlign tibial jig",
+      "startTime": 309
+    },
+    {
+      "title": "Register offset, malleoli",
+      "startTime": 331
+    },
+    {
+      "title": "Navigate tibial cut (6º slope, neutral)",
+      "startTime": 344
+    },
+    {
+      "title": "Set resection depth",
+      "startTime": 358
+    },
+    {
+      "title": "Make tibial cut",
+      "startTime": 375
+    },
+    {
+      "title": "Resect meniscal remnants, posterior osteophytes",
+      "startTime": 407
+    },
+    {
+      "title": "Size tibial implant with trial",
+      "startTime": 436
+    },
+    {
+      "title": "Place femoral trial & insert",
+      "startTime": 452
+    }
+  ],
+  "olecranon-orif": [
+    {
+      "title": "Positioning",
+      "startTime": 2
+    },
+    {
+      "title": "Marking",
+      "startTime": 10
+    },
+    {
+      "title": "Incision",
+      "startTime": 18
+    },
+    {
+      "title": "Subcutaneous dissection",
+      "startTime": 27
+    },
+    {
+      "title": "Deep dissection",
+      "startTime": 52
+    },
+    {
+      "title": "Elevate ECU and FCU",
+      "startTime": 63
+    },
+    {
+      "title": "Medial and lateral flaps",
+      "startTime": 72
+    },
+    {
+      "title": "Clean fracture",
+      "startTime": 98
+    },
+    {
+      "title": "Elevate impacted fragment",
+      "startTime": 117
+    },
+    {
+      "title": "Prepare fracture ends",
+      "startTime": 126
+    },
+    {
+      "title": "Reduce fracture",
+      "startTime": 147
+    },
+    {
+      "title": "Minifragment plating",
+      "startTime": 153
+    },
+    {
+      "title": "Place unicortical screws",
+      "startTime": 167
+    },
+    {
+      "title": "Second minifragment plate",
+      "startTime": 192
+    },
+    {
+      "title": "Expose IM screw start site",
+      "startTime": 239
+    },
+    {
+      "title": "Drill for IM screw (3.2)",
+      "startTime": 246
+    },
+    {
+      "title": "Overdrill proximal cortex (4.5)",
+      "startTime": 265
+    },
+    {
+      "title": "Tap for screw (6.5)",
+      "startTime": 273
+    },
+    {
+      "title": "Place screw (6.5)",
+      "startTime": 308
+    },
+    {
+      "title": "Exchange minifrag screws",
+      "startTime": 341
+    },
+    {
+      "title": "Check ROM",
+      "startTime": 368
+    },
+    {
+      "title": "Antibiotic powder",
+      "startTime": 373
+    },
+    {
+      "title": "Closure",
+      "startTime": 376
+    }
+  ],
+  "l3-4-tlif": [
+    {
+      "title": "Prone positioning",
+      "startTime": 0
+    },
+    {
+      "title": "Mildline posterior incision",
+      "startTime": 13
+    },
+    {
+      "title": "Superficial dissection",
+      "startTime": 20
+    },
+    {
+      "title": "Deep dissection",
+      "startTime": 28
+    },
+    {
+      "title": "Remove old instrumentation",
+      "startTime": 42
+    },
+    {
+      "title": "Expose for adjacent fusion",
+      "startTime": 109
+    },
+    {
+      "title": "Remove spinous process",
+      "startTime": 127
+    },
+    {
+      "title": "Decorticate facets",
+      "startTime": 133
+    },
+    {
+      "title": "Complete laminectomy",
+      "startTime": 170
+    },
+    {
+      "title": "Remove ligamentum flavum",
+      "startTime": 188
+    },
+    {
+      "title": "Place lamina spreader",
+      "startTime": 243
+    },
+    {
+      "title": "Place D'Errico retractor",
+      "startTime": 249
+    },
+    {
+      "title": "Incise disk annulus",
+      "startTime": 256
+    },
+    {
+      "title": "Remove disk",
+      "startTime": 265
+    },
+    {
+      "title": "Trial spacer",
+      "startTime": 286
+    },
+    {
+      "title": "Pack bone graft",
+      "startTime": 294
+    },
+    {
+      "title": "Place cage",
+      "startTime": 303
+    },
+    {
+      "title": "Place screws in old holes",
+      "startTime": 333
+    },
+    {
+      "title": "Place new pedicle screws",
+      "startTime": 360
+    },
+    {
+      "title": "Place rods",
+      "startTime": 407
+    },
+    {
+      "title": "Place bone graft",
+      "startTime": 445
+    },
+    {
+      "title": "Absorbable hemostat and drain",
+      "startTime": 463
+    },
+    {
+      "title": "Closure",
+      "startTime": 472
+    }
+  ],
+  "l5-s1-alif": [
+    {
+      "title": "Positioning and localization",
+      "startTime": 1
+    },
+    {
+      "title": "Pfannenstiel incision",
+      "startTime": 37
+    },
+    {
+      "title": "Expose rectus sheath",
+      "startTime": 46
+    },
+    {
+      "title": "Incise sheath",
+      "startTime": 80
+    },
+    {
+      "title": "Retract left rectus",
+      "startTime": 100
+    },
+    {
+      "title": "Traverse retroperitoneal space",
+      "startTime": 111
+    },
+    {
+      "title": "Place retractors",
+      "startTime": 132
+    },
+    {
+      "title": "Expose annulus",
+      "startTime": 157
+    },
+    {
+      "title": "Cauterize descending sacral vessels",
+      "startTime": 161
+    },
+    {
+      "title": "Localize midline with bovie tip",
+      "startTime": 180
+    },
+    {
+      "title": "Annulotomy",
+      "startTime": 195
+    },
+    {
+      "title": "Gross removal of disc",
+      "startTime": 224
+    },
+    {
+      "title": "Complete discectomy",
+      "startTime": 238
+    },
+    {
+      "title": "Trial spacer",
+      "startTime": 275
+    },
+    {
+      "title": "Place cage",
+      "startTime": 292
+    },
+    {
+      "title": "Place fixation",
+      "startTime": 305
+    },
+    {
+      "title": "Final inspection and remove retractors",
+      "startTime": 356
+    },
+    {
+      "title": "Close rectus sheath",
+      "startTime": 364
+    },
+    {
+      "title": "Complete closure",
+      "startTime": 395
+    }
+  ],
+  "both-bone-forearm-orif": [
+    {
+      "title": "Skin marking",
+      "startTime": 2
+    },
+    {
+      "title": "Esmarch",
+      "startTime": 17
+    },
+    {
+      "title": "Volar incision",
+      "startTime": 20
+    },
+    {
+      "title": "Superficial dissection",
+      "startTime": 25
+    },
+    {
+      "title": "Mobilize radial artery",
+      "startTime": 36
+    },
+    {
+      "title": "Deep dissection",
+      "startTime": 75
+    },
+    {
+      "title": "Clean fracture",
+      "startTime": 101
+    },
+    {
+      "title": "Ulnar incision",
+      "startTime": 126
+    },
+    {
+      "title": "Superficial dissection",
+      "startTime": 130
+    },
+    {
+      "title": "Deep dissection",
+      "startTime": 138
+    },
+    {
+      "title": "Clean fracture",
+      "startTime": 146
+    },
+    {
+      "title": "Ulnar plate application",
+      "startTime": 149
+    },
+    {
+      "title": "Ulna reduction",
+      "startTime": 161
+    },
+    {
+      "title": "Screw in compression mode",
+      "startTime": 170
+    },
+    {
+      "title": "Remaining ulnar screws",
+      "startTime": 178
+    },
+    {
+      "title": "Debride traumatic wound",
+      "startTime": 208
+    },
+    {
+      "title": "Reduce radius",
+      "startTime": 219
+    },
+    {
+      "title": "Contour radial plate",
+      "startTime": 226
+    },
+    {
+      "title": "Contour & place provisional plate",
+      "startTime": 249
+    },
+    {
+      "title": "Place radial plate",
+      "startTime": 294
+    },
+    {
+      "title": "Screw in compression mode",
+      "startTime": 309
+    },
+    {
+      "title": "Remaining radial screws",
+      "startTime": 319
+    },
+    {
+      "title": "Check ROM & irrigate",
+      "startTime": 342
+    },
+    {
+      "title": "Ulnar wound closure",
+      "startTime": 351
+    },
+    {
+      "title": "Radial wound closure",
+      "startTime": 382
+    }
+  ],
+  "supracondylar-humerus-fracture-crpp": [
+    {
+      "title": "Position and drape",
+      "startTime": 1
+    },
+    {
+      "title": "Traction",
+      "startTime": 15
+    },
+    {
+      "title": "Flexion",
+      "startTime": 23
+    },
+    {
+      "title": "Check reduction",
+      "startTime": 36
+    },
+    {
+      "title": "First pin",
+      "startTime": 42
+    },
+    {
+      "title": "Second pin",
+      "startTime": 81
+    },
+    {
+      "title": "Third pin",
+      "startTime": 101
+    },
+    {
+      "title": "Bend pins",
+      "startTime": 120
+    },
+    {
+      "title": "Dress and splint",
+      "startTime": 149
+    }
+  ],
+  "cubital-tunnel-release": [
+    {
+      "title": "Skin Marking",
+      "startTime": 2
+    },
+    {
+      "title": "Incision",
+      "startTime": 7
+    },
+    {
+      "title": "Subcutaneous dissection",
+      "startTime": 21
+    },
+    {
+      "title": "Identify ulnar nerve",
+      "startTime": 104
+    },
+    {
+      "title": "Cut fascia",
+      "startTime": 112
+    },
+    {
+      "title": "Proximal release",
+      "startTime": 136
+    },
+    {
+      "title": "Distal release",
+      "startTime": 154
+    },
+    {
+      "title": "Inspect nerve",
+      "startTime": 214
+    },
+    {
+      "title": "Check for subluxation",
+      "startTime": 233
+    }
+  ],
+  "esmail-carpal-tunnel": [
+    {
+      "title": "Skin Marking",
+      "startTime": 0
+    },
+    {
+      "title": "Incision",
+      "startTime": 34
+    },
+    {
+      "title": "Subcutaneous dissection",
+      "startTime": 38
+    },
+    {
+      "title": "Incise palmar fascia",
+      "startTime": 53
+    },
+    {
+      "title": "Incise TCL",
+      "startTime": 82
+    },
+    {
+      "title": "Distal release",
+      "startTime": 94
+    },
+    {
+      "title": "Proximal release",
+      "startTime": 141
+    },
+    {
+      "title": "Irrigation and closure",
+      "startTime": 196
+    }
+  ],
+  "posterior-wall-orif": [
+    {
+      "title": "Examination under anesthesia",
+      "startTime": 2
+    },
+    {
+      "title": "Skin marking",
+      "startTime": 11
+    },
+    {
+      "title": "Incision",
+      "startTime": 17
+    },
+    {
+      "title": "Split IT band",
+      "startTime": 24
+    },
+    {
+      "title": "Place Charnley",
+      "startTime": 38
+    },
+    {
+      "title": "Expose external rotators",
+      "startTime": 49
+    },
+    {
+      "title": "Release piriformis",
+      "startTime": 68
+    },
+    {
+      "title": "Debride necrotic muscle",
+      "startTime": 92
+    },
+    {
+      "title": "Sciatic nerve retractor",
+      "startTime": 107
+    },
+    {
+      "title": "Expose superior acetabulum",
+      "startTime": 109
+    },
+    {
+      "title": "Clean fracture",
+      "startTime": 152
+    },
+    {
+      "title": "Reduction",
+      "startTime": 190
+    },
+    {
+      "title": "Provisional fixation",
+      "startTime": 203
+    },
+    {
+      "title": "Lag screw",
+      "startTime": 212
+    },
+    {
+      "title": "Contour plate",
+      "startTime": 227
+    },
+    {
+      "title": "Fix plate",
+      "startTime": 253
+    },
+    {
+      "title": "Final fluoro",
+      "startTime": 284
+    },
+    {
+      "title": "Repair external rotators",
+      "startTime": 291
+    },
+    {
+      "title": "Irrigate and close",
+      "startTime": 305
+    }
+  ],
+  "untitlepd": [
+    {
+      "title": "Position",
+      "startTime": 0
+    },
+    {
+      "title": "Incision",
+      "startTime": 13
+    },
+    {
+      "title": "Split at spinous process",
+      "startTime": 24
+    },
+    {
+      "title": "Elevate paraspinal muscle",
+      "startTime": 30
+    },
+    {
+      "title": "Remove interspinous ligaments",
+      "startTime": 44
+    },
+    {
+      "title": "Ponte osteotomies",
+      "startTime": 57
+    },
+    {
+      "title": "Remove inferior articular processes",
+      "startTime": 87
+    },
+    {
+      "title": "Pedicle screws and hooks",
+      "startTime": 107
+    },
+    {
+      "title": "Stimulate screws",
+      "startTime": 209
+    },
+    {
+      "title": "Measure and cut rod",
+      "startTime": 222
+    },
+    {
+      "title": "Contour and place rod",
+      "startTime": 233
+    },
+    {
+      "title": "Curve correction",
+      "startTime": 244
+    },
+    {
+      "title": "Opposite rod",
+      "startTime": 302
+    },
+    {
+      "title": "Final tightening",
+      "startTime": 310
+    },
+    {
+      "title": "Irrigation and betadine",
+      "startTime": 315
+    },
+    {
+      "title": "Decorticate and bone graft",
+      "startTime": 323
+    },
+    {
+      "title": "Close and place drain",
+      "startTime": 343
+    }
+  ],
+  "distal-femur-orif": [
+    {
+      "title": "Incision",
+      "startTime": 95
+    },
+    {
+      "title": "Arthrotomy",
+      "startTime": 122
+    },
+    {
+      "title": "Stabilize Hoffa",
+      "startTime": 141
+    },
+    {
+      "title": "Reduce articular block",
+      "startTime": 153
+    },
+    {
+      "title": "Fix articular block",
+      "startTime": 238
+    },
+    {
+      "title": "Bump knee",
+      "startTime": 276
+    },
+    {
+      "title": "Expose lateral cortex",
+      "startTime": 283
+    },
+    {
+      "title": "Reduce metaphysis",
+      "startTime": 293
+    },
+    {
+      "title": "Reduce block to shaft",
+      "startTime": 300
+    },
+    {
+      "title": "Provisional reduction",
+      "startTime": 304
+    },
+    {
+      "title": "Place lateral plate",
+      "startTime": 329
+    },
+    {
+      "title": "Provisionally fix plate",
+      "startTime": 355
+    },
+    {
+      "title": "Plate fixation to shaft",
+      "startTime": 380
+    },
+    {
+      "title": "Plate fixation to block",
+      "startTime": 391
+    },
+    {
+      "title": "Remaining block screws",
+      "startTime": 412
+    },
+    {
+      "title": "Remaining shaft screws",
+      "startTime": 423
+    },
+    {
+      "title": "Contour medial plate",
+      "startTime": 450
+    },
+    {
+      "title": "Expose & place medial plate",
+      "startTime": 463
+    },
+    {
+      "title": "Fix medial plate",
+      "startTime": 476
+    },
+    {
+      "title": "Final fluoro",
+      "startTime": 539
+    },
+    {
+      "title": "Irrigation and closure",
+      "startTime": 547
+    }
+  ],
+  "ankle-orif": [
+    {
+      "title": "Supine positioning",
+      "startTime": 1
+    },
+    {
+      "title": "Lateral incision",
+      "startTime": 11
+    },
+    {
+      "title": "Expose fibula",
+      "startTime": 25
+    },
+    {
+      "title": "Clean fracture",
+      "startTime": 33
+    },
+    {
+      "title": "Reduce fibula",
+      "startTime": 46
+    },
+    {
+      "title": "Provisional fixation",
+      "startTime": 63
+    },
+    {
+      "title": "Lag screw",
+      "startTime": 80
+    },
+    {
+      "title": "Contour plate",
+      "startTime": 103
+    },
+    {
+      "title": "Fix plate",
+      "startTime": 112
+    },
+    {
+      "title": "Proximal cortical screws",
+      "startTime": 131
+    },
+    {
+      "title": "Distal locking screws",
+      "startTime": 150
+    },
+    {
+      "title": "Medial incision",
+      "startTime": 164
+    },
+    {
+      "title": "Protect saphenous",
+      "startTime": 177
+    },
+    {
+      "title": "Expose fracture",
+      "startTime": 183
+    },
+    {
+      "title": "Reduce medial malleolus",
+      "startTime": 202
+    },
+    {
+      "title": "Medial screws",
+      "startTime": 217
+    },
+    {
+      "title": "Stress view",
+      "startTime": 265
+    },
+    {
+      "title": "Irrigate and close",
+      "startTime": 270
+    }
+  ],
+  "monteggia-fracture-orif": [
+    {
+      "title": "Positioning",
+      "startTime": 62
+    },
+    {
+      "title": "Planned approach",
+      "startTime": 75
+    },
+    {
+      "title": "Incision",
+      "startTime": 101
+    },
+    {
+      "title": "Exposure",
+      "startTime": 108
+    },
+    {
+      "title": "Clean fracture",
+      "startTime": 113
+    },
+    {
+      "title": "Reduction",
+      "startTime": 135
+    },
+    {
+      "title": "Provisional plate",
+      "startTime": 140
+    },
+    {
+      "title": "Contour definitive plate",
+      "startTime": 187
+    },
+    {
+      "title": "Fix plate",
+      "startTime": 227
+    },
+    {
+      "title": "Check ROM",
+      "startTime": 329
+    },
+    {
+      "title": "Final fluoro",
+      "startTime": 334
+    },
+    {
+      "title": "Irrigation and closure",
+      "startTime": 348
+    }
+  ],
+  "distal-tibia-imn": [
+    {
+      "title": "Positioning",
+      "startTime": 56
+    },
+    {
+      "title": "Landmarks",
+      "startTime": 68
+    },
+    {
+      "title": "Skin incision",
+      "startTime": 84
+    },
+    {
+      "title": "Incise quad tendon",
+      "startTime": 96
+    },
+    {
+      "title": "Place guidewire",
+      "startTime": 104
+    },
+    {
+      "title": "Start point",
+      "startTime": 119
+    },
+    {
+      "title": "Place cannula",
+      "startTime": 150
+    },
+    {
+      "title": "Entry reamer",
+      "startTime": 170
+    },
+    {
+      "title": "Ball tip guidewire",
+      "startTime": 185
+    },
+    {
+      "title": "Reduction",
+      "startTime": 206
+    },
+    {
+      "title": "Pass guidewire",
+      "startTime": 275
+    },
+    {
+      "title": "End wire laterally",
+      "startTime": 284
+    },
+    {
+      "title": "Measure",
+      "startTime": 293
+    },
+    {
+      "title": "Blocking wire",
+      "startTime": 300
+    },
+    {
+      "title": "Reaming",
+      "startTime": 357
+    },
+    {
+      "title": "Assemble nail",
+      "startTime": 372
+    },
+    {
+      "title": "Place nail",
+      "startTime": 380
+    },
+    {
+      "title": "Distal interlocks",
+      "startTime": 405
+    },
+    {
+      "title": "Backslap nail",
+      "startTime": 452
+    },
+    {
+      "title": "Proximal interlocks",
+      "startTime": 465
+    },
+    {
+      "title": "Final distal interlock",
+      "startTime": 493
+    },
+    {
+      "title": "Final fluoroscopy",
+      "startTime": 535
+    },
+    {
+      "title": "Irrigation and closure",
+      "startTime": 551
+    }
+  ],
+  "distal-humerus-orif": [
+    {
+      "title": "Positioning",
+      "startTime": 42
+    },
+    {
+      "title": "Planned approach",
+      "startTime": 53
+    },
+    {
+      "title": "Skin incision",
+      "startTime": 62
+    },
+    {
+      "title": "Superficial dissection",
+      "startTime": 75
+    },
+    {
+      "title": "Incise fascia",
+      "startTime": 103
+    },
+    {
+      "title": "Lateral skin flap",
+      "startTime": 121
+    },
+    {
+      "title": "Dissect bare area",
+      "startTime": 140
+    },
+    {
+      "title": "Dissect triceps off septum",
+      "startTime": 178
+    },
+    {
+      "title": "Middle collateral a. / PACN",
+      "startTime": 196
+    },
+    {
+      "title": "Isolate radial nerve",
+      "startTime": 239
+    },
+    {
+      "title": "Proximal dissection",
+      "startTime": 284
+    },
+    {
+      "title": "Reduction",
+      "startTime": 303
+    },
+    {
+      "title": "Lag screws",
+      "startTime": 313
+    },
+    {
+      "title": "Contour plate",
+      "startTime": 388
+    },
+    {
+      "title": "Place plate",
+      "startTime": 414
+    },
+    {
+      "title": "First distal screw",
+      "startTime": 480
+    },
+    {
+      "title": "First proximal screw",
+      "startTime": 488
+    },
+    {
+      "title": "Remaining screws",
+      "startTime": 506
+    },
+    {
+      "title": "Final fluoroscopy",
+      "startTime": 548
+    },
+    {
+      "title": "Irrigation and closure",
+      "startTime": 563
+    }
+  ],
+  "proximal-tibia-imn": [
+    {
+      "title": "Positioning",
+      "startTime": 48
+    },
+    {
+      "title": "Planning approach",
+      "startTime": 68
+    },
+    {
+      "title": "Incision",
+      "startTime": 79
+    },
+    {
+      "title": "Divide quad tendon",
+      "startTime": 94
+    },
+    {
+      "title": "Dilate patellofemoral space",
+      "startTime": 105
+    },
+    {
+      "title": "Place guidewire",
+      "startTime": 109
+    },
+    {
+      "title": "Find start point",
+      "startTime": 119
+    },
+    {
+      "title": "Insert cannula",
+      "startTime": 171
+    },
+    {
+      "title": "Entry reamer",
+      "startTime": 189
+    },
+    {
+      "title": "Insert guidewire",
+      "startTime": 203
+    },
+    {
+      "title": "Reduction",
+      "startTime": 212
+    },
+    {
+      "title": "Pass guidewire distally",
+      "startTime": 253
+    },
+    {
+      "title": "Measure",
+      "startTime": 287
+    },
+    {
+      "title": "Sequential reaming",
+      "startTime": 297
+    },
+    {
+      "title": "Place nail",
+      "startTime": 321
+    },
+    {
+      "title": "Remove nail",
+      "startTime": 340
+    },
+    {
+      "title": "Blocking wire",
+      "startTime": 346
+    },
+    {
+      "title": "Repeat reaming",
+      "startTime": 376
+    },
+    {
+      "title": "Place nail",
+      "startTime": 394
+    },
+    {
+      "title": "Proximal interlocks",
+      "startTime": 405
+    },
+    {
+      "title": "Distal interlocks",
+      "startTime": 422
+    },
+    {
+      "title": "Final fluoroscopy",
+      "startTime": 459
+    },
+    {
+      "title": "Irrigation and closure",
+      "startTime": 475
+    }
+  ]
+}

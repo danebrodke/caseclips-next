@@ -9,6 +9,7 @@ import {
 } from "@/lib/data";
 import type { Video } from "@/lib/types";
 import VimeoPlayer from "@/components/VimeoPlayer";
+import MuxPlayer from "@/components/MuxPlayer";
 import LikeButton from "@/components/LikeButton";
 import FilmGallery from "@/components/FilmGallery";
 
@@ -78,7 +79,15 @@ export default async function VideoPage({
   return (
     <div className="max-w-6xl mx-auto">
       {/* Video + Chapters */}
-      {video.vimeoId && <VimeoPlayer vimeoId={video.vimeoId} />}
+      {video.muxPlaybackId ? (
+        <MuxPlayer
+          slug={video.slug}
+          playbackId={video.muxPlaybackId}
+          title={video.title}
+        />
+      ) : video.vimeoId ? (
+        <VimeoPlayer vimeoId={video.vimeoId} />
+      ) : null}
 
       {/* Title */}
       <div className="mt-8 animate-fade-in-up">

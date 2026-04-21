@@ -1,6 +1,7 @@
 import Mux from "@mux/mux-node";
 import { readFileSync, existsSync, statSync, createReadStream } from "fs";
 import { writeFile } from "fs/promises";
+import { Readable, Transform } from "stream";
 import path from "path";
 import { videos } from "../src/lib/data";
 
@@ -65,40 +66,54 @@ function formatBytes(n: number) {
 }
 
 async function uploadFile(url: string, filePath: string, size: number) {
-  const stream = createReadStream(filePath);
+  const source = createReadStream(filePath);
   const started = Date.now();
   let uploaded = 0;
-  let lastReport = 0;
 
-  stream.on("data", (chunk) => {
-    uploaded += chunk.length;
-    const now = Date.now();
-    if (now - lastReport > 2000) {
-      const pct = ((uploaded / size) * 100).toFixed(1);
-      const mbps = ((uploaded * 8) / (now - started) / 1000).toFixed(1);
-      process.stdout.write(
-        `\r    uploading: ${pct}% (${formatBytes(uploaded)}/${formatBytes(size)}) @ ${mbps} Mbps        `
-      );
-      lastReport = now;
-    }
-  });
-
-  const res = await fetch(url, {
-    method: "PUT",
-    // @ts-expect-error Node fetch supports streaming bodies with duplex: 'half'
-    body: stream,
-    duplex: "half",
-    headers: {
-      "Content-Type": "application/octet-stream",
-      "Content-Length": String(size),
+  const counter = new Transform({
+    transform(chunk, _enc, cb) {
+      uploaded += chunk.length;
+      cb(null, chunk);
     },
   });
 
-  process.stdout.write("\r                                                                    \r");
+  source.on("error", (err) => counter.destroy(err));
+  source.pipe(counter);
 
-  if (!res.ok) {
-    throw new Error(`PUT failed: ${res.status} ${res.statusText}`);
+  const reporter = setInterval(() => {
+    const pct = ((uploaded / size) * 100).toFixed(1);
+    const elapsed = Math.max(1, Date.now() - started) / 1000;
+    const mbps = ((uploaded * 8) / elapsed / 1_000_000).toFixed(1);
+    process.stdout.write(
+      `\r    uploading: ${pct}% (${formatBytes(uploaded)}/${formatBytes(size)}) @ ${mbps} Mbps        `
+    );
+  }, 2000);
+
+  try {
+    const webBody = Readable.toWeb(counter) as unknown as ReadableStream<Uint8Array>;
+    const res = await fetch(url, {
+      method: "PUT",
+      body: webBody,
+      // @ts-expect-error duplex required by Node fetch for streaming bodies
+      duplex: "half",
+      headers: {
+        "Content-Type": "application/octet-stream",
+        "Content-Length": String(size),
+      },
+    });
+    if (!res.ok) {
+      throw new Error(`PUT failed: ${res.status} ${res.statusText}`);
+    }
+  } finally {
+    clearInterval(reporter);
+    process.stdout.write(
+      `\r                                                                              \r`
+    );
   }
+
+  const elapsed = (Date.now() - started) / 1000;
+  const mbps = ((size * 8) / elapsed / 1_000_000).toFixed(1);
+  console.log(`    uploaded ${formatBytes(size)} in ${elapsed.toFixed(1)}s @ ${mbps} Mbps`);
 }
 
 async function pollUpload(uploadId: string, timeoutMs = 10 * 60 * 1000): Promise<string> {
@@ -164,10 +179,15 @@ async function processVideo(slug: string, state: State): Promise<UploadRecord> {
     };
     await saveState(state);
 
+    if (!upload.url) throw new Error("Mux did not return an upload URL");
     // Step 2: PUT the file
     await uploadFile(upload.url, filePath, size);
   } else if (!assetId) {
     console.log(`[resume] ${slug} — upload ${uploadId} exists, checking status`);
+  }
+
+  if (!uploadId) {
+    throw new Error(`Invalid state: no uploadId for ${slug}`);
   }
 
   // Step 3: wait for upload → asset_id

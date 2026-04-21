@@ -24,6 +24,7 @@ export interface Video {
   title: string;
   slug: string;
   vimeoId: string;
+  muxPlaybackId?: string;
   thumbnailUrl: string;
   preopImages: string[];
   postopImages: string[];
