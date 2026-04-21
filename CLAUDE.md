@@ -36,7 +36,7 @@ src/
 │   ├── types.ts                     # TypeScript interfaces (Video has vimeoId + optional muxPlaybackId)
 │   ├── data.ts                      # Real content (51 videos, 17 authors, 6 institutions, 8 specialties)
 │   ├── chapters.ts                  # getChapters(slug) reader for chapters.json
-│   └── chapters.json                # 984 chapters across 51 videos, keyed by slug
+│   └── chapters.json                # 982 chapters across 51 videos, keyed by slug
 scripts/
 ├── upload-to-mux.ts                 # Resumable bulk upload; state in downloads/mux-upload-state.json
 ├── apply-mux-ids.ts                 # Patches muxPlaybackId into data.ts from upload state
