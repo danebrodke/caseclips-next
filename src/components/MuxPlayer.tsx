@@ -172,6 +172,8 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
                 "--pip-button": "none",
                 "--playback-rate-button": "inline-flex",
                 "--bottom-playback-rate-button": "inline-flex",
+                "--time-display": "inline-flex",
+                "--bottom-time-display": "inline-flex",
               } as MuxCSSProperties
             }
           />
