@@ -76,22 +76,19 @@ export default function MobileChapterMenu({
   }, [open]);
 
   // Scroll the active row into view inside the list WITHOUT scrolling the
-  // page — scrollIntoView propagates to ancestors, so we set scrollTop
-  // directly on the list container instead.
+  // page. We use offsetTop/offsetHeight (layout geometry) instead of
+  // getBoundingClientRect because the panel's scaleY transition would
+  // otherwise corrupt the measurements on first open after a seek.
   useEffect(() => {
-    if (!open) return;
+    if (!open || active < 0) return;
     const list = listRef.current;
     if (!list) return;
     const row = list.querySelector(
       `[data-chap="${active}"]`
     ) as HTMLElement | null;
     if (!row) return;
-    const listRect = list.getBoundingClientRect();
-    const rowRect = row.getBoundingClientRect();
-    const rowOffsetInList =
-      list.scrollTop + (rowRect.top - listRect.top);
     const target =
-      rowOffsetInList - (list.clientHeight - row.clientHeight) / 2;
+      row.offsetTop - (list.clientHeight - row.offsetHeight) / 2;
     list.scrollTo({
       top: Math.max(0, target),
       behavior: "smooth",
@@ -312,7 +309,11 @@ export default function MobileChapterMenu({
           <div
             ref={listRef}
             className="mobile-chapter-scroll"
-            style={{ overflow: "auto", padding: "4px 6px 8px" }}
+            style={{
+              overflow: "auto",
+              padding: "4px 6px 8px",
+              position: "relative",
+            }}
           >
             {chapters.map((ch, i) => {
               const isActive = i === active;
