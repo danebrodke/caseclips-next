@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  useState,
-  useMemo,
-  useRef,
-  useEffect,
-  useCallback,
-} from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -49,31 +43,6 @@ const miniSearch = new MiniSearch({
 });
 miniSearch.addAll(searchableVideos);
 
-
-function HeartIcon({
-  className,
-  filled,
-}: {
-  className?: string;
-  filled?: boolean;
-}) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 20 20"
-      fill={filled ? "currentColor" : "none"}
-      stroke="currentColor"
-      strokeWidth={filled ? 0 : 1.5}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
 
 function useDropdown() {
   const [open, setOpen] = useState(false);
@@ -203,30 +172,20 @@ function TypeaheadFilter({
   );
 }
 
-function VideoCard({
-  video,
-  likeCount,
-  isLiked,
-  onLike,
-}: {
-  video: Video;
-  likeCount: number;
-  isLiked: boolean;
-  onLike: (id: string) => void;
-}) {
+function VideoCard({ video }: { video: Video }) {
   const videoAuthors = getAuthors(video.authorIds);
   const videoSpecialties = getSpecialties(video.specialtyIds);
 
   return (
     <div className="group">
       <Link href={`/video/${video.slug}`}>
-        <div className="relative aspect-video bg-card-bg rounded-lg overflow-hidden mb-2">
+        <div className="relative aspect-video bg-card-bg rounded-lg overflow-hidden mb-3">
           {video.thumbnailUrl ? (
             <Image
               src={video.thumbnailUrl}
               alt={video.title}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
               sizes="(min-width: 1024px) 25vw, 50vw"
             />
           ) : (
@@ -240,55 +199,32 @@ function VideoCard({
               </svg>
             </div>
           )}
-          {/* Dark overlay on hover */}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
         </div>
       </Link>
-      <div className="flex items-start justify-between gap-1">
-        <div className="min-w-0">
-          <Link href={`/video/${video.slug}`}>
-            <h3 className="font-semibold text-sm leading-snug group-hover:text-accent transition-colors line-clamp-2 text-foreground">
-              {video.title}
-            </h3>
-          </Link>
-          <div className="text-xs text-muted">
-            {videoAuthors.map((author, i) => (
-              <span key={author.id}>
-                {i > 0 && ", "}
-                <Link
-                  href={`/author/${author.slug}`}
-                  className="hover:text-accent transition-colors"
-                >
-                  {author.name}
-                </Link>
-              </span>
-            ))}
+      <div className="min-w-0">
+        {videoSpecialties.length > 0 && (
+          <div className="text-[10px] uppercase tracking-[0.12em] font-medium text-accent/80 mb-1.5">
+            {videoSpecialties.map((s) => s.name).join(" / ")}
           </div>
-          <div className="flex flex-wrap gap-1 mt-1">
-            {videoSpecialties.map((spec) => (
-              <span
-                key={spec.id}
-                className="text-[10px] px-1.5 py-0.5 bg-accent-light text-accent rounded-full font-medium"
+        )}
+        <Link href={`/video/${video.slug}`}>
+          <h3 className="font-serif text-[17px] leading-[1.2] tracking-[-0.01em] text-foreground group-hover:text-accent transition-colors line-clamp-2">
+            {video.title}
+          </h3>
+        </Link>
+        <div className="mt-1.5 text-[12px] text-muted">
+          {videoAuthors.map((author, i) => (
+            <span key={author.id}>
+              {i > 0 && ", "}
+              <Link
+                href={`/author/${author.slug}`}
+                className="hover:text-accent transition-colors"
               >
-                {spec.name}
-              </span>
-            ))}
-          </div>
+                {author.name}
+              </Link>
+            </span>
+          ))}
         </div>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            onLike(video.id);
-          }}
-          className={`shrink-0 flex items-center gap-1 mt-0.5 px-1.5 py-0.5 rounded-full text-xs transition-colors ${
-            isLiked
-              ? "text-rose-400"
-              : "text-muted hover:text-rose-400"
-          }`}
-        >
-          <HeartIcon className="w-3.5 h-3.5" filled={isLiked} />
-          <span>{likeCount}</span>
-        </button>
       </div>
     </div>
   );
@@ -323,65 +259,6 @@ export default function VideoGrid() {
     window.addEventListener("caseclips:reset-filters", handleReset);
     return () => window.removeEventListener("caseclips:reset-filters", handleReset);
   }, []);
-
-  // Likes state
-  const [likeCounts, setLikeCounts] = useState<Record<string, number>>({});
-  const [likedIds, setLikedIds] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    fetch("/api/likes")
-      .then((res) => res.json())
-      .then((data: { counts: Record<string, number>; liked: string[] }) => {
-        setLikeCounts(data.counts);
-        setLikedIds(new Set(data.liked));
-      })
-      .catch(() => {});
-  }, []);
-
-  const handleLike = useCallback(
-    async (videoId: string) => {
-      // Optimistic update
-      const wasLiked = likedIds.has(videoId);
-      const currentCount = likeCounts[videoId] ?? 0;
-      const newCount = wasLiked ? currentCount - 1 : currentCount + 1;
-
-      setLikeCounts((prev) => ({ ...prev, [videoId]: newCount }));
-      setLikedIds((prev) => {
-        const next = new Set(prev);
-        if (wasLiked) next.delete(videoId);
-        else next.add(videoId);
-        return next;
-      });
-
-      try {
-        const res = await fetch("/api/likes", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ videoId }),
-        });
-        if (res.ok) {
-          const data = await res.json();
-          setLikeCounts((prev) => ({ ...prev, [videoId]: data.count }));
-          setLikedIds((prev) => {
-            const next = new Set(prev);
-            if (data.liked) next.add(videoId);
-            else next.delete(videoId);
-            return next;
-          });
-        }
-      } catch {
-        // Revert on failure
-        setLikeCounts((prev) => ({ ...prev, [videoId]: currentCount }));
-        setLikedIds((prev) => {
-          const next = new Set(prev);
-          if (wasLiked) next.add(videoId);
-          else next.delete(videoId);
-          return next;
-        });
-      }
-    },
-    [likeCounts, likedIds]
-  );
 
   function toggleInSet(set: Set<string>, id: string): Set<string> {
     const next = new Set(set);
@@ -516,10 +393,10 @@ export default function VideoGrid() {
           {/* Specialty pills */}
           <button
             onClick={() => setSelectedSpecialties(new Set())}
-            className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
+            className={`px-2.5 py-1 text-xs font-medium rounded-full border transition-colors ${
               selectedSpecialties.size === 0
-                ? "bg-accent text-white"
-                : "bg-card-bg border border-card-border text-muted hover:border-accent/40"
+                ? "bg-accent border-accent text-white"
+                : "bg-card-bg border-card-border text-muted hover:border-accent/40"
             }`}
           >
             All
@@ -530,10 +407,10 @@ export default function VideoGrid() {
               onClick={() =>
                 setSelectedSpecialties((prev) => toggleInSet(prev, spec.id))
               }
-              className={`px-2.5 py-1 text-xs font-medium rounded-full transition-colors ${
+              className={`px-2.5 py-1 text-xs font-medium rounded-full border transition-colors ${
                 selectedSpecialties.has(spec.id)
-                  ? "bg-accent text-white"
-                  : "bg-card-bg border border-card-border text-muted hover:border-accent/40"
+                  ? "bg-accent border-accent text-white"
+                  : "bg-card-bg border-card-border text-muted hover:border-accent/40"
               }`}
             >
               {spec.name}
@@ -587,13 +464,7 @@ export default function VideoGrid() {
       {/* Video grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 sm:gap-x-5 sm:gap-y-7">
         {visibleVideos.map((video) => (
-          <VideoCard
-            key={video.id}
-            video={video}
-            likeCount={likeCounts[video.id] ?? 0}
-            isLiked={likedIds.has(video.id)}
-            onLike={handleLike}
-          />
+          <VideoCard key={video.id} video={video} />
         ))}
       </div>
 

@@ -79,13 +79,13 @@ export default async function AuthorPage({
               href={`/video/${video.slug}`}
               className="group"
             >
-              <div className="relative aspect-video bg-card-bg rounded-lg overflow-hidden mb-2">
+              <div className="relative aspect-video bg-card-bg rounded-lg overflow-hidden mb-3">
                 {video.thumbnailUrl ? (
                   <Image
                     src={video.thumbnailUrl}
                     alt={video.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                     sizes="(min-width: 1024px) 33vw, 50vw"
                   />
                 ) : (
@@ -99,21 +99,15 @@ export default async function AuthorPage({
                     </svg>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>
-              <h3 className="font-semibold text-sm leading-snug group-hover:text-accent transition-colors line-clamp-2">
+              {videoSpecialties.length > 0 && (
+                <div className="text-[10px] uppercase tracking-[0.12em] font-medium text-accent/80 mb-1.5">
+                  {videoSpecialties.map((s) => s.name).join(" / ")}
+                </div>
+              )}
+              <h3 className="font-serif text-[17px] leading-[1.2] tracking-[-0.01em] text-foreground group-hover:text-accent transition-colors line-clamp-2">
                 {video.title}
               </h3>
-              <div className="flex flex-wrap gap-1 mt-1">
-                {videoSpecialties.map((spec) => (
-                  <span
-                    key={spec.id}
-                    className="text-[10px] px-1.5 py-0.5 bg-accent-light text-accent rounded-full font-medium"
-                  >
-                    {spec.name}
-                  </span>
-                ))}
-              </div>
             </Link>
           );
         })}

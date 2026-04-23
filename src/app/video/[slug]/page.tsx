@@ -10,7 +10,6 @@ import {
 import type { Video } from "@/lib/types";
 import VimeoPlayer from "@/components/VimeoPlayer";
 import MuxPlayer from "@/components/MuxPlayer";
-import LikeButton from "@/components/LikeButton";
 import FilmGallery from "@/components/FilmGallery";
 
 export function generateStaticParams() {
@@ -149,8 +148,6 @@ export default async function VideoPage({
           <span className="text-sm text-muted">
             {formatDate(video.publishedAt)}
           </span>
-          <span className="text-muted/30 select-none">&middot;</span>
-          <LikeButton videoId={video.id} />
           {videoSpecialties.map((spec) => (
             <Link
               key={spec.id}

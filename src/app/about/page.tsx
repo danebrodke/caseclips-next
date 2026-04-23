@@ -44,6 +44,11 @@ export default function AboutPage() {
           if you would like to contribute, please contact us at{" "}
           <a href="mailto:editor@caseclips.com" className="text-accent hover:text-accent-hover">editor@caseclips.com</a>.
         </p>
+        <p className="italic font-serif text-[1rem] text-muted leading-relaxed !mt-10">
+          Disclaimer: This website is for medical professionals for educational
+          purposes. It is not intended to present the only, or necessarily best,
+          methods for the medical situations discussed.
+        </p>
       </div>
 
       <div className="border-t border-card-border pt-8">
@@ -94,13 +99,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="border-t border-card-border mt-8 pt-6">
-        <p className="text-xs text-muted leading-relaxed italic font-serif text-sm">
-          Disclaimer: This website is for medical professionals for educational
-          purposes. It is not intended to present the only, or necessarily best,
-          methods for the medical situations discussed.
-        </p>
-      </div>
     </div>
   );
 }
