@@ -135,7 +135,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
       {/* Video */}
       <div
         ref={videoWrapperRef}
-        className={`${
+        className={`max-lg:relative max-lg:z-[22] ${
           isReady && chapters.length > 0
             ? "lg:flex-1 lg:min-w-0"
             : !isReady
