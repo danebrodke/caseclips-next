@@ -7,6 +7,7 @@ import type {
   MuxCSSProperties,
 } from "@mux/mux-player-react";
 import { getChapters } from "@/lib/chapters";
+import MobileChapterMenu from "./MobileChapterMenu";
 
 function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);
@@ -129,6 +130,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
   );
 
   return (
+    <>
     <div className="flex flex-col lg:flex-row gap-4">
       {/* Video */}
       <div
@@ -225,5 +227,13 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
         </div>
       )}
     </div>
+    {isReady && chapters.length > 0 && (
+      <MobileChapterMenu
+        chapters={chapters}
+        activeChapter={activeChapter}
+        onSeek={seekToChapter}
+      />
+    )}
+    </>
   );
 }
