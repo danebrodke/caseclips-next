@@ -20,14 +20,15 @@ src/
 ├── app/
 │   ├── layout.tsx                   # Root layout with logo header/nav
 │   ├── page.tsx                     # Home - video grid with filters
-│   ├── globals.css                  # Tailwind + dark mode CSS variables + lightbox + skeleton + .video-frame
+│   ├── globals.css                  # Tailwind + dark mode CSS variables + lightbox + skeleton + .video-frame + .mobile-chapter-scroll
 │   ├── about/page.tsx               # About page with contributor grid
 │   ├── video/[slug]/page.tsx        # Video detail (MuxPlayer, fallback VimeoPlayer, chapters, films, author)
 │   ├── author/[slug]/page.tsx       # Author profile + video grid
 │   └── accent-preview/page.tsx      # Internal page to preview candidate accent colors in context
 ├── components/
 │   ├── VideoGrid.tsx                # Search, specialty pills, author/institution typeahead, grid
-│   ├── MuxPlayer.tsx                # Mux player with chapter sidebar, skeleton, auto-scroll, custom poster
+│   ├── MuxPlayer.tsx                # Mux player + desktop chapter sidebar; owns hasStarted/activeChapter state
+│   ├── MobileChapterMenu.tsx        # Mobile-only chapter dropdown (pill → floating panel), lg:hidden
 │   ├── VimeoPlayer.tsx              # Legacy fallback player (kept until production verified)
 │   ├── LikeButton.tsx               # Like toggle with Redis-backed persistence
 │   ├── Lightbox.tsx                 # Fullscreen image lightbox overlay (Escape to close)
@@ -70,7 +71,8 @@ public/
 - Specialty filters: clickable pills. Author/Institution: typeahead dropdowns
 - Video grid: 4 cols desktop, 2 cols mobile
 - Likes: Upstash Redis with anonymous cookie-based tracking, like button inline with video title
-- Chapters: sidebar on desktop (height matched to video via ResizeObserver), horizontal scroll on mobile, auto-scrolls to active chapter
+- Chapters (desktop, `lg+`): sidebar beside the video, height matched via ResizeObserver, auto-scrolls to active chapter
+- Chapters (mobile, `< lg`): `MobileChapterMenu` pill under the video expands into a floating dropdown (`#141418` panel, `#9a93ff` active accent). Pre-play pill shows a neutral "Chapters · N" label with no active row; first play flips it to `NN / TOT  Current chapter title`. Video wrapper is raised to `z-22` on mobile so the open-state scrim dims title/imaging/related but never the video. Panel auto-sizes to remaining viewport height; active chapter auto-centers on open or when the user seeks
 - Loading: shimmer skeleton for video and chapters while the player loads
 - Lightbox: pre/post-op films open in fullscreen overlay on click
 - Scrollbar: `overflow-y: scroll` on html to prevent layout shift during filtering
