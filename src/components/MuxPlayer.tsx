@@ -29,6 +29,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
   const videoWrapperRef = useRef<HTMLDivElement>(null);
   const [activeChapter, setActiveChapter] = useState<number>(-1);
   const [isReady, setIsReady] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
   const [videoHeight, setVideoHeight] = useState<number | null>(null);
 
   // Match chapter-panel height to video container on desktop
@@ -167,6 +168,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
             poster={`/posters/${slug}.jpg`}
             onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
+            onPlay={() => setHasStarted(true)}
             style={
               {
                 backgroundColor: "#000",
@@ -231,6 +233,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
       <MobileChapterMenu
         chapters={chapters}
         activeChapter={activeChapter}
+        hasStarted={hasStarted}
         onSeek={seekToChapter}
       />
     )}

@@ -32,12 +32,14 @@ function formatTime(seconds: number): string {
 interface Props {
   chapters: Chapter[];
   activeChapter: number;
+  hasStarted: boolean;
   onSeek: (seconds: number) => void;
 }
 
 export default function MobileChapterMenu({
   chapters,
   activeChapter,
+  hasStarted,
   onSeek,
 }: Props) {
   const [open, setOpen] = useState(false);
@@ -50,8 +52,10 @@ export default function MobileChapterMenu({
   const wrapperRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
-  const active = Math.max(0, activeChapter);
-  const current = chapters[active];
+  // -1 means "no active chapter" (pre-playback). All row comparisons against
+  // -1 are false, so no row highlights and the auto-scroll selector no-ops.
+  const active = hasStarted ? Math.max(0, activeChapter) : -1;
+  const currentStarted = chapters[Math.max(0, activeChapter)];
 
   // Fit the panel within available viewport space below the pill so the
   // sheet never extends off-screen — the user scrolls inside the list only.
@@ -103,7 +107,7 @@ export default function MobileChapterMenu({
     return () => window.removeEventListener("keydown", handler);
   }, [open]);
 
-  if (chapters.length === 0 || !current) return null;
+  if (chapters.length === 0) return null;
 
   return (
     <>
@@ -139,63 +143,140 @@ export default function MobileChapterMenu({
             transition: "border-color 0.2s",
           }}
         >
-          <div
-            style={{
-              fontSize: 10,
-              fontWeight: 600,
-              letterSpacing: 1,
-              color: "rgba(235,235,245,0.5)",
-              background: "rgba(255,255,255,0.05)",
-              padding: "3px 7px",
-              borderRadius: 4,
-              fontVariantNumeric: "tabular-nums",
-            }}
-          >
-            {String(active + 1).padStart(2, "0")} / {chapters.length}
-          </div>
-          <div
-            style={{
-              flex: 1,
-              minWidth: 0,
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
-              fontSize: 14,
-            }}
-          >
-            {current.title}
-          </div>
-          <span
-            style={{
-              fontSize: 12,
-              color: "rgba(235,235,245,0.5)",
-              display: "flex",
-              alignItems: "center",
-              gap: 6,
-            }}
-          >
-            Chapters
-            <span
-              style={{
-                transform: open ? "rotate(180deg)" : "rotate(0deg)",
-                transition: "transform 0.25s",
-                display: "inline-flex",
-              }}
-            >
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+          {hasStarted && currentStarted ? (
+            <>
+              <div
+                style={{
+                  fontSize: 10,
+                  fontWeight: 600,
+                  letterSpacing: 1,
+                  color: "rgba(235,235,245,0.5)",
+                  background: "rgba(255,255,255,0.05)",
+                  padding: "3px 7px",
+                  borderRadius: 4,
+                  fontVariantNumeric: "tabular-nums",
+                }}
               >
-                <path d="M2 4l3 3 3-3" />
-              </svg>
-            </span>
-          </span>
+                {String(Math.max(0, activeChapter) + 1).padStart(2, "0")} /{" "}
+                {chapters.length}
+              </div>
+              <div
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  fontSize: 14,
+                }}
+              >
+                {currentStarted.title}
+              </div>
+              <span
+                style={{
+                  fontSize: 12,
+                  color: "rgba(235,235,245,0.5)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                }}
+              >
+                Chapters
+                <span
+                  style={{
+                    transform: open ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "transform 0.25s",
+                    display: "inline-flex",
+                  }}
+                >
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M2 4l3 3 3-3" />
+                  </svg>
+                </span>
+              </span>
+            </>
+          ) : (
+            <>
+              <span
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                }}
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  stroke="rgba(235,235,245,0.55)"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                >
+                  <path d="M3 4h9M3 7.5h9M3 11h6" />
+                </svg>
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 8,
+                    minWidth: 0,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: 14,
+                      color: "rgba(235,235,245,0.85)",
+                    }}
+                  >
+                    Chapters
+                  </span>
+                  <span
+                    style={{
+                      fontSize: 12,
+                      color: "rgba(235,235,245,0.4)",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    · {chapters.length}
+                  </span>
+                </span>
+              </span>
+              <span
+                style={{
+                  color: "rgba(235,235,245,0.55)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  transform: open ? "rotate(180deg)" : "rotate(0deg)",
+                  transition: "transform 0.25s",
+                }}
+              >
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M2 4l3 3 3-3" />
+                </svg>
+              </span>
+            </>
+          )}
         </button>
 
         <div
