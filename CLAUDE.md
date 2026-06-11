@@ -9,7 +9,7 @@ Surgical case video platform for orthopaedic surgery. Migrated from Ghost CMS to
 - **Search**: MiniSearch for client-side BM25-ranked search with prefix and fuzzy matching
 - **Video**: Mux (via @mux/mux-player-react) — 51 assets migrated from Vimeo. Vimeo fallback still wired in video page as a safety net for any entry missing `muxPlaybackId`.
 - **Chapters**: Bundled in `src/lib/chapters.json` (slug-keyed), read via `src/lib/chapters.ts`. Originally exported from Vimeo's chapters API.
-- **Likes**: Upstash Redis backend with anonymous cookie-based user tracking
+- **Likes**: Upstash Redis backend with anonymous cookie-based user tracking. UI is currently removed from the site (heart/count not rendered anywhere); `/api/likes` routes and `LikeButton.tsx` are retained so the feature can be restored by re-importing the component.
 - **Deployment**: Vercel (hosting + serverless API routes), Upstash Redis (likes storage), Mux (video ingest + delivery)
 - **Package manager**: npm
 
@@ -30,7 +30,7 @@ src/
 │   ├── MuxPlayer.tsx                # Mux player + desktop chapter sidebar; owns hasStarted/activeChapter state
 │   ├── MobileChapterMenu.tsx        # Mobile-only chapter dropdown (pill → floating panel), lg:hidden
 │   ├── VimeoPlayer.tsx              # Legacy fallback player (kept until production verified)
-│   ├── LikeButton.tsx               # Like toggle with Redis-backed persistence
+│   ├── LikeButton.tsx               # Like toggle with Redis-backed persistence (retained but not rendered)
 │   ├── Lightbox.tsx                 # Fullscreen image lightbox overlay (Escape to close)
 │   └── FilmGallery.tsx              # Pre/post-op film grid with lightbox integration
 ├── lib/
@@ -70,7 +70,7 @@ public/
 - Logo SVG in header with tagline
 - Specialty filters: clickable pills. Author/Institution: typeahead dropdowns
 - Video grid: 4 cols desktop, 2 cols mobile
-- Likes: Upstash Redis with anonymous cookie-based tracking, like button inline with video title
+- Card style (home + author pages): editorial layout — accent-colored uppercase specialty kicker, Newsreader serif title (`text-[17px]`, `tracking-[-0.01em]`), muted sans author line. No pill chips on the card itself. Same recipe in `VideoGrid.tsx` `VideoCard` and the author-page grid in `src/app/author/[slug]/page.tsx`. `src/app/card-preview/page.tsx` is an internal page with the other card directions that were considered
 - Chapters (desktop, `lg+`): sidebar beside the video, height matched via ResizeObserver, auto-scrolls to active chapter
 - Chapters (mobile, `< lg`): `MobileChapterMenu` pill under the video expands into a floating dropdown (`#141418` panel, `#9a93ff` active accent). Pre-play pill shows a neutral "Chapters · N" label with no active row; first play flips it to `NN / TOT  Current chapter title`. Video wrapper is raised to `z-22` on mobile so the open-state scrim dims title/imaging/related but never the video. Panel auto-sizes to remaining viewport height; active chapter auto-centers on open or when the user seeks
 - Loading: shimmer skeleton for video and chapters while the player loads
