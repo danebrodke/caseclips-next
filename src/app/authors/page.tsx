@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   authors,
+  institutions,
   getVideosByAuthor,
   getAuthorInstitution,
 } from "@/lib/data";
@@ -13,8 +14,12 @@ export const metadata = {
 
 export default function AuthorsPage() {
   return (
-    <div className="max-w-6xl mx-auto">
-      <h1 className="text-3xl font-serif mb-8">Authors</h1>
+    <div className="max-w-6xl mx-auto animate-fade-in-up">
+      <h1 className="text-3xl font-serif">Authors</h1>
+      <p className="mt-1.5 mb-8 text-sm text-muted">
+        {authors.length} contributing surgeons across {institutions.length}{" "}
+        institutions
+      </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
         {authors.map((author) => {
@@ -26,7 +31,7 @@ export default function AuthorsPage() {
             <Link
               key={author.id}
               href={`/author/${author.slug}`}
-              className="group block rounded-xl bg-card-bg border border-card-border hover:border-accent/30 transition-colors"
+              className="group block rounded-xl bg-card-bg border border-card-border hover:border-accent/30 hover:shadow-lg hover:shadow-black/25 transition-all duration-300"
             >
               {/* Thumbnail banner */}
               <div className="relative">
@@ -35,14 +40,14 @@ export default function AuthorsPage() {
                     {recentVideos.map((video) => (
                       <div
                         key={video.id}
-                        className="relative flex-1 bg-surface"
+                        className="relative flex-1 bg-surface overflow-hidden"
                       >
                         {video.thumbnailUrl ? (
                           <Image
                             src={video.thumbnailUrl}
                             alt={video.title}
                             fill
-                            className="object-cover"
+                            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                             sizes="(min-width: 1024px) 15vw, 25vw"
                           />
                         ) : (

@@ -67,8 +67,8 @@ export default async function AuthorPage({
       <div className="border-t border-card-border my-6" />
 
       {/* Videos */}
-      <h2 className="text-sm font-semibold uppercase tracking-wider text-muted mb-4">
-        Videos ({authorVideos.length})
+      <h2 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted/50 mb-4">
+        Videos &middot; {authorVideos.length}
       </h2>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         {authorVideos.map((video) => {
@@ -79,7 +79,7 @@ export default async function AuthorPage({
               href={`/video/${video.slug}`}
               className="group"
             >
-              <div className="relative aspect-video bg-card-bg rounded-lg overflow-hidden mb-3">
+              <div className="relative aspect-video bg-card-bg rounded-lg overflow-hidden mb-3 ring-1 ring-white/[0.06] group-hover:ring-white/[0.14] transition-shadow duration-300">
                 {video.thumbnailUrl ? (
                   <Image
                     src={video.thumbnailUrl}

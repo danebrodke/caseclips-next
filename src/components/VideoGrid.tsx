@@ -172,14 +172,17 @@ function TypeaheadFilter({
   );
 }
 
-function VideoCard({ video }: { video: Video }) {
+function VideoCard({ video, index }: { video: Video; index: number }) {
   const videoAuthors = getAuthors(video.authorIds);
   const videoSpecialties = getSpecialties(video.specialtyIds);
 
   return (
-    <div className="group">
+    <div
+      className="group animate-fade-in-up"
+      style={{ animationDelay: `${Math.min(index, 11) * 45}ms` }}
+    >
       <Link href={`/video/${video.slug}`}>
-        <div className="relative aspect-video bg-card-bg rounded-lg overflow-hidden mb-3">
+        <div className="relative aspect-video bg-card-bg rounded-lg overflow-hidden mb-3 ring-1 ring-white/[0.06] group-hover:ring-white/[0.14] transition-shadow duration-300">
           {video.thumbnailUrl ? (
             <Image
               src={video.thumbnailUrl}
@@ -247,6 +250,29 @@ export default function VideoGrid() {
   const [selectedInstitutions, setSelectedInstitutions] = useState<Set<string>>(
     new Set()
   );
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  // "/" focuses search from anywhere; Escape blurs it
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        const target = e.target as HTMLElement;
+        if (
+          target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable
+        )
+          return;
+        e.preventDefault();
+        searchRef.current?.focus();
+      }
+      if (e.key === "Escape" && document.activeElement === searchRef.current) {
+        searchRef.current?.blur();
+      }
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
 
   // Listen for logo-click reset
   useEffect(() => {
@@ -360,12 +386,18 @@ export default function VideoGrid() {
             />
           </svg>
           <input
+            ref={searchRef}
             type="text"
             placeholder="Search videos, authors, specialties..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-10 py-2.5 text-base sm:text-sm border border-card-border rounded-lg bg-card-bg text-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 transition-colors placeholder:text-muted"
           />
+          {!searchQuery && (
+            <kbd className="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:flex items-center justify-center w-5 h-5 text-[11px] text-muted/70 border border-card-border rounded bg-surface pointer-events-none">
+              /
+            </kbd>
+          )}
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
@@ -454,7 +486,7 @@ export default function VideoGrid() {
             </>
           )}
 
-          <span className="text-xs text-muted ml-auto">
+          <span className="text-xs text-muted ml-auto tabular-nums">
             {filteredVideos.length} video
             {filteredVideos.length !== 1 && "s"}
           </span>
@@ -463,8 +495,8 @@ export default function VideoGrid() {
 
       {/* Video grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 sm:gap-x-5 sm:gap-y-7">
-        {visibleVideos.map((video) => (
-          <VideoCard key={video.id} video={video} />
+        {visibleVideos.map((video, i) => (
+          <VideoCard key={video.id} video={video} index={i} />
         ))}
       </div>
 

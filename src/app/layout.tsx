@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
-import Link from "next/link";
 import LogoLink from "@/components/LogoLink";
+import NavLinks from "@/components/NavLinks";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -29,37 +29,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${newsreader.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${newsreader.variable} antialiased min-h-screen flex flex-col`}
+      >
         <header className="border-b border-card-border bg-surface/80 backdrop-blur-md sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-14">
               <LogoLink />
-              <nav className="flex items-center gap-5 text-sm font-medium text-muted">
-                <Link
-                  href="/"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Videos
-                </Link>
-                <Link
-                  href="/authors"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Authors
-                </Link>
-                <Link
-                  href="/about"
-                  className="hover:text-foreground transition-colors"
-                >
-                  About
-                </Link>
-              </nav>
+              <NavLinks />
             </div>
           </div>
         </header>
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1">
           {children}
         </main>
+        <footer className="border-t border-card-border mt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+            <p className="text-xs text-muted/60 leading-relaxed max-w-2xl">
+              For medical professionals, for educational purposes. Content is
+              not intended to present the only, or necessarily best, methods for
+              the medical situations discussed.
+            </p>
+            <p className="text-xs text-muted/60 whitespace-nowrap">
+              &copy; {new Date().getFullYear()} Caseclips
+            </p>
+          </div>
+        </footer>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback, useMemo } from "react";
+import Image from "next/image";
 import MuxPlayerReact from "@mux/mux-player-react";
 import type {
   MuxPlayerRefAttributes,
@@ -28,7 +29,6 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
   const chapterListRef = useRef<HTMLDivElement>(null);
   const videoWrapperRef = useRef<HTMLDivElement>(null);
   const [activeChapter, setActiveChapter] = useState<number>(-1);
-  const [isReady, setIsReady] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const [videoHeight, setVideoHeight] = useState<number | null>(null);
 
@@ -58,10 +58,6 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
     }
     setActiveChapter(current);
   }, [chapters]);
-
-  const handleLoadedMetadata = useCallback(() => {
-    setIsReady(true);
-  }, []);
 
   // Auto-scroll chapter list to active chapter
   useEffect(() => {
@@ -102,76 +98,43 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
     void el.play();
   }, []);
 
-  const chapterSkeleton = (
-    <div className="max-lg:hidden lg:w-72 shrink-0">
-      <div className="skeleton h-3 w-16 rounded mb-3 ml-3" />
-      <div className="flex flex-col gap-0.5">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div
-            key={i}
-            className="flex items-start gap-3 pl-4 pr-3 py-2.5 rounded-lg"
-          >
-            <div className="skeleton h-3.5 w-8 rounded mt-[3px] shrink-0" />
-            <div className="flex-1 flex flex-col gap-1.5">
-              <div
-                className="skeleton h-3.5 rounded"
-                style={{ width: `${65 + ((i * 17) % 30)}%` }}
-              />
-              {i % 3 !== 2 && (
-                <div
-                  className="skeleton h-3.5 rounded"
-                  style={{ width: `${40 + ((i * 13) % 25)}%` }}
-                />
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  const hasChapters = chapters.length > 0;
 
   return (
     <>
-    <div className="flex flex-col lg:flex-row gap-4">
+    <div className="flex flex-col lg:flex-row gap-4 animate-fade-in-up">
       {/* Video */}
       <div
         ref={videoWrapperRef}
         className={`max-lg:relative max-lg:z-[22] ${
-          isReady && chapters.length > 0
-            ? "lg:flex-1 lg:min-w-0"
-            : !isReady
-            ? "lg:flex-1 lg:min-w-0"
-            : "w-full"
+          hasChapters ? "lg:flex-1 lg:min-w-0" : "w-full"
         }`}
       >
-        {!isReady && (
-          <div className="skeleton aspect-video rounded-xl flex items-center justify-center">
-            <div className="flex flex-col items-center gap-2">
-              <svg
-                className="w-12 h-12 text-muted/30 animate-pulse"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              <span className="text-xs text-muted/50">Loading video...</span>
-            </div>
-          </div>
-        )}
-        <div className={`video-frame ${!isReady ? "hidden" : ""}`}>
+        <div className="video-frame group">
+          {/* Static poster paints instantly while the Mux web component
+              upgrades and cues playback metadata in the background. */}
+          <Image
+            src={`/posters/${slug}.jpg`}
+            alt={title ?? ""}
+            fill
+            priority
+            sizes="(min-width: 1024px) 70vw, 100vw"
+            className="object-cover"
+          />
           <MuxPlayerReact
             ref={playerRef}
             playbackId={playbackId}
             metadataVideoTitle={title}
             streamType="on-demand"
+            preload="metadata"
             accentColor="#6366f1"
             poster={`/posters/${slug}.jpg`}
-            onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
             onPlay={() => setHasStarted(true)}
             style={
               {
                 backgroundColor: "#000",
+                "--center-play-button": "none",
                 "--airplay-button": "none",
                 "--pip-button": "none",
                 "--playback-rate-button": "inline-flex",
@@ -181,12 +144,31 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
               } as MuxCSSProperties
             }
           />
+          {/* Our own play affordance — renders with the poster (no flicker),
+              pointer-events-none so the click falls through to the player,
+              and fades out once playback begins. */}
+          <div
+            className={`pointer-events-none absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-300 ${
+              hasStarted ? "opacity-0" : "opacity-100"
+            }`}
+          >
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.06] backdrop-blur-md ring-1 ring-white/20 shadow-[0_2px_16px_rgba(0,0,0,0.35)] transition-all duration-500 ease-out group-hover:scale-105 group-hover:bg-white/[0.1] group-hover:ring-accent/50 group-hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.4)]">
+              {/* Centroid-centered triangle: vertices (9,6)(9,18)(18,12) put
+                  the centroid at (12,12) so it reads as optically centered. */}
+              <svg
+                className="w-[1.6rem] h-[1.6rem] text-white/95"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M9 6v12l9-6z" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Chapter markers sidebar */}
-      {!isReady && chapterSkeleton}
-      {isReady && chapters.length > 0 && (
+      {hasChapters && (
         <div className="max-lg:hidden lg:w-72 shrink-0">
           <h3 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted/50 mb-3 px-3">
             Chapters
@@ -229,7 +211,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
         </div>
       )}
     </div>
-    {isReady && chapters.length > 0 && (
+    {hasChapters && (
       <MobileChapterMenu
         chapters={chapters}
         activeChapter={activeChapter}

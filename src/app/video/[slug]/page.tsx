@@ -90,7 +90,7 @@ export default async function VideoPage({
 
       {/* Title */}
       <div className="mt-8 animate-fade-in-up">
-        <h1 className="font-serif text-[1.7rem] sm:text-[2.25rem] font-normal tracking-[-0.015em] leading-[1.2] text-white">
+        <h1 className="font-serif text-[1.7rem] sm:text-[2.25rem] font-normal tracking-[-0.015em] leading-[1.2] text-white text-balance">
           {video.title}
         </h1>
 

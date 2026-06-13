@@ -18,15 +18,17 @@ Surgical case video platform for orthopaedic surgery. Migrated from Ghost CMS to
 ```
 src/
 ├── app/
-│   ├── layout.tsx                   # Root layout with logo header/nav
+│   ├── layout.tsx                   # Root layout with logo header/nav + site footer
 │   ├── page.tsx                     # Home - video grid with filters
-│   ├── globals.css                  # Tailwind + dark mode CSS variables + lightbox + skeleton + .video-frame + .mobile-chapter-scroll
+│   ├── not-found.tsx                # Custom 404 page
+│   ├── globals.css                  # Tailwind + dark mode CSS variables + atmosphere (glow/grain) + lightbox + skeleton + .video-frame + .mobile-chapter-scroll
 │   ├── about/page.tsx               # About page with contributor grid
 │   ├── video/[slug]/page.tsx        # Video detail (MuxPlayer, fallback VimeoPlayer, chapters, films, author)
 │   ├── author/[slug]/page.tsx       # Author profile + video grid
 │   └── accent-preview/page.tsx      # Internal page to preview candidate accent colors in context
 ├── components/
-│   ├── VideoGrid.tsx                # Search, specialty pills, author/institution typeahead, grid
+│   ├── VideoGrid.tsx                # Search ("/" shortcut), specialty pills, author/institution typeahead, grid
+│   ├── NavLinks.tsx                 # Header nav with active-route pill highlighting
 │   ├── MuxPlayer.tsx                # Mux player + desktop chapter sidebar; owns hasStarted/activeChapter state
 │   ├── MobileChapterMenu.tsx        # Mobile-only chapter dropdown (pill → floating panel), lg:hidden
 │   ├── VimeoPlayer.tsx              # Legacy fallback player (kept until production verified)
@@ -67,9 +69,13 @@ public/
 ## Design
 
 - Dark mode (#0f0f0f bg, indigo accent #6366f1, muted #9ca3af)
-- Logo SVG in header with tagline
+- Atmosphere: `body::before` adds a faint indigo radial glow below the header; `body::after` adds a ~2% film-grain SVG noise overlay (both fixed, pointer-events none, in globals.css). Accent-tinted `::selection` and `:focus-visible` outline
+- Logo SVG in header with tagline; nav links (`NavLinks.tsx`) get a `bg-white/[0.06]` pill on the active route (/video/* maps to Videos, /author* to Authors)
+- Footer in layout.tsx: logo + tagline, nav/contact links, disclaimer + copyright. Body is `min-h-screen flex flex-col` with `flex-1` main so it pins to the bottom on short pages
+- Search: "/" focuses the home search from anywhere (kbd hint shown in the input); Escape blurs
+- Section headers unified across pages: `text-[11px] font-semibold uppercase tracking-[0.15em] text-muted/50` (Imaging, Related, Videos · N, Contributors · N)
 - Specialty filters: clickable pills. Author/Institution: typeahead dropdowns
-- Video grid: 4 cols desktop, 2 cols mobile
+- Video grid: 4 cols desktop, 2 cols mobile; cards stagger in via animate-fade-in-up (45ms steps, capped at index 11). Thumbnails carry a `ring-1 ring-white/[0.06]` hairline that brightens on hover, plus a small play chip fading in bottom-right
 - Card style (home + author pages): editorial layout — accent-colored uppercase specialty kicker, Newsreader serif title (`text-[17px]`, `tracking-[-0.01em]`), muted sans author line. No pill chips on the card itself. Same recipe in `VideoGrid.tsx` `VideoCard` and the author-page grid in `src/app/author/[slug]/page.tsx`. `src/app/card-preview/page.tsx` is an internal page with the other card directions that were considered
 - Chapters (desktop, `lg+`): sidebar beside the video, height matched via ResizeObserver, auto-scrolls to active chapter
 - Chapters (mobile, `< lg`): `MobileChapterMenu` pill under the video expands into a floating dropdown (`#141418` panel, `#9a93ff` active accent). Pre-play pill shows a neutral "Chapters · N" label with no active row; first play flips it to `NN / TOT  Current chapter title`. Video wrapper is raised to `z-22` on mobile so the open-state scrim dims title/imaging/related but never the video. Panel auto-sizes to remaining viewport height; active chapter auto-centers on open or when the user seeks

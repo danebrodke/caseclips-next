@@ -9,7 +9,7 @@ export default function AboutPage() {
   );
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto animate-fade-in-up">
       <h1 className="text-3xl font-serif mb-6">About</h1>
 
       <div className="max-w-none text-foreground/85 space-y-5 mb-10 font-sans text-[1.05rem] leading-[1.8] tracking-[-0.01em] font-[350]">
@@ -52,8 +52,8 @@ export default function AboutPage() {
       </div>
 
       <div className="border-t border-card-border pt-8">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-muted mb-5">
-          Contributors
+        <h2 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted/50 mb-5">
+          Contributors &middot; {activeAuthors.length}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {activeAuthors.map((author) => {
@@ -63,9 +63,9 @@ export default function AboutPage() {
               <Link
                 key={author.id}
                 href={`/author/${author.slug}`}
-                className="flex items-center gap-3 p-3 rounded-lg bg-card-bg border border-card-border hover:border-accent/40 transition-colors"
+                className="flex items-center gap-3 p-3 rounded-lg bg-card-bg border border-card-border hover:border-accent/40 hover:bg-surface-elevated transition-colors duration-200"
               >
-                <div className="w-10 h-10 rounded-full bg-surface shrink-0 overflow-hidden">
+                <div className="w-10 h-10 rounded-full bg-surface shrink-0 overflow-hidden ring-1 ring-white/[0.08]">
                   {author.photoUrl ? (
                     <Image
                       src={author.photoUrl}
