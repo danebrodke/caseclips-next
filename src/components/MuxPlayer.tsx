@@ -134,7 +134,11 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
             style={
               {
                 backgroundColor: "#000",
-                "--center-play-button": "none",
+                // Hide Mux's center button only before the first play, where our
+                // own affordance lives (and where the load flicker happened).
+                // Once playback starts, restore it so native play/pause works
+                // on mobile and desktop.
+                "--center-play-button": hasStarted ? undefined : "none",
                 "--airplay-button": "none",
                 "--pip-button": "none",
                 "--playback-rate-button": "inline-flex",
