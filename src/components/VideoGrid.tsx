@@ -449,29 +449,30 @@ export default function VideoGrid() {
             </button>
           ))}
 
-          <div className="w-px h-5 bg-card-border mx-1 hidden sm:block" />
-
-          {/* Typeahead filters */}
-          <TypeaheadFilter
-            label="Author"
-            items={authors}
-            selected={selectedAuthors}
-            onToggle={(id) =>
-              setSelectedAuthors((prev) => toggleInSet(prev, id))
-            }
-          />
-          <TypeaheadFilter
-            label="Institution"
-            items={institutions}
-            selected={selectedInstitutions}
-            onToggle={(id) =>
-              setSelectedInstitutions((prev) => toggleInSet(prev, id))
-            }
-          />
+          {/* Typeahead filters — desktop only; mobile keeps just the pills */}
+          <div className="hidden sm:flex items-center gap-2">
+            <div className="w-px h-5 bg-card-border mx-1" />
+            <TypeaheadFilter
+              label="Author"
+              items={authors}
+              selected={selectedAuthors}
+              onToggle={(id) =>
+                setSelectedAuthors((prev) => toggleInSet(prev, id))
+              }
+            />
+            <TypeaheadFilter
+              label="Institution"
+              items={institutions}
+              selected={selectedInstitutions}
+              onToggle={(id) =>
+                setSelectedInstitutions((prev) => toggleInSet(prev, id))
+              }
+            />
+          </div>
 
           {hasFilters && (
-            <>
-              <div className="w-px h-5 bg-card-border mx-1 hidden sm:block" />
+            <div className="hidden sm:flex items-center gap-2">
+              <div className="w-px h-5 bg-card-border mx-1" />
               <button
                 onClick={() => {
                   setSearchQuery("");
@@ -483,10 +484,10 @@ export default function VideoGrid() {
               >
                 Clear all
               </button>
-            </>
+            </div>
           )}
 
-          <span className="text-xs text-muted ml-auto tabular-nums">
+          <span className="hidden sm:block text-xs text-muted ml-auto tabular-nums">
             {filteredVideos.length} video
             {filteredVideos.length !== 1 && "s"}
           </span>

@@ -144,15 +144,19 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
               } as MuxCSSProperties
             }
           />
-          {/* Our own play affordance — renders with the poster (no flicker),
-              pointer-events-none so the click falls through to the player,
-              and fades out once playback begins. */}
-          <div
-            className={`pointer-events-none absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-300 ${
-              hasStarted ? "opacity-0" : "opacity-100"
+          {/* Our own play affordance — renders with the poster (no flicker)
+              and triggers playback directly so the tap works on touch too
+              (tapping the media area alone only toggles controls on mobile).
+              Fades out and stops intercepting once playback begins. */}
+          <button
+            type="button"
+            aria-label="Play video"
+            onClick={() => void playerRef.current?.play()}
+            className={`absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-300 ${
+              hasStarted ? "opacity-0 pointer-events-none" : "opacity-100"
             }`}
           >
-            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.06] backdrop-blur-md ring-1 ring-white/20 shadow-[0_2px_16px_rgba(0,0,0,0.35)] transition-all duration-500 ease-out group-hover:scale-105 group-hover:bg-white/[0.1] group-hover:ring-accent/50 group-hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.4)]">
+            <span className="flex items-center justify-center w-16 h-16 rounded-full bg-white/[0.06] backdrop-blur-md ring-1 ring-white/20 shadow-[0_2px_16px_rgba(0,0,0,0.35)] transition-all duration-500 ease-out group-hover:scale-105 group-hover:bg-white/[0.1] group-hover:ring-accent/50 group-hover:shadow-[0_0_32px_-6px_rgba(99,102,241,0.4)]">
               {/* Centroid-centered triangle: vertices (9,6)(9,18)(18,12) put
                   the centroid at (12,12) so it reads as optically centered. */}
               <svg
@@ -162,8 +166,8 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
               >
                 <path d="M9 6v12l9-6z" />
               </svg>
-            </div>
-          </div>
+            </span>
+          </button>
         </div>
       </div>
 
