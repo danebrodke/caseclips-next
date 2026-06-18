@@ -70,21 +70,21 @@ public/
 
 - Dark mode (#0f0f0f bg, indigo accent #6366f1, muted #9ca3af)
 - Atmosphere: `body::before` adds a faint indigo radial glow below the header; `body::after` adds a ~2% film-grain SVG noise overlay (both fixed, pointer-events none, in globals.css). Accent-tinted `::selection` and `:focus-visible` outline
-- Logo SVG in header with tagline; nav links (`NavLinks.tsx`) get a `bg-white/[0.06]` pill on the active route (/video/* maps to Videos, /author* to Authors)
+- Logo SVG in header with tagline; logo is `h-6 sm:h-7` and nav (`NavLinks.tsx`) compacts on mobile (`text-[13px]`, tighter padding/gap) so the links clear the wordmark. Nav links get a `bg-white/[0.06]` pill on the active route (/video/* maps to Videos, /author* to Authors)
 - Footer in layout.tsx: logo + tagline, nav/contact links, disclaimer + copyright. Body is `min-h-screen flex flex-col` with `flex-1` main so it pins to the bottom on short pages
 - Search: "/" focuses the home search from anywhere (kbd hint shown in the input); Escape blurs
 - Section headers unified across pages: `text-[11px] font-semibold uppercase tracking-[0.15em] text-muted/50` (Imaging, Related, Videos · N, Contributors · N)
-- Specialty filters: clickable pills. Author/Institution: typeahead dropdowns
-- Video grid: 4 cols desktop, 2 cols mobile; cards stagger in via animate-fade-in-up (45ms steps, capped at index 11). Thumbnails carry a `ring-1 ring-white/[0.06]` hairline that brightens on hover, plus a small play chip fading in bottom-right
+- Specialty filters: clickable pills. Author/Institution: typeahead dropdowns. On mobile (`< sm`) the typeaheads, video count, and "Clear all" are hidden — only the search bar and specialty pills show (tap All to reset)
+- Video grid: 4 cols desktop, 2 cols mobile; cards stagger in via animate-fade-in-up (45ms steps, capped at index 11). Thumbnails carry a `ring-1 ring-white/[0.06]` hairline that brightens on hover
 - Card style (home + author pages): editorial layout — accent-colored uppercase specialty kicker, Newsreader serif title (`text-[17px]`, `tracking-[-0.01em]`), muted sans author line. No pill chips on the card itself. Same recipe in `VideoGrid.tsx` `VideoCard` and the author-page grid in `src/app/author/[slug]/page.tsx`. `src/app/card-preview/page.tsx` is an internal page with the other card directions that were considered
 - Chapters (desktop, `lg+`): sidebar beside the video, height matched via ResizeObserver, auto-scrolls to active chapter
 - Chapters (mobile, `< lg`): `MobileChapterMenu` pill under the video expands into a floating dropdown (`#141418` panel, `#9a93ff` active accent). Pre-play pill shows a neutral "Chapters · N" label with no active row; first play flips it to `NN / TOT  Current chapter title`. Video wrapper is raised to `z-22` on mobile so the open-state scrim dims title/imaging/related but never the video. Panel auto-sizes to remaining viewport height; active chapter auto-centers on open or when the user seeks
-- Loading: shimmer skeleton for video and chapters while the player loads
+- Video page loads instantly: chapters (from `chapters.json`) and a static poster `<Image>` render at static-paint time — no skeletons. Mux uses `preload="metadata"` and cues in the background; a static poster paints under the player so the thumbnail shows before the web component upgrades. (The `.skeleton` shimmer class/keyframes remain, used only by the legacy VimeoPlayer fallback.)
 - Lightbox: pre/post-op films open in fullscreen overlay on click
 - Scrollbar: `overflow-y: scroll` on html to prevent layout shift during filtering
 - Video page layout: author card + radiographs side by side on desktop to minimize scrolling
-- Video frame: `.video-frame` owns aspect-ratio 16/9 + rounded-xl + overflow-hidden; mux-player is absolutely positioned inset:0 to prevent sub-pixel gaps at the rounded corners
-- Mux Player hides its big center play button via `--center-play-button: none`; users click the poster or the bottom bar to play
+- Video frame: `.video-frame` owns aspect-ratio 16/9 + rounded-xl + overflow-hidden; the static poster `<Image>` and mux-player are absolutely positioned inset:0 to prevent sub-pixel gaps at the rounded corners
+- Play affordance: a custom frosted-glass button (in `MuxPlayer.tsx`) overlays the poster before first play — hairline `ring-white/20` at rest, a whisper of accent ring + soft bloom on hover, centroid-centered triangle (`M9 6v12l9-6z`). It's a real `<button>` calling `play()` (so taps work on touch), and fades out + goes `pointer-events-none` once `hasStarted`. `--center-play-button` is set to `none` only before first play (where the custom button lives and the load flicker occurred); once `hasStarted` it's removed so Mux's native center button and play/pause controls return on mobile and desktop
 
 ## Future (Not Yet Built)
 
