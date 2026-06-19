@@ -43,6 +43,49 @@ const miniSearch = new MiniSearch({
 });
 miniSearch.addAll(searchableVideos);
 
+// Videos published within this window stay pinned at the top, newest first.
+// Everything older is shuffled so different cases float up on each reload.
+const RECENT_WINDOW_MS = 1000 * 60 * 60 * 24 * 182; // ~6 months
+
+function partitionByRecency(list: Video[]) {
+  const cutoff = Date.now() - RECENT_WINDOW_MS;
+  const recent: Video[] = [];
+  const older: Video[] = [];
+  for (const v of list) {
+    if (new Date(v.publishedAt + "T00:00:00").getTime() >= cutoff) {
+      recent.push(v);
+    } else {
+      older.push(v);
+    }
+  }
+  recent.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+  return { recent, older };
+}
+
+// Seeded PRNG (mulberry32) so a given seed always produces the same order. The
+// server picks the seed per request and passes it in, so the server-rendered
+// HTML and the client hydration shuffle identically — no post-mount reshuffle,
+// no flash — while a fresh seed each request still reorders on every reload.
+function mulberry32(seed: number): () => number {
+  let s = seed;
+  return function () {
+    s |= 0;
+    s = (s + 0x6d2b79f5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffle<T>(arr: T[], seed: number): T[] {
+  const rng = mulberry32(seed);
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 function useDropdown() {
   const [open, setOpen] = useState(false);
@@ -233,7 +276,7 @@ function VideoCard({ video, index }: { video: Video; index: number }) {
   );
 }
 
-export default function VideoGrid() {
+export default function VideoGrid({ shuffleSeed }: { shuffleSeed: number }) {
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialties, setSelectedSpecialties] = useState<Set<string>>(
@@ -251,6 +294,14 @@ export default function VideoGrid() {
     new Set()
   );
   const searchRef = useRef<HTMLInputElement>(null);
+
+  // Browse order: recent videos pinned on top (newest first), the rest shuffled
+  // with the server-provided seed so server render and client hydration match
+  // exactly (no flash) while each page load gets a fresh order.
+  const orderedVideos = useMemo(() => {
+    const { recent, older } = partitionByRecency(videos);
+    return [...recent, ...shuffle(older, shuffleSeed)];
+  }, [shuffleSeed]);
 
   // "/" focuses search from anywhere; Escape blurs it
   useEffect(() => {
@@ -300,7 +351,7 @@ export default function VideoGrid() {
       const videoMap = new Map(videos.map((v) => [v.id, v]));
       pool = results.map((r) => videoMap.get(r.id)).filter(Boolean) as Video[];
     } else {
-      pool = videos;
+      pool = orderedVideos;
     }
 
     return pool.filter((video) => {
@@ -328,7 +379,13 @@ export default function VideoGrid() {
 
       return true;
     });
-  }, [searchQuery, selectedSpecialties, selectedAuthors, selectedInstitutions]);
+  }, [
+    searchQuery,
+    selectedSpecialties,
+    selectedAuthors,
+    selectedInstitutions,
+    orderedVideos,
+  ]);
 
   // Lazy loading: show 16 initially, load 16 more each time sentinel is visible
   const PAGE_SIZE = 16;

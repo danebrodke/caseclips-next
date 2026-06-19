@@ -71,12 +71,14 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
 
     const isVertical = window.innerWidth >= 1024;
     if (isVertical) {
-      if (
-        activeRect.top < containerRect.top ||
-        activeRect.bottom > containerRect.bottom
-      ) {
-        activeEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
+      // Keep the active chapter centered (like the mobile menu) instead of
+      // only nudging when it hits an edge — so it stays mid-list as long as
+      // possible and the browser naturally clamps near the top/bottom.
+      const activeTopWithin =
+        activeRect.top - containerRect.top + container.scrollTop;
+      const target =
+        activeTopWithin - (container.clientHeight - activeEl.offsetHeight) / 2;
+      container.scrollTo({ top: Math.max(0, target), behavior: "smooth" });
     } else {
       if (
         activeRect.left < containerRect.left ||
@@ -102,13 +104,11 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
 
   return (
     <>
-    <div className="flex flex-col lg:flex-row gap-4 animate-fade-in-up">
+    <div className="flex flex-col lg:flex-row gap-4 animate-fade-in-up max-lg:relative max-lg:z-[22]">
       {/* Video */}
       <div
         ref={videoWrapperRef}
-        className={`max-lg:relative max-lg:z-[22] ${
-          hasChapters ? "lg:flex-1 lg:min-w-0" : "w-full"
-        }`}
+        className={hasChapters ? "lg:flex-1 lg:min-w-0" : "w-full"}
       >
         <div className="video-frame group">
           {/* Static poster paints instantly while the Mux web component
@@ -194,7 +194,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
               <button
                 key={i}
                 onClick={() => seekToChapter(chapter.startTime)}
-                className={`relative flex items-start gap-3 pl-4 pr-3 py-2.5 rounded-lg text-left transition-all duration-200 shrink-0 lg:shrink lg:w-full ${
+                className={`relative flex items-baseline gap-3 pl-4 pr-3 py-2.5 rounded-lg text-left transition-all duration-200 shrink-0 lg:shrink lg:w-full ${
                   activeChapter === i
                     ? "bg-accent/8 text-foreground"
                     : "text-foreground/70 hover:text-foreground hover:bg-white/[0.03]"
@@ -204,13 +204,13 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
                   <span className="absolute left-0 top-2 bottom-2 w-[2px] rounded-full bg-accent" />
                 )}
                 <span
-                  className={`text-[10px] font-mono mt-[3px] shrink-0 tabular-nums ${
+                  className={`text-[11px] font-mono shrink-0 tabular-nums ${
                     activeChapter === i ? "text-accent" : "text-muted/50"
                   }`}
                 >
                   {formatTime(chapter.startTime)}
                 </span>
-                <span className="text-[13px] leading-snug line-clamp-2">
+                <span className="text-[14px] leading-snug line-clamp-2">
                   {chapter.title}
                 </span>
               </button>
