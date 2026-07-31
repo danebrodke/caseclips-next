@@ -27,22 +27,8 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
 
   const playerRef = useRef<MuxPlayerRefAttributes | null>(null);
   const chapterListRef = useRef<HTMLDivElement>(null);
-  const videoWrapperRef = useRef<HTMLDivElement>(null);
   const [activeChapter, setActiveChapter] = useState<number>(-1);
   const [hasStarted, setHasStarted] = useState(false);
-  const [videoHeight, setVideoHeight] = useState<number | null>(null);
-
-  // Match chapter-panel height to video container on desktop
-  useEffect(() => {
-    if (!videoWrapperRef.current) return;
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        setVideoHeight(entry.contentRect.height);
-      }
-    });
-    observer.observe(videoWrapperRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   // Update active chapter on timeupdate
   const handleTimeUpdate = useCallback(() => {
@@ -106,10 +92,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
     <>
     <div className="flex flex-col lg:flex-row gap-4 animate-fade-in-up max-lg:relative max-lg:z-[22]">
       {/* Video */}
-      <div
-        ref={videoWrapperRef}
-        className={hasChapters ? "lg:flex-1 lg:min-w-0" : "w-full"}
-      >
+      <div className={hasChapters ? "lg:flex-1 lg:min-w-0" : "w-full"}>
         <div className="video-frame group">
           {/* Static poster paints instantly while the Mux web component
               upgrades and cues playback metadata in the background. */}
@@ -175,21 +158,20 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
         </div>
       </div>
 
-      {/* Chapter markers sidebar */}
+      {/* Chapter markers sidebar — the row's height comes from the video's
+          16/9 aspect ratio, so the absolutely-filled inner column matches the
+          video height at first paint with no JS measurement (no post-hydration
+          height jump). */}
       {hasChapters && (
-        <div className="max-lg:hidden lg:w-72 shrink-0">
-          <h3 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted/50 mb-3 px-3">
-            Chapters
-          </h3>
-          <div
-            ref={chapterListRef}
-            className="flex flex-row lg:flex-col gap-0.5 overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto pb-2 lg:pb-0"
-            style={
-              videoHeight
-                ? { maxHeight: `${videoHeight - 32}px` }
-                : { maxHeight: "60vh" }
-            }
-          >
+        <div className="max-lg:hidden lg:w-72 shrink-0 lg:relative">
+          <div className="lg:absolute lg:inset-0 flex flex-col">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted/50 mb-3 px-3 shrink-0">
+              Chapters
+            </h3>
+            <div
+              ref={chapterListRef}
+              className="flex flex-col gap-0.5 flex-1 min-h-0 overflow-y-auto"
+            >
             {chapters.map((chapter, i) => (
               <button
                 key={i}
@@ -215,6 +197,7 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
                 </span>
               </button>
             ))}
+            </div>
           </div>
         </div>
       )}

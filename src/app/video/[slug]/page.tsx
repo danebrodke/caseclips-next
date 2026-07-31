@@ -21,7 +21,6 @@ function formatDate(dateStr: string): string {
   return date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
-    day: "numeric",
   });
 }
 
@@ -88,41 +87,55 @@ export default async function VideoPage({
         <VimeoPlayer vimeoId={video.vimeoId} />
       ) : null}
 
-      {/* Title */}
+      {/* Title block — stacked hierarchy with an even rhythm: specialty
+          kicker (same recipe as the grid cards), serif title, then a single
+          byline row with a secondary institution/date line under the names. */}
       <div className="mt-8 animate-fade-in-up">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-3">
+          {videoSpecialties.map((spec) => (
+            <Link
+              key={spec.id}
+              href={`/?specialty=${spec.slug}`}
+              className="text-[11px] uppercase tracking-[0.14em] font-medium text-accent/80 hover:text-accent transition-colors duration-200"
+            >
+              {spec.name}
+            </Link>
+          ))}
+        </div>
+
         <h1 className="font-serif text-[1.7rem] sm:text-[2.25rem] font-normal tracking-[-0.015em] leading-[1.2] text-white text-balance">
           {video.title}
         </h1>
 
-        {/* Metadata */}
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-4">
-          <div className="flex items-center gap-2.5">
-            <div className="flex -space-x-1.5">
-              {videoAuthors.map((author) => (
-                <div
-                  key={author.id}
-                  className="w-7 h-7 rounded-full bg-surface ring-2 ring-background overflow-hidden"
-                >
-                  {author.photoUrl ? (
-                    <Image
-                      src={author.photoUrl}
-                      alt={author.name}
-                      width={28}
-                      height={28}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-[9px] font-semibold text-muted">
-                      {author.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <span className="text-sm">
+        {/* Byline */}
+        <div className="flex items-center gap-3 mt-5">
+          <div className="flex -space-x-2 shrink-0">
+            {videoAuthors.map((author) => (
+              <div
+                key={author.id}
+                className="w-9 h-9 rounded-full bg-surface ring-2 ring-background overflow-hidden"
+              >
+                {author.photoUrl ? (
+                  <Image
+                    src={author.photoUrl}
+                    alt={author.name}
+                    width={36}
+                    height={36}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-[10px] font-semibold text-muted">
+                    {author.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="min-w-0">
+            <div className="text-[14px] font-medium leading-snug">
               {videoAuthors.map((author, i) => (
                 <span key={author.id}>
                   {i > 0 && ", "}
@@ -134,29 +147,21 @@ export default async function VideoPage({
                   </Link>
                 </span>
               ))}
-            </span>
-          </div>
-          {primaryInstitution && (
-            <>
-              <span className="text-muted/30 select-none">&middot;</span>
-              <span className="text-sm text-muted">
-                {primaryInstitution.name}
+            </div>
+            <div className="text-[12.5px] text-muted mt-0.5 leading-snug">
+              {primaryInstitution && (
+                <>
+                  {primaryInstitution.name}
+                  <span className="mx-2 text-muted/40 select-none">
+                    &middot;
+                  </span>
+                </>
+              )}
+              <span className="tabular-nums">
+                {formatDate(video.publishedAt)}
               </span>
-            </>
-          )}
-          <span className="text-muted/30 select-none">&middot;</span>
-          <span className="text-sm text-muted">
-            {formatDate(video.publishedAt)}
-          </span>
-          {videoSpecialties.map((spec) => (
-            <Link
-              key={spec.id}
-              href={`/?specialty=${spec.slug}`}
-              className="text-[11px] px-2.5 py-[3px] bg-accent/8 text-accent/80 rounded-full font-medium border border-accent/10 hover:bg-accent/15 hover:text-accent transition-all duration-200"
-            >
-              {spec.name}
-            </Link>
-          ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -166,7 +171,7 @@ export default async function VideoPage({
       {/* Imaging + Related */}
       <div
         className="flex flex-col lg:flex-row lg:items-start gap-8 animate-fade-in-up"
-        style={{ animationDelay: "0.12s" }}
+        style={{ animationDelay: "0.06s" }}
       >
         {/* Imaging */}
         <div className="flex-1 min-w-0">

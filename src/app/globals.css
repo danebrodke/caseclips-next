@@ -178,7 +178,7 @@ body::after {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -187,5 +187,5 @@ body::after {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.45s ease-out both;
+  animation: fadeInUp 0.3s ease-out both;
 }
