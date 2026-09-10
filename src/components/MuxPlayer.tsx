@@ -79,6 +79,34 @@ export default function MuxPlayer({ slug, playbackId, title }: Props) {
     }
   }, [activeChapter]);
 
+  // Mobile fix: media-chrome hides the controls 2 s after the last touch, but a touch that
+  // starts on the control bar and turns into a page scroll ends with pointercancel (never
+  // pointerup). The library clears its hide timer on the move and never restarts it, so the
+  // controls stay on screen until the next tap. On pointercancel, poke the inner
+  // media-controller with a synthetic mouse move on itself, which is its own path for
+  // "show, then schedule the hide".
+  useEffect(() => {
+    const el = playerRef.current as unknown as HTMLElement | null;
+    if (!el) return;
+    const findController = (root: ShadowRoot | null | undefined, depth = 0): Element | null => {
+      if (!root || depth > 4) return null;
+      const direct = root.querySelector("media-controller");
+      if (direct) return direct;
+      for (const child of Array.from(root.querySelectorAll("*"))) {
+        const found = child.shadowRoot ? findController(child.shadowRoot, depth + 1) : null;
+        if (found) return found;
+      }
+      return null;
+    };
+    const onPointerCancel = (e: PointerEvent) => {
+      if (e.pointerType !== "touch") return;
+      const controller = findController(el.shadowRoot);
+      controller?.dispatchEvent(new PointerEvent("pointermove", { pointerType: "mouse" }));
+    };
+    el.addEventListener("pointercancel", onPointerCancel);
+    return () => el.removeEventListener("pointercancel", onPointerCancel);
+  }, []);
+
   const seekToChapter = useCallback((startTime: number) => {
     const el = playerRef.current;
     if (!el) return;
