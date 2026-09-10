@@ -161,6 +161,19 @@ export const specialties: Specialty[] = [
 
 export const videos: Video[] = [
   {
+    id: "9afdada1c4416bc338cc1cb2",
+    title: "Pilon ORIF",
+    slug: "pilon-orif",
+    muxPlaybackId: "01Qd3B8zE1QiGtnb601sDkFqdIygFraCgf400imTZOBWyA",
+    vimeoId: "",
+    thumbnailUrl: "/images/cases/pilon-preop.jpg",
+    preopImages: ["/images/cases/pilon-preop.jpg"],
+    postopImages: ["/images/cases/pilon-postop.jpg"],
+    authorIds: ["auth-14"],
+    specialtyIds: ["spec-2"],
+    publishedAt: "2026-09-10",
+  },
+  {
     id: "693e36152c94f10001c3c7d3",
     title: "Scaphoid Fracture Fixation",
     slug: "scaphoid-fracture-fixation",

@@ -1,4 +1,54 @@
 {
+  "pilon-orif": [
+    {
+      "title": "Case overview",
+      "startTime": 1
+    },
+    {
+      "title": "Positioning and skin marking",
+      "startTime": 36
+    },
+    {
+      "title": "Incision",
+      "startTime": 44
+    },
+    {
+      "title": "Deep dissection",
+      "startTime": 57
+    },
+    {
+      "title": "Expose and debride fracture",
+      "startTime": 73
+    },
+    {
+      "title": "Reduce posterolateral fragment",
+      "startTime": 99
+    },
+    {
+      "title": "Reduce medial fragment",
+      "startTime": 130
+    },
+    {
+      "title": "Reduce anterolateral fragment",
+      "startTime": 161
+    },
+    {
+      "title": "Stabilize reduction with K wires",
+      "startTime": 176
+    },
+    {
+      "title": "Place definitive plates",
+      "startTime": 187
+    },
+    {
+      "title": "Final fluoroscopy",
+      "startTime": 227
+    },
+    {
+      "title": "Closure",
+      "startTime": 231
+    }
+  ],
   "scaphoid-fracture-fixation": [
     {
       "title": "Intro",
@@ -281,7 +331,7 @@
       "startTime": 204
     },
     {
-      "title": "Place 2nd wire 30º varus from wire up neck",
+      "title": "Place 2nd wire 30\u00ba varus from wire up neck",
       "startTime": 217
     },
     {
@@ -2351,7 +2401,7 @@
       "startTime": 168
     },
     {
-      "title": "Navigate cut at 6º slope, 0º varus/valgus",
+      "title": "Navigate cut at 6\u00ba slope, 0\u00ba varus/valgus",
       "startTime": 176
     },
     {
@@ -2867,7 +2917,7 @@
       "startTime": 161
     },
     {
-      "title": "Navigate distal cut (3º flexion, 2º varus)",
+      "title": "Navigate distal cut (3\u00ba flexion, 2\u00ba varus)",
       "startTime": 174
     },
     {
@@ -2899,7 +2949,7 @@
       "startTime": 331
     },
     {
-      "title": "Navigate tibial cut (6º slope, neutral)",
+      "title": "Navigate tibial cut (6\u00ba slope, neutral)",
       "startTime": 344
     },
     {
