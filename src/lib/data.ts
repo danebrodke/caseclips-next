@@ -162,7 +162,7 @@ export const specialties: Specialty[] = [
 export const videos: Video[] = [
   {
     id: "be04b4b32e38f727c4d62a53",
-    title: "Distal femur ORIF and IMN",
+    title: "Distal Femur ORIF and IMN",
     slug: "distal-femur-orif-and-imn",
     muxPlaybackId: "1tmyUBLEmkApMfrO3cyOmdNtwK6czmU00rg01KGc01uQ00Q",
     vimeoId: "",
