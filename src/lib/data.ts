@@ -161,6 +161,19 @@ export const specialties: Specialty[] = [
 
 export const videos: Video[] = [
   {
+    id: "be04b4b32e38f727c4d62a53",
+    title: "Distal femur ORIF and IMN",
+    slug: "distal-femur-orif-and-imn",
+    muxPlaybackId: "1tmyUBLEmkApMfrO3cyOmdNtwK6czmU00rg01KGc01uQ00Q",
+    vimeoId: "",
+    thumbnailUrl: "/images/cases/distal-femur-imn-preop.jpg",
+    preopImages: ["/images/cases/distal-femur-imn-preop.jpg"],
+    postopImages: ["/images/cases/distal-femur-imn-postop.jpg"],
+    authorIds: ["auth-14"],
+    specialtyIds: ["spec-2"],
+    publishedAt: "2026-09-14",
+  },
+  {
     id: "9afdada1c4416bc338cc1cb2",
     title: "Pilon ORIF",
     slug: "pilon-orif",
